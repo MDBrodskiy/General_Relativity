@@ -43,6 +43,6 @@ Authentication:
 Cloning This Repository
 </br>&nbsp;&nbsp;with **command line interface**:
     <pre>    
-    **$** git clone https://github.com/MDBrodskiy/Electricity_Magnetism.git    
+    **$** git clone https://github.com/MDBrodskiy/General_Relativity.git    
     **$** **>**  **_**
     </pre>
