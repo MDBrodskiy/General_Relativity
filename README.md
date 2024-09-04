@@ -19,6 +19,8 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
+* [**Notes**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Notes/)
+    * [**Lecture 1**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Notes/Lecture1.pdf)
 
 <!--
   * [**Chapter 1**](#Notes/Chapter\ 1)
