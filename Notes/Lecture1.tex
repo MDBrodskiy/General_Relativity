@@ -146,6 +146,109 @@
 
     \end{itemize}
 
+  \item Lorentz Transformations and Rotations
+
+    \begin{figure}[H]
+      \centering
+      \include{Figures/Rot}
+      \caption{Rotation of Coordinate System}
+      \label{fig:2}
+    \end{figure}
+
+    \begin{itemize}
+
+      \item Following rotation, we get:
+
+        $$x'=x\cos(\theta)-y\sin(\theta)$$
+        $$y'=x\sin(\theta)+y\cos(\theta)$$
+
+      \item For boosting in a single direction (``rotation'' between space and time):
+
+        $$x'=(x-vt)\gamma$$
+        $$y'=y$$
+        $$z'=z$$
+        $$t'=(t-vx)\gamma$$
+
+      \item Space and time are no longer separate $\Rightarrow$ single spacetime
+
+      \item A translation would involve movement of the origin
+
+    \end{itemize}
+
+  \item Spacetime Diagram
+
+    \begin{figure}[H]
+      \centering
+      \include{Figures/SpacetimeDiag}
+      \caption{Example Spacetime Diagram}
+      \label{fig:3}
+    \end{figure}
+
+    \begin{itemize}
+
+      \item Points represent events
+
+      \item Light always travels at $45^{\circ}$
+
+      \item Cone of causality: outside cone is causally separate (events inside cone can not affect events outside of it)
+
+      \item Inside a light cone, it is possible to perform a boost such that events happen in the same place
+
+      \item Lorentz transformation ``squeezes'' axes
+
+        \begin{figure}[H]
+          \centering
+          \include{Figures/Boost}
+          \caption{Lorentz Transformation from $O$ to $O'$}
+          \label{fig:4}
+        \end{figure}
+
+      \item $A$ to $B_1$: $\Delta t$ and $\Delta t'$ are positive
+
+      \item $A$ to $B_2$:  $\Delta x=\Delta t$, $\Delta x'=\Delta t'$
+
+      \item $A$ to $B_3$: $\Delta x$, $\Delta x'$ are positive
+
+      \item Distances are invariant under translations and rotations (in standard Euclidean space)
+
+      \item Distances in spacetime: spacetime interval
+        
+        \begin{itemize}
+
+          \item For flat space (Minkowski space)
+
+            $$\Delta s^2=-\Delta t^2+\Delta x^2 + \Delta y^2+\Delta z^2$$
+
+            \begin{itemize}
+
+              \item Has a $-+++$ signature, versus a $+---$ signature
+
+              \item If $\Delta s^2<0$: time-like separation
+
+              \item If $\Delta s^2=0$: light-like (null) separation
+
+              \item If $\Delta s^2>0$: space-like separation
+
+              \item With proper time $\tau$:
+
+                $$\Delta \tau^2=-\Delta s^2$$
+
+            \end{itemize}
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Changing between inertial reference frams is a Lorentz transformation
+
+    \begin{itemize}
+
+      \item $\Delta s$ is invariant under Lorentz transformations
+
+      \item General Relativity involves generalizing this to curved space $\Rightarrow$ differential geometry
+
+    \end{itemize}
+
 \end{itemize}
 
 \end{document}
