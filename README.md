@@ -21,6 +21,7 @@
 
 * [**Notes**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Notes/)
     * [**Lecture 1**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Notes/Lecture1.pdf)
+    * [**Lecture 2**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Notes/Lecture2.pdf)
 * [**Homework**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Homework/)
 
 <!--
