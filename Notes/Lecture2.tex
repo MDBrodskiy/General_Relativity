@@ -7,7 +7,7 @@
 \include{Includes.tex}
 
 \title{Lecture 2 — Introduction to Differential Geometry}
-\date{\today}
+\date{September 9 — \today}
 \author{Michael Brodskiy\\ \small Professor: J. Blazek}
 
 \begin{document}
@@ -20,8 +20,8 @@
 
   \item In differential geometry, a metric defines how we calculate distance
 
-    $$\Delta s^2=-\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2\,\quad\text{ (the metric in Minkowski space)}$$
-    $$=\eta_{\mu\nu}\Delta x^{\mu}\Delta x^{\nu}\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad$$
+    $$\Delta s^2=-\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2=-\Delta\tau^2\,\quad\text{ (the metric in Minkowski space)}$$
+    $$=\eta_{\mu\nu}\Delta x^{\mu}\Delta x^{\nu}\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad$$
 
     \begin{itemize}
 
@@ -29,22 +29,294 @@
 
         \begin{itemize}
 
-          \item Greek: 0-3
+          \item Spacetime Vector \to Greek: 0-3
 
-            $$\begin{array}{l r} \Delta x^{\mu} & \Delta x^0\\ & \Delta x^1\\ & \Delta x^2\\ & \Delta x^3\end{array}$$
+            $$\vec{x}=\left( \begin{array}{c} t\\x\\y\\z\end{array} \right)\to\left(\begin{array}{x} x^0\\ x^1\\ x^2\\ x^3\end{array}\right)\to x^{\mu}$$
 
-          \item Latin: 1-3
+          \item Vector $\to$ Latin: 1-3
 
-            $$\begin{array}{l r} \Delta x^{i} & \Delta x^1\\ & \Delta x^2\\ & \Delta x^3\end{array}$$
+            $$\vec{x}=\left( \begin{array}{c} x\\y\\z\end{array} \right)\to\left(\begin{array}{x} x^1\\ x^2\\ x^3\end{array}\right)\to x^{i}$$
 
         \end{itemize}
 
         $$\eta_{00}\Delta x^0\Delta x^0+\eta_{01}\Delta x^0\Delta x^1+\eta_{02}\Delta x^0\Delta x^2+\eta_{10}\Delta x^1\Delta x^0+\eta_{11}\Delta x^1\Delta x^1+\cdots$$
 
-      \item This can be written as:
+      \item Tensors, index notation:
 
         $$\eta_{\mu\nu}=\left( \begin{array}{c c c c} -1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1\\ \end{array}\right)$$
         $$=\eta_{00}\Delta x^0\Delta x^0+=\eta_{11}\Delta x^1\Delta x^1+=\eta_{22}\Delta x^2\Delta x^2+=\eta_{33}\Delta x^3\Delta x^3$$
+
+        \begin{itemize}
+
+          \item Summation convention, one up and one down (order does not matter)
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Curved Space Distance
+
+    \begin{itemize}
+
+      \item We know $d\neq|x_1-x_2|$
+
+      \item $\Delta s^2=\Delta x^2=\eta_{\mu\nu}\Delta x^{\mu}\Delta x^{\nu}\Rightarrow g_{\mu\nu}\Delta x^{\mu}\Delta x^{\nu}$, where $g_{\mu\nu}$ is a metric that depends on a radius $R$ (called manifolds, encodes geometry)
+
+      \item Note: 1D or 2D analogies are embedded in 3D
+
+      \item In differential geometry, we will generally deal with:
+
+        $$ds^2=g_{\mu\nu}dx^{\mu}dx^{\nu}$$
+
+    \end{itemize}
+
+  \item Revisiting Lorentz Transformations
+
+    \begin{itemize}
+
+      \item We can write a transformation in two ways:
+
+        $$\Lambda=\left( \begin{array}{c c c c} \gamma & -v\gamma & 0 & 0\\ -v\gamma & \gamma & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1\end{array} \right)$$
+        $$\Lambda=\left( \begin{array}{c c c c} \cosh(\phi) & -\sinh(\phi) & 0 & 0\\ -\sinh(\phi) & \cosh(\phi) & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1\end{array} \right)$$
+
+        \item With four-vectors:
+
+          $$\vec{x}=\left( \begin{array}{c} \gamma t\\ x\\ y\\ z\end{array} \right)$$
+          $$\vec{x}'=\left( \begin{array}{c} \gamma t - vx\\ -vt+\gamma x\\ y\\ z\end{array} \right)$$
+
+        \item Matrix multiplication with indices becomes:
+
+          $$x^{\mu'}=\Lambda^{\mu'}_{\nu}x^{\nu}$$
+
+    \end{itemize}
+
+  \item The metric and Lorentz Transformations
+
+    \begin{itemize}
+
+      \item $\Delta s^2$ is invariant under boosts ($x^{\mu}\to x^{\mu'}$)
+
+      \item $\Delta s^2=\eta_{\mu\nu}\Delta x^{\mu}\Delta x^{\nu}=\eta_{\mu'\nu'}\Delta x^{\mu'}\Delta x^{\nu'}=\eta_{\mu'\nu'}\Lambda^{\mu'}_{\mu}\Delta x^{\mu}\Lambda^{\nu'}_{\nu}\Delta x^{\nu}$
+
+      \item This defines Lorentz Transformations (group)
+
+    \end{itemize}
+
+  \item What is a group?
+
+    \begin{itemize}
+
+      \item A set $\left\{ a,b,c,\cdots \right\}$
+
+        \begin{enumerate}
+
+          \item Has an operation ``$\cdot$''
+
+          \item Operation is associative: $(a\cdot b)\cdot c=a\cdot (b\cdot c)$
+
+          \item Set is closed: if $a\cdot b=c$, $c$ is in the group
+
+          \item Contains an identity element: $a\cdot e=e\cdot a=a$
+
+          \item Contains an inverse for all elements: $a\cdot a^{-1}=e$
+
+        \end{enumerate}
+
+      \item Can be finite or infinite
+
+      \item Simple example: integers under addition
+        '
+      \item Rotations in space are a group and can be represented by matrices with multiplication:
+
+        $$R_{z,\theta}=\left( \begin{array}{ccc} \cos(\theta) & -\sin(\theta) & 0 \\ \sin(\theta) & \cos(\theta) & 0 \\ 0 & 0 & 1 \end{array}\right)$$
+
+        \begin{itemize}
+
+          \item SO(3) ``special orthogonal in 3D''
+
+        \end{itemize}
+
+      \item Operations don't commute: non-abelian group
+
+      \item In 4D, spatial rotations and boosts form the Lorentz transformations (group) and translations $\to$ Poincar\'e group
+
+    \end{itemize}
+
+  \item Vectors and Covectors
+
+    \begin{itemize}
+
+      \item We already have a concept of vectors:
+
+        \begin{itemize}
+
+          \item $\vec{v}$ exists at a single point in spacetime in the tangent space $T_p$
+
+          \item Vectors from $T_p$ can not simply be moved to $T_q$
+
+          \item Example: $v^{\mu}=\dfrac{d}{d\lambda}x^{\mu}$ tangent to $x^{\mu}(\lambda)$
+
+        \end{itemize}
+
+      \item Vector field: one vector at each spacetime point
+
+      \item Vectors are invariant under $\Lambda$
+
+        \begin{itemize}
+
+          \item Example: Wind velocity at every point in space:
+
+            \begin{itemize}
+
+              \item Changing frames alters components, but not the vector itself (why we ``prime'' the index)
+
+            \end{itemize}
+
+        \end{itemize}
+
+      \item This can be written as:
+
+        $$\text{\footnotesize vector}\to A=\hspace{-15pt}\overbrace{A^{\mu}}^{\text{components}}\hspace{-25pt}\underbrace{\hat{e}_{(\mu)}}_{\text{basis vectors}}$$
+
+        \begin{itemize}
+
+          \item $\hat{e}_{(\mu)}$ does NOT refer to dual vectors
+
+          \item $(\mu)$ is not a coordinate index
+
+        \end{itemize}
+
+        $$\text{\footnotesize unprimed to primed}\to\Lambda^{\nu'}_{\mu}\longleftrightarrow\Lambda^{\rho}_{\sigma'}\leftarrow\text{\footnotesize primed to unprimed}$$
+        $$\Lambda^{\nu'}_{\mu}\Lambda^{\rho}_{\sigma'}=\delta_{\mu}^{\rho}\text{ (Kronecker delta)}$$
+
+    \end{itemize}
+
+  \item Dual Vectors (``One-forms,'' covariant vectors)
+
+    \begin{itemize}
+
+      \item A map from vectors to $\mathbb{R}$
+
+      \item Ex.
+
+        $$v=\left( \begin{array}{c}a\\b\\c\end{array} \right)\text{ and }w=(d\quad e\quad f)$$
+        $$w(v)=(d\quad e\quad f)\left(\begin{array}{c}a\\b\\c\end{array}\right)=da+eb+fc$$
+
+        \begin{itemize}
+
+          \item $w(v)$ is not the dot product, though it is similar in spirit
+
+        \end{itemize}
+
+      \item Cotangent space $T_p^{*}$
+
+      \item Similar basis structure and transformations
+
+        $$w=w_{\mu}\hat{\theta}^{(\mu)}$$
+
+      \item where 
+
+        $$\hat{\theta}^{(\nu)}\left( \hat{e}_{(\mu)} \right)=\delta^{\nu}_{\mu}$$
+
+    \end{itemize}
+
+  \item The Gradient
+
+    \begin{itemize}
+
+      \item Recall $\nabla\phi=\left( \frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z} \right)\phi\Rightarrow\frac{\partial\phi}{\partial x}\hat{x}+\frac{\partial\phi}{\partial y}\hat{y}+\frac{\partial \phi}{\partial z}\hat{z}$
+
+      \item It is a dual vector
+
+    \end{itemize}
+
+  \item Tensors
+
+    \begin{itemize}
+
+      \item A $(k,l)$-rank tensor maps $k$ dual vectors and $l$ vectors to $\mathbb{R}$
+
+        \begin{center}
+          $$\begin{array}{l l}\text{scalar} & (0,0)\\ \text{vector} & (1,0)\\\text{dual vector} & (0,1)\\\text{metric} & (0,2)\end{array}$$
+        \end{center}
+
+      \item Tensors obey ``multi-linearity''
+
+        $$T(a\omega+b\eta,cV+dW)=acT(\omega,V)+adT(\omega,W)+bcT(\eta,V)+bdT(\eta,W)$$
+
+      \item Tensor Product
+
+        $$T_2=T\otimes S(\omega^(1)\cdots\omega^{(k)}, \cdots\omega^{(k+m)},V^{(1)}\cdots V^{(l)}, V^{(l+m)})$$
+        $$=T(\omega^{(1)}\cdots\omega^{(k)},V^{(1)}\cdots V^{(l)})\times S(\omega^{(k+1)}\cdots\omega^{(k+m)},V^{(l+1)}\cdots V^{(l+m)})$$
+
+      \item Basis for a $(k,l)$ tensor:
+
+        $$\hat{e}_{\mu_1}\otimes\cdots\otimes\hat{e}_{\mu_k}\otimes\hat{\theta}^{(\nu_1)}\otimes\cdots\otimes\hat{\theta}^{(\nu_l)}$$
+
+        \begin{itemize}
+
+          \item $\mu_i$ has $D$ values for $D$ dimensions ($D=4$ for us), $4^{k+l}$ total basis vectors
+
+        \end{itemize}
+
+        $$T=T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}\times\text{(Basis tensors)}$$
+
+      \item Transformations under $\Lambda$ (builds from vector transforms)
+
+        $$T^{\mu_1'\ldots\mu_k'}_{\nu_1'\ldots\nu_l^'}=\Lambda^{\mu_1'}_{\mu_1}\cdots\Lambda^{\mu_k'}_{\mu_k}\Lambda^{\nu_1}_{\nu_1'}\cdots\Lambda^{\nu_l}_{\nu_l'}T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l'}$$
+
+      \item $T$ can act on a subset
+
+    \end{itemize}
+
+  \item The inner product (dot product)
+
+    $$\eta(V,W)=V\cdotW=\eta_{\mu\nu}V^{\mu}W^{\nu}$$
+
+    \begin{itemize}
+
+      \item The metric appears again!
+
+    \end{itemize}
+
+    $$\eta^{\mu\nu}\eta_{\nu\sigma}=\delta^{\mu}_{\sigma}\text{ (inverse metric)}$$
+
+  \item Another famous tensor example: E\&M Field Strength Tensor
+
+    $$F_{\mu\nu}=\left( \begin{array}{cccc} 0 & -E_1 & -E_2 & -E_3\\E_1& 0 & B_3 & -B_2\\ E_2 & -B_3 & 0 & B_1\\ E_3 & B_2 & -B_1 & 0\end{array} \right)$$
+
+  \item Manipulating Tensors
+
+    \begin{itemize}
+
+      \item Contraction: $S^{\mu\rho}_{\sigma}=T^{\mu\nu\rho}_{\sigma\nu}$
+
+      \item Indices are arbitrary, until they are set:
+
+        $$T^{\mu\nu\rho}\neq T^{\nu\mu\rho}\text{ because we compare them}$$
+
+      \item The metric raises/lowers indices:
+
+        \begin{itemize}
+
+          \item Recall inner product:
+
+            $$\eta_{\mu\nu}V^{\mu}U^{\nu}=V_{\nu}U^{\nu}$$
+
+        \end{itemize}
+
+      \item Symmetric versus Anti-symmetric Tensors:
+
+        $$S^{\mu\nu}=S^{\nu\mu}\quad\quad S^{\mu\nu}_{\sigma}=S^{\sigma\nu}_{\mu}$$
+        $$A^{\mu\nu}=-A^{\nu\mu}\quad\quad A^{\mu\nu}_{\sigma}=-A^{\sigma\nu}_{\mu}$$
+
+        \begin{itemize}
+
+          \item Levi-Civita Symbol (Tensor ``density'') is anti-symmetric
+
+            $$\tilde{\varepsilon}_{\mu\nu\rho\sigma}=\left\{\begin{array}{l l} +1 & \text{even perm }0123\text{ (eg 0312)}\\ -1 & \text{odd perm }0123\end{array}$$
+
+        \end{itemize}
 
     \end{itemize}
 
