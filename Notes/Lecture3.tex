@@ -1,0 +1,200 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: General Relativity and Cosmology
+% Professor: J. Blazek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Lecture 3 — Energy and Momentum}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: J. Blazek}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item In general, the trace of a matrix $g$ is the dimensionality of manifold described by $g$:
+
+    $$\text{Tr}(g)=\text{dim(manifold$_g$)}$$
+
+  \item Results from special relativity:
+
+    $$E^2=(mc^2)^2+(pc)^2\to m^2+p^2$$
+    $$p=mv\gamma\Rightarrow E=m\gamma$$
+
+  \item In proper covariant notation, the four velocity of a particle on $x^{\mu}(t)$ is:
+
+    $$U^{\mu}=\frac{dx^{\mu}}{d\tau}\to \eta_{\mu\nu}U^{\mu}u^{\nu}=-1\text{ (due to definition of $\tau$)}$$
+
+    \begin{itemize}
+
+      \item This makes the four momentum:
+
+        $$p^{\mu}=mU^{\mu}$$
+        $$P^o=E$$
+        $$P^i=\vec{p}\to\left(\begin{array}{c}E\\p^1\\p^2\\p^3\end{array}\right)$$
+        $$p_{\mu}p^{mu}=-m^2$$
+
+      \item Thus, we may write:
+
+        $$E^2=m^2+p^2$$
+
+      \item With a $\Lambda$:
+
+        $$p^{\mu'}=\left( \begin{array}{c} \gamma m\\mv\gamma\\0\\0\end{array} \right)\text{ corresponding to $(-v)$!}$$
+
+    \end{itemize}
+
+  \item Force in Spacetime
+
+    $$f^{\mu}=m\frac{d^2}{d\tau^2}x^{\mu}(\tau)=\frac{d}{d\tau}p^{\mu}(\tau)$$
+
+    \begin{itemize}
+
+      \item For electromagnetics, we may write:
+
+        $$f^{\mu}=qU^{\lambda}F_{\lambda}^{\mu}\text{ (the power of symmetry)}$$
+
+    \end{itemize}
+
+  \item Particle to Fluid
+
+    \begin{itemize}
+
+      \item From individual particles, we get fluid elements with: $\rho, P,$ viscosity,\ldots
+
+    \end{itemize}
+
+  \item Energy-Momentum Tensor (Stress-Energy Tensor)
+
+    \begin{itemize}
+
+      \item We want to derive $T^{\mu\nu}$, or the flux of $p^{\mu}$ across $x^{\nu}$ surface (Recall $R_{\mu\nu}-\dfrac{1}{2}Rg_{\mu\nu}=8\pi GT_{\mu\nu}$)
+
+      \item Since time is now a dimension, there is a flux for particles moving solely in time
+
+      \item Imagine two cases:
+
+        \begin{itemize}
+
+          \item At Rest
+
+            \begin{itemize}
+
+              \item Particles at rest have a flux in time $=x^o$
+
+              \item $T^{oo}=\rho=mn$, where $m$ is the mass and $n$ is the number density
+
+              \item $T^{\mu'\nu'}=\Lambda^{\mu'}_{\alpha}\Lambda^{\nu'}_{\beta}T^{\alpha\beta}$
+
+            \end{itemize}
+
+          \item In a boosted frame
+
+            \begin{itemize}
+
+              \item There is now a flux across $x$ and $x'$
+
+              \item Particles are no longer ``at rest''
+
+            \end{itemize}
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Dust: Particles at rest with respect to each other
+
+    \begin{itemize}
+
+      \item At rest:
+
+        $$T^{\mu\nu}=\left( \begin{array}{cccc}\rho & 0 & 0 & 0\\ 0 & 0 & 0 & 0\\0 & 0 & 0 & 0\\0 & 0 & 0 & 0\end{array} \right)=\rho U^{\mu}U^{\nu}$$
+
+      \item Perfect fluid (with density $\rho$ and pressure $p$), the fluid is isotropic (same in all directions)
+
+        $$T^{\mu\nu}=\left( \begin{array}{cccc}\rho & 0 & 0 & 0\\ 0 & p & 0 & 0\\0 & 0 & p & 0\\0 & 0 & 0 & p\end{array} \right)=(\rho+p) U^{\mu}U^{\nu}+p\eta^{\mu\nu}$$
+
+        \begin{itemize}
+
+          \item Pressure is used because energy and mass are then interchangeable
+
+          \item This kinetic energy really makes a box more ``massive''
+
+            \begin{itemize}
+
+              \item Imagine protons (1\% quark mass)
+
+            \end{itemize}
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Equation of State
+
+    $$w=\frac{p}{\rho}$$
+
+    \begin{itemize}
+
+      \item Will appear in cosmology
+
+      \item $w=0$ for matter (``dust'') $\to$ non-relative
+
+      \item $w=1/3$ for photons (CMB)
+
+      \item $w=-1$ (?) for dark energy $T_{\Lambda}^{\mu\nu}=-\rho_{vac}\eta^{\mu\nu}$ (absolute energy is important)
+
+    \end{itemize}
+
+  \item Conservation of Energy-Momentum
+
+    $$\partial_{\mu}T^{\mu\nu}=0$$
+
+    \begin{itemize}
+
+      \item For $\nu=0$ conservation of energy
+
+      \item For $\nu=k=1,2,3$ conservation of momentum
+
+    \end{itemize}
+
+  \item Classical Field Theory
+
+    $$\text{Action: }S=\int\,dt \underbrace{L(q,\dot{q})}_{\text{Lagrangian}}$$
+
+    \begin{itemize}
+
+      \item $L=K-V$ (kinetic minus potential energy)
+
+      \item Equations of motion:
+
+        $$\frac{\partial L}{\partial q}-\frac{d}{dt}\left( \frac{\partial L}{\partial q} \right)=0$$
+
+      \item Move to a field:
+
+        $$q\to\left\{ \Phi^i(x^{\mu}) \right\}$$
+
+        \begin{itemize}
+
+          \item Quantize $\Phi$ to particles
+
+        \end{itemize}
+
+      $$S=\int d^4\times\mathcal{L}(\Phi^i,\partial_{\mu}\Phi^i)$$
+
+    \item Integrate the Lagrangian density
+
+    \item Our field will be the metric of spacetime
+
+    \item $\mathcal{L}$ and symmetry are powerful tools
+
+    \end{itemize}
+
+\end{itemize}
+
+\end{document}
+
