@@ -38,6 +38,207 @@
 
       \item These charts must be smooth, continuous, invertible, and differentiable
 
+      \item Now we will define (co)tangent spaces on these manifolds, with metrics that map (dual) vectors to $\mathbb{R}$
+
+    \end{itemize}
+
+  \item The Equivalence Principle
+
+    \begin{itemize}
+
+      \item In special relativity, we had the principle that the laws of physics were the same in all inertial frames
+
+      \item Einstein's ``happiest though'': If someone falls from a roof, nothing falls in their frame
+
+      \item Equivalence of inertial frames should be generalized to include gravity
+
+      \item Weak Equivalence Principle (WEP)
+
+        \begin{itemize}
+
+          \item Inertial mass = gravitational mass
+
+            $$F=m_ia\text{ (inertial)}$$
+            $$F=-m_g\nabla\Phi\text{ (gravitational "charge")}$$
+            $$m_i=m_g\text{ (WEP: E\"otu\"os experiments, late 19th century)}$$
+
+          \item All freely falling bodies behave the same/are indistinguishable ($a=-\nabla\Phi$)
+
+          \item Define inertial trajectory as unaccelerated (subject only to gravity)
+
+          \item In small enough regions of space-time, freely falling particles behave the same in a gravitational field or a uniformly accelerated field (physicist in a box, accelerating reference frame)
+
+        \end{itemize}
+
+      \item Strong Equivalence Principle (SEP)
+
+        \begin{itemize}
+
+          \item All laws of physics, including gravitation, look like SR
+
+            \begin{itemize}
+
+              \item Einstein Equivalence Principle (EEP) plus the impact of gravitational binding energy
+
+              \item Rules out ``fifth force''
+
+            \end{itemize}
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Tidal Forces
+
+    \begin{itemize}
+
+      \item Causes tides on Earth
+
+      \item Locally inertial frames
+
+    \end{itemize}
+
+  \item Gravitational Redshift
+
+    $$\Delta v=\frac{az}{c}$$
+
+    \begin{itemize}
+
+      \item Relativistic Doppler Shift:
+
+        $$\lambda_{obs}=\lambda_o\left( \frac{1+\dfrac{v}{c}}{1-\dfrac{v}{c}} \right)^{\frac{1}{2}}$$
+
+        \begin{itemize}
+
+          \item Using Taylor expansion, we may simply write this as:
+
+            $$\lambda_{obs}=1+\frac{v}{c}$$
+
+          \item Bringing this together, we get:
+
+            $$\frac{\Delta\lambda}{\lambda_o}\approx\frac{\Delta v}{c}=\frac{az}{c^2}$$
+
+        \end{itemize}
+
+      \item EEP says that this must be the same as a gravitational field:
+
+        $$\frac{\Delta\lambda}{\lambda_o}=\frac{a_gz}{c^2}=\frac{\Delta\Phi}{c^2}$$
+
+      \item This is the time from start to end of wavelength, and can be used to compare clocks
+
+      \item If we have a case where $\Delta t_o=\lambda_oc^{-1}$ and $\Delta t_1=\lambda_1c^{-1}$, and $\lambda_1>\lambda_o$ then $\Delta t_1>\Delta t_o$, which indicates gravitational time dilation
+
+    \end{itemize}
+
+  \item Classic Tests of General Relativity
+
+    \begin{enumerate}
+
+      \item Precession of the perihelion of Mercury — \nth{19} century: 43'' per century discrepancy successful ``post-diction'' of GR (about 10\% of total effect)
+
+      \item Bending of star light by sun (gravitational lensing) — GR predicts a factor of 2 larger deflection (1919 Eddington Expedition to observe the solar eclipse)
+
+      \item Gravitational Redshift — 1954: Popper measurement of a white dwarf, 1959: Pound-rebka at Jefferson lab (Harvard), 22.5m
+
+    \end{enumerate}
+
+  \item Vectors and Tensors on Manifolds (Curved Spacetime)
+
+    \begin{itemize}
+
+      \item We already saw $V=V^{\mu}\hat{e}_{\mu}$ at point $P$ on $T_p$
+
+      \item What is the basis?
+
+        \begin{itemize}
+
+          \item We want to define tangent vectors before we have a vector space on $M$
+
+          \item Instead, consider a function $f$ and a curve $\lambda$. The directional derivative is:
+
+            $$\frac{d}{d\lambda}x^{\mu}\frac{\partial}{\partial x^{\mu}}f=\frac{d}{d\lambda}x^{\mu}\partial_{\mu}f\quad\text{ (gradient $\cdot$ tangent $\vec{v}$)}$$
+
+          \item $f$ could have been anything, so we define the tangent vector:
+
+            $$\frac{d}{d\lambda}=\frac{dx^{\mu}}{d\lambda}\partial_{\mu}$$
+            
+          \item $\left\{ \hat{e}_{\mu}=\partial_{\mu} \right\}$ is the coordinate basis (``points'' in the direction of $x^{\mu}$)
+
+          \item Not orthonormal, but always well defined
+
+          \item In this basis, things transform according to:
+
+            $$\partial_{\mu}\prime=\frac{\partial}{\partial x^{\mu}\prime}=\frac{\partial}{\partial x^{\mu}}\frac{\partial x^{\mu}}{\partial x^{\mu}\prime}=\frac{\partial x^{\mu}}{\partial x^{\mu}\prime}\partial_{\mu}$$
+
+          \item Similarly, $V=V^{\mu}\partial_{\mu}$ is preserved, so:
+
+            $$V^{\mu}\prime\partial_{\mu}\prime=V^{\mu}\partial_{\mu}\Rightarrow V^{\mu}\prime=\frac{\partial x^{\mu}\prime}{\partial x^{\mu}}V^{\mu}$$
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item General Coordinate Transform
+
+    \begin{itemize}
+
+      \item In flat space: $x^{\mu}\prime=\Lambda^{\mu}_{\mu}\primex^{\mu}$
+
+        $$\frac{dx^{\mu}\prime}{dx^{\mu}}=\Lambda^{\mu}_{\mu}\prime$$
+
+      \item We recover the transform of vectors
+
+      \item Vector Fields:
+
+        \begin{itemize}
+
+          \item $X$: One vector at each point on the manifold
+
+          \item $X,Y$: Both define a field that can be used to take directional derivatives of functions on $\mu$
+
+            $$[X,Y](f)=X(Y(f))-Y(X(f))\quad\text{ \underline{commutator}}$$
+
+        \end{itemize}
+
+      \item Dual Vectors
+
+        \begin{itemize}
+
+          \item Recall we defined the gradient: $df$
+
+            $$df\left( \frac{d}{d\lambda} \right)=\frac{df}{d\lambda}\quad\text{ map a vector to $\mathbb{R}$}$$
+
+          \item Basis for dual vectors $dx^{\mu}$
+
+          \item Gradient of the coordinate function:
+
+            $$dx^{\mu}(\partial_{\nu})=\frac{dx^{\mu}}{dx^{\nu}}=\delta^{\mu}_{\nu}$$
+            $$V=V^{\mu}\partial_{\mu}$$
+            $$\omega=\omega_{\nu}dx^{\nu}$$
+            $$\omega_{\mu\prime}=\frac{\partial x^{\mu}}{\partial x^{\mu\prime}}\omega_{\mu}$$
+
+        \end{itemize}
+
+      \item We can now write the transformation of an arbitrary $(k,l)$ tensor on a manifold:
+
+        $$T^{\mu_1\prime\ldots\mu_{k}\prime}_{\nu_1\prime\ldots\nu_l\prime}=\frac{\partial x^{\mu_1\prime}}{\partial x^{\mu_1}}\cdots\frac{\partial x^{\mu_k\prime}}{\partial x^{\mu_k}}\frac{\partial x^{\nu_1}}{\partial x^{\nu_1\prime}}\cdots\frac{\partial x^{\nu_k}}{\partial x^{\nu_k\prime}}T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}$$
+
+        \begin{itemize}
+
+          \item Warning: in curved space $\partial_{\mu}W_{\nu}$ is not a tensor; unlike in flat space, the derivative of the transform can be non-zero ($\Lambda$ is the same everywhere)
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item The Metric
+
+    \begin{itemize}
+
+      \item $\eta_{\mu\nu}$ in Minkowski space
+
+      \item $g_{\mu\nu}$ in general curved spacetime
+
     \end{itemize}
 
 \end{itemize}
