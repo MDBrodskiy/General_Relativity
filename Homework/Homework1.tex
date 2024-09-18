@@ -1,0 +1,420 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: General Relativity and Cosmology
+% Professor: J. Blazek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Homework 1}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: J. Blazek}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+  \item Verify that the inner product of two four-vectors in Minkowski space is indeed Lorentz invariant by explicitly computing the inner product of the transformed vectors. That is, if
+
+    $$a\cdot b=-a^0b^0+a^1b^1+a^2b^2+a^3b^3$$
+
+    compute $(a') \cdot (b')$ and show that it is the same as the above.
+
+    First and foremost, we can redefine the inner product in Minkowski space by writing:
+
+    $$a\cdot b=\eta_{\mu\nu}a^{\mu}b^{\nu}$$
+
+    Per Lorentz transformations, we know:
+
+    $$a'=\Lambda^{\mu}_{\alpha}a^{\alpha}\text{ and }b'=\Lambda^{\nu}_{\beta}b^{\beta}$$
+
+    Combining the two equations above yields:
+
+    $$a'\cdot b'=\eta_{\mu\nu}\left(  \Lambda^{\mu}_{\alpha}a^{\alpha}\right)\left(  \Lambda^{\nu}_{\beta}b^{\beta}\right)$$
+
+    Since Lorentz transformations preserve the Minkowski metric, we know:
+
+    $$\eta_{\mu\nu}\Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}=\eta_{\alpha\beta}$$
+
+    Which finally gives us:
+
+    $$\boxed{a'\cdot b'=\eta_{\alpha\beta}a^{\alpha}b^{\beta}}$$
+
+    Or the same result as $a\cdot b$, which shows Lorentz invariance.
+
+  \item Show explicitly that the transformation matrix
+    
+    $$\Lambda=\left( \begin{array}{cccc} \gamma & -\gamma v\cos(\theta) & -\gamma v\sin(\theta) & 0\\ -\gamma v& \gamma \cos(\theta) & \gamma\sin(\theta) & 0\\ 0 & -\sin(\theta) & \cos(\theta) & 0\\ 0 & 0 & 0 & 1\end{array} \right)$$
+
+    with $\gamma = (1 -v^2)^{−1/2}$, satisfies
+
+    $$\Lambda^T\eta\Lambda=\eta$$,
+
+    where $\eta$ is the standard Minkowski metric. Describe what this transformation does, in words.
+
+    First, we transpose the matrix:
+
+    $$\Lambda^T=\left( \begin{array}{cccc} \gamma & -\gamma v & 0 & 0\\ -\gamma v\cos(\theta) & \gamma \cos(\theta) & -\sin(\theta) & 0\\ -\gamma v\sin(\theta) & \gamma\sin(\theta) & \cos(\theta) & 0\\ 0 & 0 & 0 & 1\end{array} \right)$$
+
+    Next, we multiply:
+
+    $$\Lambda^T\eta=\left( \begin{array}{cccc} \gamma & -\gamma v & 0 & 0\\ -\gamma v\cos(\theta) & \gamma \cos(\theta) & -\sin(\theta) & 0\\ -\gamma v\sin(\theta) & \gamma\sin(\theta) & \cos(\theta) & 0\\ 0 & 0 & 0 & 1\end{array} \right)\left( \begin{matrix} -1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1 \end{matrix} \right)$$
+    $$\Lambda^T\eta=\left( \begin{matrix}-\gamma & -\gamma v & 0 & 0\\ \gamma v\cos(\theta) & \gamma\cos(\theta) & -\sin(\theta) & 0\\ \gamma v\sin(\theta) & \gamma\sin(\theta) & \cos(\theta) & 0\\ 0 & 0 & 0 & 1 \end{matrix} \right)$$
+
+    Once again, we multiply:
+
+    $$\Lambda^T\eta\Lambda=\left( \begin{matrix}-\gamma & -\gamma v & 0 & 0\\ \gamma v\cos(\theta) & \gamma\cos(\theta) & -\sin(\theta) & 0\\ \gamma v\sin(\theta) & \gamma\sin(\theta) & \cos(\theta) & 0\\ 0 & 0 & 0 & 1 \end{matrix} \right)\left( \begin{array}{cccc} \gamma & -\gamma v\cos(\theta) & -\gamma v\sin(\theta) & 0\\ -\gamma v& \gamma \cos(\theta) & \gamma\sin(\theta) & 0\\ 0 & -\sin(\theta) & \cos(\theta) & 0\\ 0 & 0 & 0 & 1\end{array} \right)$$
+    $$\boxed{\Lambda^T\eta\Lambda=\left( \begin{matrix} -1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1 \end{matrix}\right)=\eta}$$
+
+    Thus we see that this once again produces $\eta$. This confirms that the Lorentz transformation preserves the Minkowski matrix, and satisfies the condition $\eta\Lambda=\eta$, which is important within the realm of relativity, as  spacetime separation should remain invariant with transformations. In this case, $\Lambda$ represents a boost by factor $\gamma$, and a rotation of angle $\theta$.
+
+  \item Consider objects $M$ and $N$ in two dimensions, with components
+
+    $$M:\quad M^{11}=a,\quad M^{12}=b,\quad M^{21}=c,\quad M^{22}=d,$$
+    $$N:\quad N_{11}=e,\quad N_{12}=f,\quad N_{21}=g,\quad N_{22}=h.$$
+
+    Explicitly compute the following, using the Einstein summation convention:
+
+    \begin{enumerate}
+
+      \item $N_{ij}M^{ki}$
+
+        Let us assume this product is equal to $X$, that is:
+
+        $$X=N_{ij}M^{ki}\to X_j^k$$
+
+        Thus, we see this will form a (1,1) tensor. This yields:
+
+        $$X_j^k\Longrightarrow\left\{\begin{array}{l c r} X_1^1 &= & N_{i1}M^{1i}\\ X^2_1 &= & N_{i1}M^{2i}\\ X^1_2 &= & N_{i2}M^{1i}\\ X^2_2 &= & N_{i2}M^{2i}\end{array}$$
+
+          Expanding the values, we find:
+
+          $$X_j^k\Longrightarrow\left\{\begin{array}{l c r} X_1^1 &= & N_{11}M^{11}+N_{21}M^{12}\\ X^2_1 &= & N_{11}M^{21}+N_{21}M^{22}\\ X^1_2 &= & N_{12}M^{11}+N_{22}M^{12}\\ X^2_2 &= & N_{12}M^{21}+N_{22}M^{22}\end{array}$$
+
+            Plugging in known values, we get:
+
+            $$\boxed{X_j^k\Longrightarrow\left\{\begin{array}{l c r} X_1^1 &= & ae+bg\\ X^2_1 &= & ce+dg\\ X^1_2 &= & af+bh\\ X^2_2 &= & cf+dh\end{array}}$$
+
+      \item $N_{ij}M^{kj}$
+
+        Let us assume this product is equal to $X$, that is:
+
+        $$X=N_{ij}M^{kj}\to X_i^k$$
+
+        Thus, we see this will form a (1,1) tensor. This yields:
+
+        $$X_i^k\Longrightarrow\left\{\begin{array}{l c r} X_1^1 &= & N_{1j}M^{1j}\\ X^2_1 &= & N_{1j}M^{2j}\\ X^1_2 &= & N_{2j}M^{1j}\\ X^2_2 &= & N_{2j}M^{2j}\end{array}$$
+
+          Expanding the values, we find:
+
+          $$X_i^k\Longrightarrow\left\{\begin{array}{l c r} X_1^1 &= & N_{11}M^{11}+N_{12}M^{12}\\ X^2_1 &= & N_{11}M^{21}+N_{12}M^{22}\\ X^1_2 &= & N_{21}M^{11}+N_{22}M^{12}\\ X^2_2 &= & N_{21}M^{21}+N_{22}M^{22}\end{array}$$
+
+            Plugging in known values, we get:
+
+            $$\boxed{X_i^k\Longrightarrow\left\{\begin{array}{l c r} X_1^1 &= & ae+bf\\ X^2_1 &= & ce+df\\ X^1_2 &= & ag+bh\\ X^2_2 &= & cg+dh\end{array}}$$
+
+      \item $N_{ij}M^{ji}$
+
+        We will assign the product above as $X$, which can be written as:
+
+        $$X=N_{ij}M^{ji}$$
+
+        Thus, we can say that $X$ is a scalar, and we sum accordingly:
+
+        $$X=N_{11}M^{11}+N_{12}M^{21}+N_{21}M^{12}+N_{22}M^{22}$$
+
+        This yields:
+
+        $$\boxed{X=ae+bg+cf+dh}$$
+
+      \item $N_{ij}M^{ij}$
+
+        We will assign the product above as $X$, which can be written as:
+
+        $$X=N_{ij}M^{ij}$$
+
+        Thus, we can say that $X$ is a scalar, and we sum accordingly:
+
+        $$X=N_{11}M^{11}+N_{12}M^{12}+N_{21}M^{21}+N_{22}M^{22}$$
+
+        This yields:
+
+        $$\boxed{X=ae+bf+cg+dh}$$
+
+    \end{enumerate}
+
+  \item Imagine we have a tensor $X^{\mu\nu}$:
+
+    $$X^{\mu\nu}:\quad \left( \begin{matrix} 2 & 0 & 1 & -1 \\ -1 & 0 & -3 & 2\\ -1 & 1 & 0 & 0\\ -2 & 1 & -1 & -2\end{matrix} \right),$$
+
+    and a vector
+
+    $$V^{\mu}:\quad (1, 2, 0, -2).$$
+
+    Using our canonical Minkowski metric $\eta$, find the components of the following objects:
+
+    \begin{enumerate}
+
+      \item $X^{\mu}_{\nu}$
+
+        To convert $X^{\mu\nu}\to X^{\mu}_{\nu}$, we use $\eta_{\lambda\nu}$:
+        
+        $$X_{\nu}^{\mu}=X^{\mu\nu}\eta_{\lambda\nu}$$
+        $$X_{\nu}^{\mu}=\left( \begin{matrix} X^{11}\eta_{\lambda1} & X^{12}\eta_{\lambda2} & X^{13}\eta_{\lambda3} & X^{14}\eta_{\lambda4} \\ X^{21}\eta_{\lambda1} & X^{22}\eta_{\lambda2} & X^{23}\eta_{\lambda3} & X^{24}\eta_{\lambda4}\\ X^{31}\eta_{\lambda1} & X^{32}\eta_{\lambda2} & X^{33}\eta_{\lambda3} & X^{34}\eta_{\lambda4}\\ X^{41}\eta_{\lambda1} & X^{42}\eta_{\lambda2} & X^{43}\eta_{\lambda3} & X^{44}\eta_{\lambda4}\\ \end{matrix}\right)$$
+
+        Next, we insert the actual values:
+
+        $$X_{\nu}^{\mu}=\left( \begin{matrix} 2(-1) & 0 & 1(1) & -1(1) \\ -1(-1) & 0 & -3(1) & 2(1)\\ -1(-1) & 1(1) & 0 & 0\\ -2(-1) & 1(1) & -1(1) & -2(1)\\ \end{matrix}\right)$$
+
+        And finally, we get:
+
+        $$\boxed{X_{\nu}^{\mu}=\left( \begin{matrix} -2 & 0 & 1 & -1 \\ 1 & 0 & -3 & 2\\ 1 & 1 & 0 & 0\\ 2 & 1 & -1 & -2\\ \end{matrix}\right)}$$
+
+      \item $X^{\nu}_{\mu}$
+
+        This is simply the transpose of part (a), which gives us:
+
+        $$\boxed{X_{\mu}^{\nu}=\left( \begin{matrix} -2 & 1 & 1 & 2 \\ 0 & 0 & 1 & 1\\ 1 & -3 & 0 & -1\\ -1 & 2 & 0 & -2\\ \end{matrix}\right)}$$
+
+      \item $\dfrac{1}{2}\left( X^{\mu\nu}+X^{\nu\mu} \right)$
+
+        Here, we symmetrize. We begin by finding the tensor transpose:
+
+        $$X^{\nu\mu}=\left( \begin{matrix} 2 & -1 & -1 & -2\\ 0 & 0 & 1 & 1 \\ 1 & -3 & 0 & -1\\ -1 & 2 & 0 & -2\end{matrix} \right)$$
+
+        Now, we sum:
+
+        $$X^{\mu\nu}+X^{\nu\mu}=\left( \begin{matrix} 2 & 0 & 1 & -1 \\ -1 & 0 & -3 & 2\\ -1 & 1 & 0 & 0\\ -2 & 1 & -1 & -2\end{matrix} \right)+\left( \begin{matrix} 2 & -1 & -1 & -2\\ 0 & 0 & 1 & 1 \\ 1 & -3 & 0 & -1\\ -1 & 2 & 0 & -2\end{matrix} \right)$$
+        $$X^{\mu\nu}+X^{\nu\mu}=\left( \begin{matrix} 4 & -1 & 0 & -3\\ -1 & 0 & -2 & 3\\ 0 & -2 & 0 & -1\\ -3 & 3 & -1 & -4 \end{matrix}\right)$$
+
+        Dividing by two, we finally get:
+
+        $$\boxed{\frac{1}{2}\left(X^{\mu\nu}+X^{\nu\mu}\right)=\left( \begin{matrix} 2 & -.5 & 0 & -1.5\\ -.5 & 0 & -1 & 1.5\\ 0 & -1 & 0 & -.5\\ -1.5 & 1.5 & -.5 & -2 \end{matrix}\right)}$$
+
+      \item $\dfrac{1}{2}\left( X_{\mu\nu}-X_{\nu\mu} \right)$
+
+        First, we want to lower the indices:
+
+        $$X^{\mu\nu}\eta_{\mu\nu}=X^{11}\eta_{11}+X^{22}\eta_{22}+X^{33}\eta_{}+X^{44}\eta_{44}$$
+        $$X^{\mu\nu}\eta_{\mu\nu}=X=-2$$
+        $$X\eta_{\mu\nu}=-2\left( \begin{matrix}-1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1\end{matrix} \right)$$
+        $$X_{\mu\nu}=\left( \begin{matrix}2 & 0 & 0 & 0\\ 0 & -2 & 0 & 0\\ 0 & 0 & -2 & 0\\ 0 & 0 & 0 & -2\end{matrix} \right)$$
+
+        The transpose produces the same matrix since only a diagonal exists:
+
+        $$X_{\nu\mu}=\left( \begin{matrix}2 & 0 & 0 & 0\\ 0 & -2 & 0 & 0\\ 0 & 0 & -2 & 0\\ 0 & 0 & 0 & -2\end{matrix} \right)$$
+
+        Thus, subtracting and multiplying by a half, we get:
+
+        $$\boxed{\frac{1}{2}(X_{\mu\nu}-X_{\nu\mu})=\left( \begin{matrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\0 & 0 & 0 & 0 \\0 & 0 & 0 & 0 \\\end{matrix}\right)}$$
+
+      \item $X^{\lambda}_{\lambda}$
+
+        This simply asks for the trace of tensor $X$:
+
+        $$\text{Tr}(X)=2+0+1-1$$
+        $$\boxed{\text{Tr}(X)=2+0+1-1}$$
+
+      \item $V^{\mu}V_{\mu}$
+
+        This asks us to compute the norm of the vector, by multiplying with the Minkowski metric. This gets us:
+
+        $$V^{\mu}V_{\mu}=1(-1)+2(1)+0(1)+(-2)(1)$$
+        $$\boxed{V^{\mu}V_{\mu}=-1}$$
+
+      \item $V_{\mu}X^{\mu\nu}$
+
+        We contract the tensor using the first index:
+
+        $$V_{\mu}X^{\mu\nu}=\left( 1,2,0,-2 \right)\left( \begin{matrix} 2 & 0 & 1 & -1 \\ -1 & 0 & -3 & 2\\ -1 & 1 & 0 & 0\\ -2 & 1 & -1 & -2\end{matrix} \right)$$
+        $$V_{\mu}X^{\mu\nu}=(1)\left( 2,0,1,-1\right)+2(-1, 0, -3, 2)+0(-1, 1, 0, 0)-2(-2, 1, -1, -2)$$
+
+        This gets us the contracted vector:
+
+        $$\boxed{V_{\mu}X^{\mu\nu}=(4,-2,-3,7)}$$
+
+    \end{enumerate}
+
+  \item Starting with the expression in class for electrodynamics
+
+    $$\partial_{\alpha}F_{\mu\nu}+\partial_{\mu}F_{\nu\alpha}+\partial_{\nu}F_{\alpha\mu}=0,$$
+
+    \begin{enumerate}
+
+      \item show that this expression is equivalent to 
+
+      $$\epsilon^{\beta\alpha\mu\nu}\partial_{\alpha}F_{\mu\nu}=0,$$ 
+
+      We know that the field strength tensor, $F_{\mu\nu}$ is entirely anti-symmetric. Thus, we can introduce the Levi-Cevita symbol to isolate anti-symmetric terms. By multiplying both sides by this, we get:
+
+      $$\epsilon^{\beta\alpha\mu\nu}\partial_{\alpha}F_{\mu\nu}+\cancel{\epsilon^{\beta\alpha\mu\nu}\partial_{\mu}F_{\nu\alpha}}+\cancel{\epsilon^{\beta\alpha\mu\nu}\partial_{\nu}F_{\alpha\mu}}=0$$
+
+      And finally, we arrive at:
+
+      $$\boxed{\epsilon^{\beta\alpha\mu\nu}\partial_{\alpha}F_{\mu\nu}=0}$$ 
+
+      \item show that this is equivalent to two Maxwell equations: 
+
+        $$\epsilon^{ijk}\partial_jE_k + \partial_0B^i = 0$$
+        $$\partial_iB^i = 0.$$
+
+        We use the relationship between the field-strength tensor and the fields to write:
+
+        $$F_{0i}=E_i\quad\text{ and }\quad F_{ij}=-\epsilon_{ijk}B^k$$
+
+        With $E$ and $B$ referring to the electric and magnetic fields, respectively. We first inspect using $\beta=0$:
+
+        $$\boxed{\epsilon^{ijk}\partial_jE_k+\partial_0B^i=0}$$
+
+        This is the first Maxwell equation. On the other hand, for $\beta=i$, we find Gauss's Law for Magnetism:
+
+        $$\boxed{\partial_iB^i=0}$$
+
+    \end{enumerate}
+
+  \item For this problem, consider familiar Euclidean three-space in Cartesian coordinates. Let the point $p$ be given by coordinates $(x, y, z) = (1, 0, -1)$, and consider three curves that pass through this point:
+
+    $$x(\lambda)=(\lambda, (\lambda-1)^2,-\lambda)$$
+    $$x(\mu)=(\cos(\mu),-\sin(\mu),\mu-1)$$
+    $$x(\sigma)=(\sigma^2, \sigma^3+\sigma^2,\sigma)$$
+
+    \begin{enumerate}
+
+      \item Calculate the components of the tangent vectors to these curves at $p$ in the coordinate basis $\{\partial_x, \partial_y, \partial_z \}$.
+
+        For the three equations, we find the tangent components to be:
+
+        $$\left\{\begin{array}{l} \dot{x}(\lambda)=(1,2\lambda-2,-1)\\\dot{x}(\mu)=(-\sin(\mu),-\cos(\mu),1)\\\dot{x}(\sigma)=(2\sigma,3\sigma^2+2\sigma,1)\end{array}$$
+
+          We then calculate the values at point $p=(1,0,-1)$:
+
+          $$p\to\left\{\begin{array}{l} \dot{x}(\lambda)=(1,0,-1)\\\dot{x}(\mu)=(0,-1,1)\\\dot{x}(\sigma)=(-2,1,1)\end{array}$$
+
+      \item Let $f=x^2+y^2-2yz$. Calculate $df/d\lambda$, $df/d\mu$, and $df/d\sigma$.
+
+        We know the following values correspond to the Cartesian coordinates:
+
+        $$\begin{array}{l l l} x & \to & \lambda, \cos(\mu), \sigma^2\\ y & \to & (\lambda-1)^2,-\sin(\mu),\sigma^3+\sigma^2\\ z & \to & -\lambda,\mu-1,\sigma \end{array}$$
+
+        We may then rewrite $f$ in terms of each variable:
+
+        $$f=\left\{\begin{array}{l} \lambda^2+(\lambda-1)^4+2\lambda(\lambda-1)^2\\ \cos^2(\mu)+\sin^2(\mu)+2(\mu-1)\sin(\mu)\\\sigma^4+(\sigma^3+\sigma^2)^2-2\sigma^4-2\sigma^3\end{array}$$
+        $$f=\left\{\begin{array}{l} \lambda^4-2\lambda^3+3\lambda^2-2\lambda+1\\ (2\mu-2)\sin(\mu)\\\sigma^6+2\sigma^5-2\sigma^3\end{array}$$
+
+          We then take the respective partials:
+
+          $$\partial f_{\lambda,\mu,\sigma}=\left\{\begin{array}{l} 4\lambda^3-6\lambda^2+6\lambda-2\\ 2\mu\cos(\mu)+2\sin(\mu)-2\cos(\mu)\\6\sigma^5+10\sigma^4-6\sigma^2\end{array}$$
+
+          We then calculate our values:
+
+          $$\boxed{\partial f_{\lambda,\mu,\sigma}=(2,-2,-2)}$$
+
+    \end{enumerate}
+
+  \item Consider the 2-sphere $S^2$ described in $\mathbb{R}^3$ by $x^2+y^2+z^2=R^2$.
+
+    \begin{enumerate}
+
+      \item Show that the metric can be written in terms of Cartesian coordinates as 
+
+        $$ds^2 = dx^2 + dy^2 + \dfrac{(x\,dx + y\,dy)^2}{R^2-x^2-y^2}$$
+
+        To begin solving for a metric, we must find the differential of the above function:
+
+        $$2x\,dx+2y\,dy+2z\,dz=0$$
+        $$x\,dx+y\,dy+z\,dz=0$$
+
+        Solving for $dz$, we write:
+
+        $$dz=-\frac{(x\,dx+y\,dy)}{z}$$
+
+        We then substitute into our metric equation:
+
+        $$ds^2=dx^2+dy^2+\frac{(x\,dx+y\,dy)^2}{z^2}$$
+
+        Per our initial equation:
+
+        $$z^2=R^2-x^2-y^2$$
+
+        Which finally yields:
+
+        $$\boxed{ds^2=dx^2+dy^2+\frac{(x\,dx+y\,dy)^2}{R^2-x^2-y^2}}$$
+
+      \item Now show that the metric can be written in the form 
+        
+        $$ds^2=\dfrac{R^2dr\prime^2}{R^2-r\prime^2}+ r\prime^2d\theta^2$$
+
+        where $x=r\prime\sin(\theta)$ and $y=r\prime\cos(\theta)$.\\
+
+        First, we differentiate to find:
+
+        $$dx=\sin(\theta)dr\prime+r\prime\cos(\theta)d\theta\quad\text{ and }\quad dy=\cos(\theta)dr\prime-r\prime\sin(\theta)d\theta$$
+
+        Inserting this into our equation from (a), we get:
+
+        $$ds^2=(\sin(\theta)dr\prime+r\prime\cos(\theta)d\theta)^2+(\cos(\theta)dr\prime-r\prime\sin(\theta)d\theta)^2+dz^2$$
+        $$ds^2=\sin^2(\theta)dr\prime^2+\cos^2(\theta)dr\prime^2+r\prime^2\cos^2(\theta)d\theta^2+r\prime^2\sin^2(\theta)d\theta+$$
+        $$2r\prime\sin(\theta)\cos(\theta)dr\prime d\theta-2r\prime\sin(\theta)\cos(\theta)dr\prime d\theta+dz^2$$
+        $$ds^2=dr\prime^2+r\prime^2d\theta^2+dz^2$$
+
+        Now we substitute for z:
+
+        $$dz=\frac{(r\prime\sin(\theta)[\sin(\theta)dr\prime+r\prime\cos(\theta)d\theta]+r\prime\cos(\theta)[\cos(\theta)dr\prime-r\prime\sin(\theta)d\theta])^2}{R^2-r\prime^2\sin^2(\theta)-r\prime^2\cos^2(\theta)}$$
+
+        This simplifies to:
+
+        $$dz=\frac{(r\prime\,dr\prime)^2}{R^2-r\prime^2}$$
+
+        Combining everything, we get:
+
+        $$ds^2=dr\prime^2+r\prime^2d\theta^2+\frac{r\prime^2\,dr\prime^2}{R^2-r\prime^2}$$
+        $$ds^2=\frac{(R^2-r\prime^2)}{(R^2-r\prime^2)}dr\prime^2+r\prime^2d\theta^2+\frac{r\prime^2\,dr\prime^2}{R^2-r\prime^2}$$
+
+        This gets us:
+
+        $$\boxed{ds^2=r\prime^2d\theta^2+\frac{R^2\,dr\prime^2}{R^2-r\prime^2}}$$
+
+    \end{enumerate}
+
+  \item Which of the following are differentiable manifolds? If not, why not?
+
+    \begin{enumerate}
+
+      \item The subset of $\mathbb{R}^2$ satisfying $xy(x^2 + y^2 - 1) = 0$
+
+        The above equation has two parts, which we can use to break it apart and analyze it:
+
+        $$xy=0\quad\text{ and }\quad x^2+y^2=1$$
+
+        First, $xy=0$ refers to the coordinate axis. On the other hand, $x^2+y^2=1$ refers to a circle. Thus, the above equation refers to the union of a circle and the $xy$ plane. Sharp points occur at intersection points of the circle with the axis; for example, at points $(1,0), (-1,0), (0,1),$ and $(0,-1)$. As such, \underline{this manifold is non-differentiable}.
+
+      \item The 2-sphere $S^2$ described in $\mathbb{R}^3$ by $x^2 + y^2 + z^2 = 1$, where we identify points $(x, y, z) = (-x, -y, -z)$.
+
+        This manifold, in essence, refers to just the 2-sphere; that is, the definition of antipodal points does not combine the 2-sphere with other shapes, and, thus, \underline{this manifold is differentiable}.
+
+    \end{enumerate}
+
+  \item Alice and Bob are both pilots in Boston. Bob is a flat-Earther who doesn't believe that the surface of the Earth is curved. Alice decides to try to convince him
+
+    \begin{enumerate}
+
+      \item They take-off at the same time from runways 100m apart that are both running North-South. They fly at the same speed always pointed North. What happens to the distance between the two planes, and why?
+
+        To picture what is occurring, it is convenient to think of longitude lines. As they are flying towards the North Pole, the longitude lines converge. That is, \underline{the distance} \underline{between Alice and Bob would decrease} (until they pass the pole, at which point they head South and will get farther until they reach the equator, when they once again converge, and so on). This is due to the curvature of earth.
+
+      \item They take-off at the same time from runways 100m apart that are both running East-West.  They fly at the same speed always pointed West. What happens to the distance between the two planes, and why?
+
+        Similar to (a), now think of latitude lines. As the lines run parallel, the planes \underline{will be at the same 100m distance as when they started}. Though the Earth is curved, this is different when it comes to East-West movement, as opposed to North-South because there is no such thing as an East/West pole at which the lines converge.
+
+      \item Alice remembers that the angles of a triangle add to a different value in a curved space than in flat space. Is the sum more or less in a positively curved space (e.g. a sphere) than in flat space? Describe a path where this should be clear, even to Bob. (It doesn't need to start in Boston.)
+
+        In a positively curved space, \underline{the sum will be more}. Picture traveling from the North Pole down to the equator. Then, travel along the equator, and, at some point, return back to the North Pole. This will result in a triangle with angles summing to greater than $180^{\circ}$ — something that is an impossibility in two-dimensional space.
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
