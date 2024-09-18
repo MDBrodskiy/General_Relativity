@@ -25,6 +25,7 @@
     * [**Lecture 3**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Notes/Lecture3.pdf)
     * [**Lecture 4**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Notes/Lecture4.pdf)
 * [**Homework**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Homework/)
+    * [**Homework 1**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Homework/Homework1.pdf)
 
 <!--
   * [**Chapter 1**](#Notes/Chapter\ 1)
