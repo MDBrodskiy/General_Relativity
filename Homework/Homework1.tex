@@ -258,9 +258,14 @@
 
       We know that the field strength tensor, $F_{\mu\nu}$ is entirely anti-symmetric. Thus, we can introduce the Levi-Cevita symbol to isolate anti-symmetric terms. By multiplying both sides by this, we get:
 
-      $$\epsilon^{\beta\alpha\mu\nu}\partial_{\alpha}F_{\mu\nu}+\cancel{\epsilon^{\beta\alpha\mu\nu}\partial_{\mu}F_{\nu\alpha}}+\cancel{\epsilon^{\beta\alpha\mu\nu}\partial_{\nu}F_{\alpha\mu}}=0$$
+      $$.5\epsilon^{\beta\alpha}\partial_{\alpha}(F_{\mu\nu}-F_{\nu\mu})+.5\epsilon^{\beta\mu}\partial_{\mu}(F_{\nu\alpha}-F_{\alpha\nu})+.5\epsilon^{\beta\nu}\partial_{\nu}(F_{\alpha\mu}-F_{\mu\alpha})=0$$
 
-      And finally, we arrive at:
+      Since only $F_{\mu\nu}$ is antisymmetric, we know $F_{\mu\nu}=-F_{\nu\mu}$. Due to symmetry, the rest of the terms cancel, which leaves us with:
+
+
+      $$.5\epsilon^{\beta\alpha}\partial_{\alpha}(F_{\mu\nu}-F_{\nu\mu})=0$$
+
+      Substituting the antisymmetry back, finally, we arrive at:
 
       $$\boxed{\epsilon^{\beta\alpha\mu\nu}\partial_{\alpha}F_{\mu\nu}=0}$$ 
 
