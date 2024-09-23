@@ -249,8 +249,233 @@
 
           \item (0,2)-tensor components, metric components, with $ds^2$ being called the ``line element'' or ``metric''
 
+          \item Usually we just write $g_{\mu\nu}$
+
+          \item In 3D Flat Space:
+
+            $$ds^2=dx^2+dy^2+dz^2=dr^2+r^2d\theta^2+r^2\sin^2(\theta)d\phi^2$$
+
+            \begin{itemize}
+
+              \item Components and bases both change, while $ds^2$ does not
+
+            \end{itemize}
+
+          \item Canonical form: coordinate transform to diagonalize and normalize
+
+            $$g_{\mu\nu}=\left( \begin{matrix} -1 & \cdots & \cdots & \cdots & \cdots & 0\\ \vdots & \ddots & & &\\ \vdots & & -1 & &\\ \vdots & & & 1 & \\ \vdots & & & & \ddots & \\ 0 & & & & & 1 \end{matrix}\\\right)$$
+
+          \item ``Signature'' is -+++, etc.
+
+          \item All positive: Euclidean or Riemannian
+
+          \item One negative: Lorentzian of pseudo-Riemannian
+
+          \item Any zeros? Degenerate
+
+          \item At some point $p$, you can always put a metric into canonical form, and make the first derivatives vanish
+
+            \begin{itemize}
+
+              \item There is always enough freedom to choose coordinates that do this
+
+              \item Second derivatives will not generally vanish
+
+            \end{itemize}
+
+          \item In our case, choose:
+
+            $$x^{\hat{\mu}} \text{ at }p\text{ such that:}$$
+
+            $$g_{\hat{\mu}\hat{\nu}}(p)=\eta_{\hat{\mu}\hat{\nu}}\quad\quad\partial_{\hat{\sigma}}g_{\hat{\mu}\hat{\nu}}\quad\quad \partial_{\hat{\rho}}\partial_{\hat{\sigma}}g_{\hat{\mu}\hat{\nu}}\neq0$$
+
+          \item Note: not a coordinate system, so not a coordinate basis
+
+            $$x^{\mu}\to\text{ locally inertial coordinates}$$
+
+            \begin{itemize}
+
+              \item Locally inertial/Lorentz frame
+
+              \item Do calculations in this frame, express in tensor (covariant) form — usually can just assume $\eta_{\mu\nu}$
+
+            \end{itemize}
+
         \end{itemize}
 
+    \end{itemize}
+
+  \item Coordinate Basis
+
+    $$V=V^{\mu}\hat{e}_{\mu}$$
+    $$\hat{e}_{\mu}=\left\{ \partial_{\mu} \right\}$$
+    $$\partial_{\mu}=\frac{\partial}{\partial x^{\mu}}$$
+
+  \item Tensor Density
+
+    $$\tilde{\epsilon}_{\mu_1\ldots\mu_n}=\left\{ \begin{matrix} +1, & \text{even perm (0123)}\\ -1, & \text{odd perm (0213)}\\ 0, & \text{other (0112)}\end{matrix}$$
+
+    \begin{itemize}
+
+      \item Our general transformation $\dfrac{\partial x^{\mu}}{\partial x^{\mu'}}$ is a particular case of $M^{\mu'}_{\mu}$
+
+        $$\tilde{\epsilon}_{\mu_1'\ldots\mu_2'}=\Big|\frac{\partial x^{\mu'}}{\partial x^{\mu}}\Big|\tilde{\epsilon}_{\mu_1\ldots\mu_n}\frac{\partial x^{\mu_1}}{\partial x^{\mu_1'}}\cdots\frac{\partial x^{\mu_n}}{\partial x^{\mu_n'}}$$
+
+      \item We may see that there is an extra factor compared to standard tensor transform
+
+      \item What about $|g_{\mu\nu}|=g$?
+
+        $$g_{\mu'\nu'}=\frac{\partial x^{\mu}}{\partial x^{\hat{\mu}}}\frac{\partial x^{\nu}}{\partial x^{\hat{\nu}}}g_{\mu\nu}$$
+
+      \item In general, for $\tilde{t}$ that transforms with $\Big|\dfrac{\partial x^{\mu'}}{\partial x^{\hat{\mu}}}\Big|^{\omega}$, we can make a real tensor $t=\tilde{t}|g|^{\omega/2}$, since this will transform with:
+
+        $$\Big|\dfrac{\partial x^{\mu}}{\partial x^{\hat{\mu'}}}\Big|^{\omega}\Big|\dfrac{\partial x^{\mu'}}{\partial x^{\hat{\mu}}}\Big|^{\omega}=1$$
+        $$\epsilon_{\mu_1\ldots\mu_n}=\sqrt{|g|}\tilde{\epsilon}_{\mu_1\ldots\mu_n}$$
+        $$\epsilon^{\mu_1\ldots\mu_n}=\epsilon_{\mu_1\ldots\mu_n}\cdot\text{sign}(g)$$
+
+    \end{itemize}
+
+  \item Differential Forms
+
+    \begin{itemize}
+
+      \item p-form is a $(0,p)$ anti-symmetric tensor with:
+
+        $$A_{\mu\nu}=-A_{\nu\mu}$$
+        $$A_{\mu\nu\sigma}=-A_{\nu\mu\sigma}=A_{\nu\sigma\mu}$$
+
+        \begin{itemize}
+
+          \item Scalars: 0-forms
+
+          \item Dual vectors: 1-forms
+
+        \end{itemize}
+
+      \item Wedge product is anti-symmetrized tensor product
+
+        $$(A\wedge B)_{\mu_1\ldots\mu_{p+q}}=\frac{(p+q)!}{p!q!}A_{[\mu_1\ldots\mu_p]}B_{[\mu_{p+1}\ldots\mu_{p+q}]}$$
+
+    \end{itemize}
+
+  \item Exterior Derivative
+
+    \begin{itemize}
+
+      \item A tensor, unlike the partial derivative, but only acts on forms
+
+        $$(dA)_{\mu\ldots\mu_{p+1}}=(p+1)\partial_{\mu_1}A_{\mu_2\ldots\mu_{p+1}}$$
+
+      \item We have already seen this operator, the gradient (of a scalar):
+
+        $$(d\phi)_{\mu}=\partial_{\mu}\phi$$
+
+      \item Because partials commute:
+
+        $$d(dA)=0$$
+
+    \end{itemize}
+
+  \item Electrodynamics
+
+    $$F_{\mu\nu}$$
+    $$\partial_{[\mu}F_{\nu\lambda]}=0$$
+    $$dF=0$$
+    $$F=dA\text{ (vector potential }A_{\mu})$$
+
+  \item Hodge Star
+
+    \begin{itemize}
+
+      \item $*A$ takes $p$-forms to $n-p$ forms
+
+    \end{itemize}
+
+  \item Integration on Manifolds
+
+    \begin{itemize}
+
+      \item In general, when changing coordinates in an integral, we multiply by the Jacobian
+
+        $$x,y,z\to r,\theta,\phi$$
+        $$\Big| \frac{\partial x^{\mu'}}{\partial x^{\mu}}\Big=r^2\sin(\theta)$$
+        $$\int dx\,dy\,dz\,f(\vec{r})\to\int r^2\sin(\theta)\,dr\,d\theta\,d\phi\, f(\vec{r})$$
+
+        \begin{itemize}
+
+          \item This is a particular example of integration on a manifold
+
+        \end{itemize}
+
+        $$\int w(x)\,dx=w$$
+
+      \item Represents a component $w(x)$ with basis $dx$
+
+      \item We may write:
+
+      $$d\mu\left( U,V,W\right)\leftarrow \mathbb{R}$$
+
+      \begin{itemize}
+
+        \item This maps vectors at a point to their volume
+
+      \end{itemize}
+
+    \item We generalize:
+
+      $$d^nx=dx^o\wedge\cdots\wedge dx^{n-1}$$
+
+      \begin{itemize}
+
+        \item This is not yet a tensor because it is coordinate independent
+
+      \end{itemize}
+
+      $$\sqrt{|g|}d^nx=\sqrt{|g|}dx^o\wedge\cdots\wedge dx^{n-1}=\sqrt{|g'|}dx^{o'}\wedge\cdots\wedge dx^{(n-1)'}$$
+      $$I=\int\phi(x)\sqrt{|g|}\,d^nx\to\int\phi(x)\,dx\,dy\,dz\text{ if }|g|=1$$
+
+    \item You can then evaluate as normal
+
+    \end{itemize}
+
+  \item FLRW Metric (or FRW, or RW)
+
+    \begin{itemize}
+
+      \item Friedmann, Lemaitre, Robertson, Walker $\to$ Solution to Einstein's equations for a spatially homogenous, isotropic spacetime. Can be curved or flat. Flat FLRW:
+
+        $$dx^2=-dt^2+a^2(t)(dx^2+dy^2+dz^2)$$
+
+        \begin{itemize}
+
+          \item Where $a(t)$ is the scale factor
+
+          \item For $a(t)=t^q$, $0<q<1$
+
+          \item $t=(1-q)^{\frac{1}{1-q}}(\pm x-x_o)^{\frac{1}{1-q}}$
+
+          \item Light not always at a $45^{\circ}$ angle
+
+          \item Singularity at $t=0\to$ cosmic horizon $\to p$ and $s$ are completely disconnected
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Curvature, Covariant Derivatives, Geodesics
+
+    \begin{itemize}
+
+      \item For $S^2$:
+
+        $$ds^2=\frac{R^2dr}{R^2-r^2}+r^2d\theta^2$$
+
+      \item The metric reflects the curvature; for $R\to\infty$, we get back to flat 2D space
+
+      \item From the metric, we will derive the ``connection,'' which tells us the impact of curvature, including defining straight lines
+
+      \item The connection tells us how to compare vectors at nearby points
+        
     \end{itemize}
 
 \end{itemize}
