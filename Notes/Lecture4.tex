@@ -474,8 +474,227 @@
 
       \item From the metric, we will derive the ``connection,'' which tells us the impact of curvature, including defining straight lines
 
-      \item The connection tells us how to compare vectors at nearby points
+      \item The connection ($\Gamma^{\lambda}_{\mu\nu}$, not a tensor) tells us how to compare vectors at nearby points
         
+    \end{itemize}
+
+  \item Covariant Derivatives
+
+    \begin{itemize}
+
+      \item Recall $\partial_{\mu}A_{\nu}$ is not a covariant because of an extra term
+
+      \item External derivative $dA=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$ is covariant but only valid on forms
+
+      \item We define the covariant derivative of a vector and dual vector:
+
+        $$\nabla_{\mu}V^{\nu}=\partial_{\mu}V^{\nu}+\Gamma^{\nu}_{\mu\lambda}V^{\lambda}$$
+        $$\nabla_{\mu}\omega^{\nu}=\partial_{\mu}\omega^{\nu}-\Gamma^{\nu}_{\mu\lambda}\omega^{\lambda}$$
+
+        \begin{itemize}
+
+          \item Note: $\Gamma$ is not a tensor, do no raise or lower indices!
+
+          \item Covariant refers to transforming like a tensor
+
+        \end{itemize}
+
+        $$\partial_{\mu'}A_{\nu'}=\left( \frac{\partial x^{\mu}}{\partial x^{\mu'}}\partial_{\mu} \right)\left( \frac{\partial x^{\nu}}{\partial x^{\nu'}}\partial_{\nu} \right)=\frac{\partial x^{\mu}}{\partial x^{\mu'}}\frac{\partial x^{\nu}}{\partial x^{\nu'}}\partial_{\mu}A_{\nu}+\frac{\partial x^{\mu}}{\partial x^{\mu'}}A_{\nu}\partial_{\mu}\frac{\partial x^{\nu}}{\partial x^{\nu'}}$$
+
+      \item We can detemine how $\Gamma$ must transform such that $\nabla_{\mu}V^{\nu}$ and $\nabla_{\mu}\omega_{\nu}$ are covariant
+
+      \item Four requirements on covariant derivatives:
+
+        \begin{enumerate}
+
+          \item Linearity: $\nabla(T+S)=\nabla T+\nabla S$
+
+          \item Product Rule: $\nabla(T\otimes S)=\nabla T\otimes S+T\otimes\nabla S$
+
+          \item Commute with Contractions: $\nabla_{\mu}(T^{\lambda}_{\lambda\rho})=(\nabla T)_{\mu}^{\lambda}_{\lambda\rho}$
+
+          \item Partial Derivative on Scalars: $\nabla_{\mu}\phi=\partial_{\mu}\phi$
+
+        \end{enumerate}
+
+      \item For a general $(k,l)$ tensor, we have:
+
+        $$\nabla_{\sigma}T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}=\partial_{\sigma T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}}+\Gamma^{\mu_1}_{\sigma\lambda}T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}+\cdots+\Gamma^{\mu_k}_{\sigma \lambda}T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}-\Gamma^{\lambda}_{\sigma\nu_1}T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}-\cdots-\Gamma^{\lambda}_{\sigma \nu_l}T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}$$
+
+      \item Notation:
+
+        $$\nabla_{\sigma}A_{\mu}=A_{\mu;\sigma}$$
+        $$\partial_{\sigma}A_{\mu}=A_{\mu,\sigma}$$
+
+      \item $\Gamma^{\mu}_{\sigma\lambda}$ must obey a particular (non-covariant) transform under coordinate change
+
+      \item We have a lot of freedom to define $\Gamma^{\mu}_{\sigma\lambda}$, but we will impose two additional conditions (for convenience):
+
+        \begin{itemize}
+
+          \item Torsion-free: $T^{\lambda}_{\mu\nu}=\Gamma^{\lambda}_{\mu\nu}-\Gamma^{\lambda}_{\nu\mu}=0\Rightarrow \Gamma^{\lambda}_{\mu\nu}=\Gamma^{\lambda}_{\nu\mu}$
+
+          \item Metric-compatible: $\nabla_{\propto}g_{\mu\nu}=0$
+
+            $$\nabla_{\lambda}\epsilon_{\mu\nu\rho\sigma}=0$$
+            $$\nabla_{\rho}g^{\mu\nu}=0$$
+
+        \end{itemize}
+
+      \item Christoffel Symbol:
+
+        $$\Gamma_{\mu\nu}^{\sigma}=\frac{1}{2}g^{\sigma\rho}\left( \partial_{\mu}g_{\nu\rho}+\partial_{\nu}g_{\rho\mu}-\partial_{\rho}g_{\mu\nu} \right)$$
+
+    \end{itemize}
+
+  \item Parallel Transport and Geodesics
+
+    \begin{itemize}
+
+      \item What is parallel transport?
+
+        \begin{itemize}
+
+          \item Keep the vetor fixed as you ``move it.'' This is generally path-dependent
+
+          \item We must do this to compare vectors
+
+          \item Let's be a bit more mathematical:
+
+            $$\frac{d}{d\lambda}V^{\mu}=0$$
+            $$\frac{d}{d\lambda}T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}=0$$
+
+          \item Before, we had:
+
+            $$\frac{d}{d\lambda}=\frac{dx^{\mu}}{d\lambda}\frac{\partial}{\partial x^{\mu}}$$
+
+          \item Replace with covariant directional derivative:
+
+            $$\frac{D}{d\lambda}\equiv\frac{dx^{\mu}}{d\lambda}\nabla_{\mu}$$
+
+        \end{itemize}
+
+      \item Parallel transport is defined by:
+
+        $$\left( \frac{D}{d\lambda} T \right)^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}=0$$
+
+    \end{itemize}
+
+  \item Straight Lines $\to$ Geodesics
+
+    \begin{itemize}
+
+      \item Straight line is the shortest distance between two points; in flat space, the direction of your tangent vector doesn't change
+
+      \item We generalize this notion: A geodesic is a path that parallel transports its own tangent vector:
+
+        $$\frac{d^2x^{\mu}}{d\lambda^2}+\Gamma^{\mu}_{\rho\sigma}\frac{dx^{\rho}}{d\lambda}\frac{dx^{\sigma}}{d\lambda}=0\quad\text{ (geodesic equation)}$$
+
+      \item In flat space with Cartesian coordinates, $\Gamma^{\mu}_{\rho\sigma}=0$
+
+        $$\frac{d^2x^{\mu}}{d\lambda^2}=0\quad\text{ (a ``straight'' line)}$$
+
+    \end{itemize}
+    
+  \item Geodesics as the ``Shortest Distance''
+
+    \begin{itemize}
+        
+      \item Consider a timelike path; recall proper time along $x^{\mu}(\lambda)$:
+
+        $$d\tau^2=ds^2$$
+        $$\tau=\int\left(-g_{\mu\nu}\frac{dx^{\mu}}{d\lambda}\frac{dx^{\nu}}{d\lambda}\right)^{\frac{1}{2}}\,d\lambda$$
+
+      \item Recall (Twin Paradox) that the ``shortest spacetime interval'' corresponds to maximum proper time, due to the minus sign in Lorentzian spacetimes
+
+      \item We want to find the stationary points of $\tau$ (max or min) by varying $x^{\mu}(\lambda)$; the resulting path will end up being (Note: very common method in physics, same as the Lagrangian $\to$ action formulation, which allows the derivation of EoM):
+
+        \begin{itemize}
+
+          \item We can simplify:
+
+            $$f=g_{\mu\nu}(dx^{\mu}/d\lambda)(dx^{\nu}/d\lambda)$$
+
+          \item Variation is:
+
+            $$\delta t=\int \delta\sqrt{-f}\,d\lambda=-\int\frac{1}{2}(-f)^{-\frac{1}{2}}\,\delta f\,d\lambda$$
+
+          \item We can simplify by taking $\lambda=\tau$:
+
+            $$\frac{dx^{\mu}}{d\tau}=U^{\mu}\quad\text{(four velocity)}$$
+            $$\Rightarrow f=g_{\mu\nu}U^{\mu}U^{\nu}=-1\quad\text{definition of $\tau$}$$
+            $$\delta t=-\frac{1}{2}\int\,\delta f\,d\tau$$
+
+        \end{itemize}
+
+      \item So, we can find the stationary points of:
+
+        $$I=\frac{1}{2}\int f\,d\tau=\frac{1}{2}\int g_{\mu\nu}\frac{dx^{\mu}}{d\tau}\frac{dx^{\nu}}{d\tau d\tau$$
+
+        \item We can use the Euler-Lagrange, or just directly calculate variation:
+
+          $$x^{\mu}\to x^{\mu}+\delta x^{\mu}$$
+          $$\Rightarrow g_{\mu\nu}\to g_{\mu\nu}+(\partial_{\sigma}g_{\mu\nu})\delta x^{\sigma}$$
+          $$\delta I=I_{new}-I_{old}$$
+
+        \item Bringing all of our terms together, we get:
+
+        $$\delta I=-\int\left[ g_{\mu\sigma}\frac{d^2x^{\mu}}{d\tau^2}+\frac{1}{2}(\partial_{\mu}g_{\nu\sigma}+\partial_{\nu}g_{\sigma\mu}-\partial_{\sigma} g_{\mu\nu}})\frac{dx^{\mu}}{d\tau}\frac{dx^{\nu}}{d\tau} \right]\delta x^{\sigma}\,d\tau$$
+
+        \item Our final form takes:
+
+          $$\frac{d^2x^{\rho}}{d\tau^2}+\underbrace{\frac{1}{2}g^{\rho\sigma}(\partial_{\mu}g_{\nu\sigma}+\partial_{\nu}g_{\sigma\mu}-\partial_{\sigma}g_{\mu\nu})\frac{dx^{\mu}}{d\tau}}_{\Gamma^{\rho}_{\mu\nu}}\frac{dx^{\nu}}{d\tau}=0$$
+
+    \end{itemize}
+
+  \item Affine Parameters
+
+    \begin{itemize}
+
+      \item For timelike geodesics: $\lambda=a\tau+b\quad\quad$ affine parameters
+
+      \item Geodesic equation is satisfied (usually just use $\tau$)
+
+      \item Parallel transport of $dx^{\mu}/d\lambda$ defines both $x^{\mu}$ and $\lambda$
+
+      \item We can express timelike geodesics using $U^{\mu}$ or $p^{\mu}=mU^{\mu}$
+
+      \item For null paths: $\tau=0$
+
+        \begin{itemize}
+
+          \item Instead, we typically choose $p^{\mu}=\frac{dx^{\mu}}{d\lambda}$ to define $\lambda$
+
+          \item In either case, then $E=-p_{\mu}U^{\mu}$
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item The Riemann Curvature Tensor
+
+    \begin{itemize}
+
+      \item What is curvature at some point $p$?
+
+      \item Flatness, in a slightly more technical sense, means:
+
+        \begin{enumerate}
+
+          \item Parallel transport does not depend on path
+
+            \begin{itemize}
+
+              \item No change on a closed loop
+
+            \end{itemize}
+
+          \item Covariant derivatives commute
+
+          \item Parallel geodesics remain parallel
+
+        \end{enumerate}
+
     \end{itemize}
 
 \end{itemize}
