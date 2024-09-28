@@ -1,0 +1,127 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: General Relativity and Cosmology
+% Professor: J. Blazek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Homework 2}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: J. Blazek}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+  \item Per the affine connection, we may use the Christoffel Symbol to write:
+
+    $$\Gamma^{\sigma}_{\mu\nu}=\frac{1}{2}g^{\alpha\rho}\left[ \partial_{\mu}g_{\nu\rho}+\partial_{\nu}g_{\rho\mu}-\partial_{\rho}g_{\mu\nu}  \right]$$
+
+    We are given the metric for polar coordinates as:
+
+    $$ds^2=dr^2+r^2\,d\theta^2$$
+
+    Which gives us $g^{rr}=1$ and $g^{\theta\theta}=r^{-2}$.
+
+    \begin{enumerate}
+
+      \item 
+
+        We can begin with what Carroll supplied:
+
+        $$\boxed{\left\{\begin{array}{ll} \Gamma^r_{rr} &= 0\\\Gamma^r_{\theta\theta}&=-r\\\Gamma^r_{\theta r}=\Gamma^r_{r\theta}&= 0\\\Gamma^{\theta}_{rr}&= 0\\\Gamma^{\theta}_{r\theta}=\Gamma^{\theta}_{\theta r}&= (1/r)\\\Gamma^{\theta}_{\theta\theta}&= 0\end{array}}$$
+
+      \item 
+
+        We can continue to find the divergence of $V$ using the simplified formula:
+
+        $$\nabla_{\mu}V^{\mu}=\frac{1}{\sqrt{|g|}}\partial_{\mu}\left( \sqrt{|g|}V^{\mu} \right)$$
+
+        Which gives us:
+
+        $$\boxed{\nabla\cdot\bold{V}=\frac{1}{\sqrt{|g|}}\partial_{r}\left( \sqrt{|g|}V^{r} \right)+\frac{1}{\sqrt{|g|}}\partial_{\theta}\left( \sqrt{|g|}V^{\theta} \right)}$$
+
+        The gradient can be found as:
+
+        $$\boxed{\nabla\bold{V}=\frac{\partial V}{\partial r}\bold{e}_r+\frac{1}{r}\frac{\partial V}{\partial \theta}\bold{e}_{\theta}}$$
+
+      \item 
+
+        In general, we may write:
+
+        $$\frac{d^2x^{\mu}}{d\lambda^2}+\Gamma^{\mu}_{\rho\sigma}\frac{dx^{\rho}}{d\lambda}\frac{dx^{\sigma}}{d\lambda}=0$$
+
+        From here, we can expand to:
+
+        $$\frac{d^2x^{\rho}}{d\tau^2}+\frac{1}{2}g^{\rho\sigma}\left[  \partial_{\mu}g_{\nu\sigma}+\partial_{\nu}g_{\sigma\mu}-\partial_{\sigma}g_{\mu\nu} \right]\frac{dx^{\rho}}{d\lambda}\frac{dx^{\sigma}}{d\lambda}=0$$
+
+        From (a), we know that $\Gamma^{\mu}_{\rho\sigma}$ is non-zero for only two combinations, $\Gamma^{r}_{\theta\theta}$ and $\Gamma^{\theta}_{r\theta}$. With this, we are able to construct two equations:
+
+        $$\frac{d^2x^{r}}{d\lambda^2}-r\frac{d^2x^{\theta}}{d\lambda^2}=0$$
+        $$\frac{d^2x^{\theta}}{d\lambda^2}+\frac{2}{r}\frac{dx^{r}}{d\lambda}\frac{dx^{\theta}}{d\lambda}=0$$
+
+        This gives us the equations:
+
+        $$\boxed{\frac{d^2x^{r}}{d\lambda^2}=r\frac{d^2x^{\theta}}{d\lambda^2}}$$
+        $$\boxed{\frac{d^2x^{\theta}}{d\lambda^2}=-\frac{2}{r}\frac{dx^{r}}{d\lambda}\frac{dx^{\theta}}{d\lambda}}$$
+
+      \item 
+
+        Using the equation for a line, we may write:
+
+        $$ax+by=c$$
+
+        In polar, this would be equivalent to:
+
+        $$ar\cos(\theta)+br\sin(\theta)=c$$
+
+        We can differentiate to get:
+
+        $$(a\cos(\theta)+b\sin(\theta))\,dr=(ar\sin(\theta)-br\cos(\theta))\,d\theta$$
+        $$dr=\frac{(ar\sin(\theta)-br\cos(\theta))}{(a\cos(\theta)+b\sin(\theta))}\,d\theta$$
+
+        Plugging this into our metric, we get:
+
+        $$ds^2=\left(\frac{(ar\sin(\theta)-br\cos(\theta))}{(a\cos(\theta)+b\sin(\theta))}\,d\theta\right)^2+r^2\,d\theta$$
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+      \item 
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+      \item 
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+      \item 
+
+    \end{enumerate}
+
+  \item
+
+\end{enumerate}
+
+\end{document}
+
