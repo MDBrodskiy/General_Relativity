@@ -81,11 +81,39 @@
         We can differentiate to get:
 
         $$(a\cos(\theta)+b\sin(\theta))\,dr=(ar\sin(\theta)-br\cos(\theta))\,d\theta$$
-        $$dr=\frac{(ar\sin(\theta)-br\cos(\theta))}{(a\cos(\theta)+b\sin(\theta))}\,d\theta$$
 
-        Plugging this into our metric, we get:
+        And then we square:
 
-        $$ds^2=\left(\frac{(ar\sin(\theta)-br\cos(\theta))}{(a\cos(\theta)+b\sin(\theta))}\,d\theta\right)^2+r^2\,d\theta$$
+        $$(a^2\cos^2(\theta)+b^2\sin^2(\theta)-2ab\sin^2(\theta)\cos^2(\theta))\,dr^2=$$
+        $$r^2(a^2\sin(\theta)+b^2\cos(\theta)+2ab\sin(\theta)\cos(\theta))\,d\theta^2$$
+
+        Per the metric, we can write:
+
+        $$ds^2=dr^2+r^2d\theta^2$$
+        $$1=\left(\frac{dr}{ds}\right)^2+r^2\left(\frac{d\theta}{ds}\right)^2$$
+
+        Combining our equations, we get:
+
+        $$\left[1-r^2d\theta^2\right]\left( (a^2\cos^2(\theta)+b^2\sin^2(\theta)-2ab\sin^2(\theta)\cos^2(\theta)) \right)-$$
+        $$r^2d\theta^2\left( a^2\sin(\theta)+b^2\cos(\theta)+2ab\sin(\theta)\cos(\theta)) \right)=0$$
+
+        Simplifying, we get:
+
+        $$r^2(a^2+b^2)d\theta^2=a^2\cos^2(\theta)+b^2\sin^2(\theta)-2ab\sin^2(\theta)\cos^2(\theta)$$
+
+        From the linear equation, we may simply rewrite this as:
+
+        $$r^2(a^2+b^2)d\theta^2=\frac{c^2}{r^2}$$
+
+        Which gets us:
+
+        $$r^4(a^2+b^2)d\theta^2=c^2$$
+        $$r^2\sqrt{(a^2+b^2)}d\theta=c$$
+        $$\boxed{r^2d\theta=\frac{c}{\sqrt{(a^2+b^2)}}}$$
+
+        As such, we see that $r^2\,d\theta$ equals a constant and, thus:
+
+        $$\frac{d}{d\lambda}(r^2\,d\theta)=0\Rightarrow ax+by=c$$
 
     \end{enumerate}
 
@@ -233,11 +261,93 @@
 
       \item 
 
-      \item 
+        The transformation of an arbitrary matrix may be written as:
+
+        $$T^{\mu_1\prime\ldots\mu_{k}\prime}_{\nu_1\prime\ldots\nu_l\prime}=\frac{\partial x^{\mu_1\prime}}{\partial x^{\mu_1}}\cdots\frac{\partial x^{\mu_k\prime}}{\partial x^{\mu_k}}\frac{\partial x^{\nu_1}}{\partial x^{\nu_1\prime}}\cdots\frac{\partial x^{\nu_k}}{\partial x^{\nu_k\prime}}T^{\mu_1\ldots\mu_k}_{\nu_1\ldots\nu_l}$$
+
+        Given this, we may focus on our case to write the matrix as:
+
+        $$\frac{\partial x^{\mu}}{\partial x^{\nu'}}\to\left[ \begin{matrix} \partial x/\partial \chi & \partial z/\partial\chi\\ \partial x/\partial \theta & \partial z/\partial\theta \end{matrix} \right]$$
+
+        Given the restriction to the $y$ plane, we may observe that $\phi\to0$, which gives us:
+
+        $$\left\{\begin{array}{lll} x&=& \sinh(\chi)\sin(\theta)\\z&= &\cosh(\chi)\cos(\theta)\end{array}$$
+
+          Taking the above partials, we get:
+
+        $$\left\{\begin{array}{lll} \partial x/\partial\chi &=& \cosh(\chi)\sin(\theta)\\\partial z/\partial \chi&= &\sinh(\chi)\cos(\theta)\\\partial x/\partial\theta &=& \cosh(\chi)\cos(\theta)\\\partial z/\partial \theta&= &-\sinh(\chi)\sin(\theta)\end{array}$$
+
+          Using matrix notation, we finally get:
+
+          $$\boxed{\frac{\partial x^{\mu}}{\partial x^{\nu'}}\to\left[ \begin{matrix} \cosh(\chi)\sin(\theta) & \sinh(\chi)\cos(\theta)\\ \sinh(\chi)\cos(\theta) & -\cosh(\chi)\sin(\theta) \end{matrix} \right]}$$
+
+      \item
+
+        To find the expression for $ds^2$, we can use the metric:
+
+        $$g_{\mu\nu}=\partial_{\mu} x^{\mu}\partial_{\nu}x^{\nu}\eta_{\nu\mu}$$
+
+        From this, we can obtain:
+
+        $$g_{\mu\nu}=g_{\mu'\nu'}\left[ \begin{matrix} \cosh(\chi)\sin(\theta) & \sinh(\chi)\cos(\theta)\\ \sinh(\chi)\cos(\theta) & -\cosh(\chi)\sin(\theta) \end{matrix} \right]\left[ \begin{matrix} \cosh(\chi)\sin(\theta) & \sinh(\chi)\cos(\theta)\\ \sinh(\chi)\cos(\theta) & -\cosh(\chi)\sin(\theta) \end{matrix} \right]$$
+
+        We continue to simplify and compute:
+
+        $$g_{\mu\nu}=g_{\mu'\nu'}\left(\left[ \begin{matrix} \cosh(\chi)\sin(\theta) & \sinh(\chi)\cos(\theta)\\ \sinh(\chi)\cos(\theta) & -\cosh(\chi)\sin(\theta) \end{matrix} \right]\right)^2$$
+        $$g_{\mu\nu}=g_{\mu'\nu'}\left[ \begin{matrix} \cosh^2(\chi)\sin^2(\theta)+\sinh^2(\chi)\cos^2(\theta) & 0\\ 0 & \cosh^2(\chi)\sin^2(\theta)+\sinh^2(\chi)\cos^2(y) \end{matrix} \right]$$
+
+        Thus, we can equivalently write:
+
+        $$\boxed{ds^2=(\cosh^2(\chi)\sin^2(\theta)+\sinh^2(\chi)\cos^2(\theta))dx^2 +(\cosh^2(\chi)\sin^2(\theta)+\sinh^2(\chi)\cos^2(\theta))d\theta^2}$$
+
+        Or, alternatively, this can be simplified as:
+
+        $$\boxed{ds^2=(\sinh^2(\chi)\cos^2(\theta)+\cosh^2(\chi)\sin^2(\theta))(dx^2+d\theta^2)}$$
 
     \end{enumerate}
 
   \item
+
+    We may begin by writing out the expression for Christoffel Symbols:
+
+      $$\Gamma^{\sigma}_{\mu\nu}=\frac{1}{2}g^{\sigma\rho}\left[ \partial_{\mu}g_{\nu\rho}+\partial_{\nu}g_{\rho\mu}-\partial_{\rho}g_{\mu\nu}  \right]$$
+
+    From the expression, and the fact that we have a diagonal matrix, we know that the value can be non-zero ONLY when $\sigma=\rho$. Thus, to simplify, using $\lambda$, we may write:
+
+      $$\Gamma^{\lambda}_{\mu\nu}=\frac{1}{2}g^{\lambda\lambda}\left[ \partial_{\mu}g_{\nu\lambda}+\partial_{\nu}g_{\lambda\mu}-\partial_{\lambda}g_{\mu\nu}  \right]$$
+
+      Furthermore, since it is given that $\mu\neq\nu\neq\lambda$, we know that the partials will be zero, as non-diagonal terms of $g$ will be used, which gives us:
+
+      $$\boxed{\Gamma^{\lambda}_{\mu\nu}=0}$$
+
+      Now, we return to the expression; however, now $\mu=\nu$. We may see that, with this, the only partial that remains (\textit{i}.\textit{e}. depends on a diagonal entry) is the last one:
+
+      $$\Gamma^{\lambda}_{\mu\mu}=\frac{1}{2}g^{\lambda\lambda}\left[ -\partial_{\lambda}g_{\mu\mu}  \right]$$
+      $$\boxed{\Gamma^{\lambda}_{\mu\mu}=-\frac{1}{2}(g_{\lambda\lambda})^{-1}\partial_{\lambda}g_{\mu\mu}}$$
+
+      Continuing, we may check the case when $\nu=\lambda$. We may see that, in this case, only the first partial relies on a diagonal entry, which gives us:
+
+      $$\Gamma^{\lambda}_{\mu\lambda}=\frac{1}{2}g^{\lambda\lambda}\partial_{\mu}(g_{\lambda\lambda})$$
+
+      Using the property that:
+
+      $$\partial_{\mu}\log(A)=\frac{1}{A} du_{\mu}(A)$$
+
+      We can simplify to:
+
+      $$\boxed{\Gamma^{\lambda}_{\mu\lambda}=\partial_{\mu}\left[ \ln\left( \sqrt{|g_{\lambda\lambda}| \right) \right]}}$$
+
+      Finally, checking the all-$\lambda$ case, we can see that the only partial that does not go to zero is the second one:
+
+      $$\Gamma^{\lambda}_{\lambda\lambda}=\frac{1}{2}g^{\lambda\lambda}\partial_{\lambda}(g_{\lambda\lambda})$$
+
+      Similar to the third equation, we can simplify to get:
+
+      $$\boxed{\Gamma^{\lambda}_{\lambda\lambda}=\partial_{\lambda}\left[ \ln\left( \sqrt{|g_{\lambda\lambda}| \right) \right]}}$$
+
+      Thus, we have shown that, for a diagonal matrix, the terms simplify as:
+
+      $$\boxed{\mu\neq\nu\neq\lambda\to\left\{\begin{array}{lll} \Gamma^{\lambda}_{\mu\nu}&=&0\\\Gamma^{\lambda}_{\mu\mu}&=&-\frac{1}{2}(g_{\lambda\lambda})^{-1}\partial_{\lambda}g_{\mu\mu}\\\Gamma^{\lambda}_{\mu\lambda}&=&\partial_{\mu}\left[ \ln\left( \sqrt{|g_{\lambda\lambda}|} \right) \right]\\\Gamma^{\lambda}_{\mu\nu}&=&\partial_{\lambda}\left[ \ln\left( \sqrt{|g_{\lambda\lambda}|} \right) \right] \end{array}}$$
 
 \end{enumerate}
 
