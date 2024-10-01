@@ -18,7 +18,7 @@
 
   \item Per the affine connection, we may use the Christoffel Symbol to write:
 
-    $$\Gamma^{\sigma}_{\mu\nu}=\frac{1}{2}g^{\alpha\rho}\left[ \partial_{\mu}g_{\nu\rho}+\partial_{\nu}g_{\rho\mu}-\partial_{\rho}g_{\mu\nu}  \right]$$
+    $$\Gamma^{\sigma}_{\mu\nu}=\frac{1}{2}g^{\sigma\rho}\left[ \partial_{\mu}g_{\nu\rho}+\partial_{\nu}g_{\rho\mu}-\partial_{\rho}g_{\mu\nu}  \right]$$
 
     We are given the metric for polar coordinates as:
 
@@ -65,7 +65,7 @@
 
         This gives us the equations:
 
-        $$\boxed{\frac{d^2x^{r}}{d\lambda^2}=r\frac{d^2x^{\theta}}{d\lambda^2}}$$
+        $$\boxed{\frac{d^2x^{r}}{d\lambda^2}=r\frac{dx^{\theta}}{d\lambda}\frac{dx^{\theta}}{d\lambda}}$$
         $$\boxed{\frac{d^2x^{\theta}}{d\lambda^2}=-\frac{2}{r}\frac{dx^{r}}{d\lambda}\frac{dx^{\theta}}{d\lambda}}$$
 
       \item 
@@ -95,7 +95,78 @@
 
       \item 
 
+        We begin with the expression for the Christoffel Symbol:
+
+          $$\Gamma^{\sigma}_{\mu\nu}=\frac{1}{2}g^{\sigma\rho}\left[ \partial_{\mu}g_{\nu\rho}+\partial_{\nu}g_{\rho\mu}-\partial_{\rho}g_{\mu\nu}  \right]$$
+
+        Given the diagonal matrix, we know that these terms may be non-zero only for $\sigma=\rho$, which allows us to obtain:
+
+          $$\Gamma^{t}_{\mu\nu}=\frac{1}{2}g^{tt}\left[ \partial_{\mu}g_{\nu t}+\partial_{\nu}g_{t\mu}-\partial_{t}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\theta}_{\mu\nu}=\frac{1}{2}g^{\theta\theta}\left[ \partial_{\mu}g_{\nu\theta}+\partial_{\nu}g_{\theta\mu}-\partial_{\theta}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\phi}_{\mu\nu}=\frac{1}{2}g^{\phi\phi}\left[ \partial_{\mu}g_{\nu\phi}+\partial_{\nu}g_{\phi\mu}-\partial_{\phi}g_{\mu\nu}  \right]$$
+
+          Furthermore, we can expand the diagonal nature of the metric to write:
+
+          $$\Gamma^{t}_{\mu\nu}=\frac{1}{2}g^{tt}\left[ \partial_{\mu}g_{tt}+\partial_{\nu}g_{tt}-\partial_{t}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\theta}_{\mu\nu}=\frac{1}{2}g^{\theta\theta}\left[ \partial_{\mu}g_{\theta\theta}+\partial_{\nu}g_{\theta\theta}-\partial_{\theta}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\phi}_{\mu\nu}=\frac{1}{2}g^{\phi\phi}\left[ \partial_{\mu}g_{\phi\phi}+\partial_{\nu}g_{\phi\phi}-\partial_{\phi}g_{\mu\nu}  \right]$$
+
+          This can be simplified as:
+
+          $$\Gamma^{t}_{\mu\nu}=-\frac{1}{2}\left[ \partial_{\mu}[-1]+\partial_{\nu}[-1]-\partial_{t}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\theta}_{\mu\nu}=\frac{1}{2}\left[ R^2 \right]\left[ \partial_{\mu}(R^2)+\partial_{\nu}(R^2)-\partial_{\theta}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\phi}_{\mu\nu}=\frac{1}{2}(R^2\sin^2(\theta))\left[ \partial_{\mu}(R^2\sin^2(\theta))+\partial_{\nu}(R^2\sin^2(\theta))-\partial_{\phi}g_{\mu\nu}  \right]$$
+
+          By inspection, we can tell that the $\sigma=t$ case will always be zero, since the partials of constant become zero, and the partial with respect to time of any entry in the matrix is also zero (since they are not time-dependent). This leaves us with:
+
+          $$\Gamma^{\theta}_{\mu\nu}=\frac{1}{2}\left[ R^2 \right]\left[ \partial_{\mu}(R^2)+\partial_{\nu}(R^2)-\partial_{\theta}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\phi}_{\mu\nu}=\frac{1}{2}(R^2\sin^2(\theta))\left[ \partial_{\mu}(R^2\sin^2(\theta))+\partial_{\nu}(R^2\sin^2(\theta))-\partial_{\phi}g_{\mu\nu}  \right]$$
+
+          We begin by analyzing the $\sigma=\theta$ case:
+
+          $$\Gamma^{\theta}_{tt}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\mu}(R^2)+\partial_{\nu}(R^2)-\partial_{\theta}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\theta}_{t\theta}=\Gamma^{\theta}_{\theta t}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\mu}(R^2)+\partial_{\nu}(R^2)-\partial_{\theta}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\theta}_{t\phi}=\Gamma^{\theta}_{\phi t}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\mu}(R^2)+\partial_{\nu}(R^2)-\partial_{\theta}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\theta}_{\theta\theta}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\mu}(R^2)+\partial_{\nu}(R^2)-\partial_{\theta}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\theta}_{\theta\phi}=\Gamma^{\theta}_{\phi\theta}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\mu}(R^2)+\partial_{\nu}(R^2)-\partial_{\theta}g_{\mu\nu}  \right]$$
+          $$\Gamma^{\theta}_{\phi\phi}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\mu}(R^2)+\partial_{\nu}(R^2)-\partial_{\theta}g_{\mu\nu}  \right]$$
+
+          Simplifying all of these, we get:
+
+          $$\Gamma^{\theta}_{tt}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\theta}(-1)\right]=0$$
+          $$\Gamma^{\theta}_{t\theta}=\Gamma^{\theta}_{\theta t}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{t}(R^2)\right]=0$$
+          $$\Gamma^{\theta}_{t\phi}=\Gamma^{\theta}_{\phi t}=\frac{1}{2}\left[ R^{-2} \right]\left[ 0\right]=0$$
+          $$\Gamma^{\theta}_{\theta\theta}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\theta}(R^2)+\partial_{\theta}(R^2)-\partial_{\theta}(R^2)  \right]=0$$
+          $$\Gamma^{\theta}_{\theta\phi}=\Gamma^{\theta}_{\phi\theta}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\phi}(R^2)\right]=0$$
+          $$\Gamma^{\theta}_{\phi\phi}=\frac{1}{2}\left[ R^{-2} \right]\left[ \partial_{\phi}(R^2)+\partial_{\phi}(R^2)-\partial_{\theta}(R^2\sin^2(\theta))  \right]=-\sin(\theta)\cos(\theta)$$
+
+          We continue with $\sigma=\phi$:
+
+          $$\Gamma^{\phi}_{tt}=\frac{1}{2}\left[ [R\sin(\theta)]^{-2} \right]\left[ \partial_{\phi}(-1)\right]=0$$
+          $$\Gamma^{\phi}_{t\theta}=\Gamma^{\phi}_{\theta t}=\frac{1}{2}\left[ [R\sin(\theta)]^{-2} \right]\left[ 0 \right]=0$$
+          $$\Gamma^{\phi}_{t\phi}=\Gamma^{\phi}_{\phi t}=\frac{1}{2}\left[ [R\sin(\theta)]^{-2} \right]\left[ \partial_{t}(R^2\sin^2(\theta))\right]=0$$
+          $$\Gamma^{\phi}_{\theta\theta}=\frac{1}{2}\left[ [R\sin(\theta)]^{-2} \right]\left[ -\partial_{\phi}(R^2)  \right]=0$$
+          $$\Gamma^{\phi}_{\theta\phi}=\Gamma^{\phi}_{\phi\theta}=\frac{1}{2}\left[ [R\sin(\theta)]^{-2} \right]\left[ \partial_{\theta}(R^2\sin^2(\theta))\right]=\cot(\theta)$$
+          $$\Gamma^{\phi}_{\phi\phi}=\frac{1}{2}\left[ [R\sin(\theta)]^{-2} \right]\left[ \partial_{\phi}(R^2\sin^2(\theta))+\partial_{\phi}(R^2\sin^2(\theta))-\partial_{\phi}(R^2\sin^2(\theta))  \right]=0$$
+
+          Thus, the only non-zero terms are:
+
+          $$\boxed{\Gamma_{\phi\phi}^{\phi}=-\sin(\theta)\cos(\theta)\quad\text{ and }\quad\Gamma^{\theta}_{\phi\theta}=\Gamma^{\theta}_{\theta\phi}=\cot(\theta)}$$
+
       \item 
+
+        The geodesic equations give us:
+
+        $$\frac{d^2x^{\mu}}{d\lambda^2}+\Gamma^{\mu}_{\rho\sigma}\frac{dx^{\rho}}{d\lambda}\frac{dx^{\sigma}}{d\lambda}=0$$
+
+        Using the values obtained in (a), we may write:
+
+        $$\frac{d^2x^{\phi}}{d\lambda^2}+\Gamma^{\phi}_{\phi\theta}\frac{dx^{\phi}}{d\lambda}\frac{dx^{\theta}}{d\lambda}=0$$
+        $$\frac{d^2x^{\theta}}{d\lambda^2}+\Gamma^{\theta}_{\phi\phi}\frac{dx^{\phi}}{d\lambda}\frac{dx^{\phi}}{d\lambda}=0$$
+
+        And we plug in known values to get:
+
+        $$\boxed{\left\{\begin{array}{lll} \dfrac{d^2x^{\theta}}{d\lambda^2} &= &\sin(\theta)\cos(\theta)\dfrac{dx^{\phi}}{d\lambda}\dfrac{dx^{\phi}}{d\lambda}\\\\ \dfrac{d^2x^{\phi}}{d\lambda^2} &= &\cot(\theta)\dfrac{dx^{\phi}}{d\lambda}\dfrac{dx^{\theta}}{d\lambda}\end{array}}$$
 
     \end{enumerate}
 
@@ -105,7 +176,54 @@
 
       \item 
 
+        We may begin by using the values assigned to $x,y$, and $z$ to obtain expressions for $r,\theta$, and $\phi$:
+
+        $$r=\frac{\cos(\lambda)}{\sin(\theta)\cos(\phi)}=\frac{\sin(\lambda)}{\sin(\theta)\sin(\phi)}$$
+
+        Using this, we get:
+
+        $$\frac{\cos(\lambda)}{\sin(\theta)\cos(\phi)}=\frac{\sin(\lambda)}{\sin(\theta)\sin(\phi)}$$
+        $$\tan(\lambda)=\tan(\phi)$$
+        $$\lambda=\phi$$
+
+        Next, combining provided parametrization with the above, we get:
+
+        $$r\cos(\theta)=\lambda$$
+        $$r\sin(\theta)\sin(\phi)=\sin(\lambda)$$
+        $$\frac{\lambda}{\cos(\theta)}=\frac{\sin(\lambda)}{\sin(\theta)\sin(\phi)}$$
+
+        But, from what we obtained for $\lambda=\phi$, we can simplify:
+
+        $$\lambda=\frac{\cos(\theta)}{\sin(\theta)}$$
+        $$\theta=\cot^{-1}\left( \lambda \right)$$
+
+        Finally, from our equation for $z$, we can say:
+
+        $$r\sin(\theta)\cos(\phi)=\cos(\lambda)$$
+
+        Which gets us:
+
+        $$r=\frac{1}{\sin(\theta)}$$
+
+        Using our trigonometric simplification rules, we may see:
+
+        $$r=\sqrt{\lambda^2+1}$$
+
+        Combining our findings, we may write the parametrization as:
+
+        $$\boxed{\{r,\theta,\phi\}\to\{\sqrt{\lambda^2+1},\cot^{-1}(\lambda),\lambda\}}$$
+
       \item 
+
+        The tangent vector to the curve may simply be found by taking the differential of the parametrizations. Let us begin by using the $x,y,z$ parametrization:
+
+        $$\frac{d}{d\lambda}\left\{ x,y,z \right\}=\frac{d}{d\lambda}\left\{ \cos(\lambda),\sin(\lambda),\lambda \right\}$$
+        $$\boxed{V^p=\left\{ -\sin(\lambda),\cos(\lambda),1 \right\}}$$
+
+        Now, we use our result from (a):
+
+        $$\frac{d}{d\lambda}\left\{ r,\theta,\phi \right\}=\frac{d}{d\lambda}\left\{ \sqrt{\lambda^2+1},\cot^{-1}(\lambda), \lambda\right\}$$
+        $$\boxed{V^p=\left\{ \frac{\lambda}{\sqrt{\lambda^2+1}},-\frac{1}{\lambda^2+1}, 1 \right\}}$$
 
     \end{enumerate}
 
