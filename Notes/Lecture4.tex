@@ -839,6 +839,151 @@
 
     \end{itemize}
 
+  \item Where are we?
+
+    \begin{itemize}
+
+      \item Special relativity: equivalence of inertial frames and constant $c$
+
+      \item Notion of a manifold which has a coordinate system and (co)tangent spaces
+
+      \item Curved spacetime as a manifold
+
+      \item Gravity is universal $\to$ equivalence principle; gravity as a property of spacetime, not a force
+
+      \item The metric measures distances in spacetime ($\eta_{\mu\nu}\to g_{\mu\nu}$)
+
+        \begin{itemize}
+
+          \item Invariant distance $ds^2=g_{\mu\nu}dx^{\mu}dx^{\nu}$
+
+        \end{itemize}
+
+      \item Covariant derivatives require a connection between nearby points on the manifold ($\Gamma \approx (d/dx)g$)
+
+      \item Metric compatible, torsion-free connection: Christoffel
+
+      \item Connection expresses geodesics (straight lines $\leftrightarrow$ parallel transport)
+
+      \item Parallel transport in a loop: Riemann Curvature Tensor
+
+        \begin{itemize}
+
+          \item Ricci Tensor, Ricci Scalar, Weyl Tensor
+
+        \end{itemize}
+
+      \item Energy and Momentum in Curved Spacetime
+
+        $$U^{\mu}=\frac{dx^{\mu}}{d\tau}$$
+        $$p^{\mu}=mU^{\mu}$$
+        $$T^{\mu\nu}:\,\, p^{\mu}\text{ across }x^{\nu}$$
+        $$T^{\mu\nu}=(\rho+p)U^{\mu}U^{\nu}+p\eta^{\mu\nu}$$
+
+    \end{itemize}
+
+  \item Minimal Coupling Principle
+
+    \begin{itemize}
+
+      \item Law of physics in inertial, flat spacetime
+
+      \item Write it in a covariant form
+
+      \item Profit! (assert that this law remains true in curved spacetime)
+
+        $$\eta_{\mu\nu}\to g_{\mu\nu}\quad\text{ and }\partial_{\mu}\nabla_{\mu}$$
+
+        \begin{itemize}
+
+          \item We have already been implicitly thinking this way
+
+        \end{itemize}
+
+      \item Geodesic equation:
+
+        $$\partial_{\mu}T^{\mu\nu}\to \nabla_{\mu}T^{\mu\nu}$$
+
+      \item Does the geodesic equation actually describe gravitational motion in the Newtonian limit?
+
+        \begin{itemize}
+
+          \item Weak field (perturbation of flat space)
+
+          \item Slow moving ($ v<< c$)
+
+          \item Constant in time
+
+            $$v<<c\to \frac{dx^i}{d\tau}<<\frac{dt}{d\tau}$$
+            $$\frac{d^2x^{\mu}}{d\tau^2}+\Gamma^{\mu}_{00}\left( \frac{dt}{d\tau} \right)^2$$
+            $$\Gamma ^{\sigma}_{\mu\nu}=\frac{1}{2}g^{\sigma\rho}(\partial_{\mu}g_{\nu\rho}+\partial_{\nu}g_{\rho\mu}-\partial_{\rho}g_{\mu\nu})$$
+
+        \end{itemize}
+
+      \item Plugging in the Newtonian limit, we may write:
+
+        $$\frac{d^2x^{\mu}}{d\tau^2}=\frac{1}{2}\eta^{\mu\lambda}\partial_{\lambda}h_{00}\left( \frac{dt}{d\tau} \right)^2$$
+
+    \end{itemize}
+
+  \item Einstein's Equation (1907-1915)
+
+    \begin{itemize}
+
+      \item We want $\nabla^2\Phi=4\pi G\rho$
+
+      \item Trying conservation of energy and combining with the Bianchi Identity, we can get:
+
+        $$\nabla^{\mu}\underbrace{(R_{\mu\mu}-\frac{1}{2}g_{\mu\nu}R)}_{G_{\mu\nu}}=0$$
+
+        \begin{itemize}
+
+          \item Where $G_{\mu\nu}$ is the Einstein Tensor
+
+        \end{itemize}
+
+      \item We can obtain:
+
+        $$R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R=G_{\mu\nu}=kT_{\mu\nu}$$
+
+      \item Contracting both sides, we can get:
+
+        $$R=-kT$$
+
+        \begin{itemize}
+
+          \item This means:
+
+            $$R_{\mu\nu}=k\left( T_{\mu\nu}-\frac{1}{2}Tg_{\mu\nu} \right)$$
+
+        \end{itemize}
+
+      \item After a series (pun intended) of Taylor expansions, and discarding many unneeded terms, and, finally, combining with Poisson's Equation, we may write:
+
+        $$R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}=G_{\mu\nu}=8\pi GT_{\mu\nu}$$
+
+        \begin{itemize}
+
+          \item Equivalently, we may write:
+
+            $$R_{\mu\nu}=8\pi G\left( T_{\mu\nu}-\frac{1}{2}Tg_{\mu\nu} \right)$$
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Quantum Gravity
+
+    $$g_{\mu\nu}\to \tilde{g}_{\mu\nu}\,\quad\text{ quantum field}$$
+
+    \begin{itemize}
+        
+      \item Essentially how QED cam from E\&M
+
+      \item So far, haven't succeeded ``non-renormalizable theory''
+
+    \end{itemize}
+
 \end{itemize}
 
 \end{document}
