@@ -1,0 +1,180 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: General Relativity and Cosmology
+% Professor: J. Blazek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Lecture 5 — Einstein's Equations and Schwarzschild}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: J. Blazek}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item We may begin with Einstein's equations
+
+    $$G_{\mu\nu}=8\pi G T_{\mu\nu}$$
+
+    \begin{itemize}
+
+      \item Note that the tensors form second order non-linear differential equations
+
+    \end{itemize}
+
+  \item Symmetric Tensor ($n=4$ dimensions)
+
+    \begin{itemize}
+
+      \item $\frac{n^2-n}{n}+n=\frac{n^2+n}{2}=10$ degrees of freedom
+
+      \item General relativity sees diffeomorphism invariance, so four of the degrees of freedom are removed (since it isn't $x^{\mu}\to x^{\mu'}$)
+
+      \item Solving these differential equations is extremely complex, so we will make some assumptions to simplify analysis:
+
+        \begin{itemize}
+
+          \item Boundary conditions and initial conditions
+
+          \item Limits
+
+          \item Simplify through symmetry
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Symmetric General Relativity
+
+    \begin{itemize}
+
+      \item Spherical symmetry and static
+
+      \item Homogenous and isotropic: FLRW universe/cosmology
+
+      \item $T_{\mu\nu}=0$, small perturbations are gravitational waves
+
+      \item In Newtonian mechanics, with three masses $M_1$, $M_2$, and much smaller $M_3$, we may write: $\Phi_{M_3}=\Phi_{M_1}+\Phi_{M_2}$
+
+        \begin{itemize}
+
+          \item In General Relativity, $g_{\mu\nu}$ depends on $M_1$ and $M_2$, as well as the binding energy between
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Schwarzschild
+
+    \begin{itemize}
+        
+      \item Only vacuum solution with spherical symmetry
+
+      \item We assume a spherical system that is static
+
+      \item We use Minkowski space, with spherical coordinates:
+
+        $$ds^2=-dt^2+dx^2+dy^2+dz^2=-dt^2+dr^2+r^2\underbrace{(d\theta^2+\sin^2(\theta)\,d\theta^2)}_{d\Omega^2}$$
+
+        \begin{itemize}
+
+          \item We may rescale this with functions of $r$:
+
+            $$ds^2=-A(r)\,dt^2+B(r)\,dr^2+C(r)r^2\,d\Omega^2$$
+
+          \item Furthermore, we define $r\to\sqrt{C(r)}$
+
+            $$ds^2=-A(r)\,dt^2+B(r)\,dr^2+r^2\,d\Omega^2$$
+            $$ds^2=-e^{2\alpha(r)}\,dt^2+e^{\beta(r)}\,dr^2+r^2\,d\Omega^2$$
+
+          \item For the diagonal metric, we way find $\Gamma^{\phi}_{r\phi}=(1/r)$, then continuing Christoffel calculations, using Riemann, and then contracting to Ricci, we find:
+
+            $$R_{tt}=e^{2(\alpha-\beta)}\left[ \partial_r^{2}\alpha+(\partial_r\alpha)^2-\partial_r\alpha\partial_r\beta+\frac{2}{r}\partial_r\alpha \right]$$
+            $$R_{rr}=-\partial^2_r\alpha-(\partial_r\alpha)^2+\partial_r\alpha\partial_r\beta+\frac{2}{r}\partial_r\beta$$
+            $$R_{\theta\theta}=e^{-2\beta}\left[ r(\partial_r\beta-\partial_r\alpha)-1 \right]+1$$
+            $$R_{\phi\phi}=\sin^2(\theta)R_{\theta\theta}$$
+
+          \item We want a $T_{\mu\nu}=0$ solution, which implies $G_{\mu\nu}=0$, which then implies $R_{\mu\nu}=0$
+
+            \begin{itemize}
+
+              \item This is known as ``Ricci Flat'' (not really flat)
+
+            \end{itemize}
+
+          \item We move terms around to find:
+
+            $$e^{2(\beta-\alpha)}R_{tt}+R_{rr}=0$$
+            $$\frac{2}{r}\left( \partial_r\alpha+\partial_r\beta \right)=0$$
+            $$\alpha=-\beta$$
+
+          \item Taking:
+
+            $$R_{\theta\theta}=0\quad\text{ and }\quad -e^{2\alpha}\left[ 2r\partial_r\alpha+1 \right]+1=0$$
+
+          \item We get:
+
+            $$e^{2\alpha}\left[ 2r\partial_r\alpha+1 \right]=\partial_r(re^{2\alpha})$$
+
+          \item We define $A(r)=e^{2\alpha}$ and $y(r)=rA(r)$, which gives:
+
+            $$y=r+C\Rightarrow A(r)=1+\frac{c}{r}$$
+            $$A(r)=1-\frac{R_s}{r}$$
+
+          \item Where $R_s$ is the Schwarzschild radius, which allows us to write:
+            $$ds^2=-\left( 1-\frac{R_s}{r} \right)\,dt^2+\left( 1-\frac{R_s}{r} \right)^{-1}\,dr^2+r^2\,d\Omega$$
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Black Holes
+
+    \begin{itemize}
+
+      \item Using Newtonian $g_{tt}=-(1+2\Phi)$, we get:
+
+        $$R_s=-2\Phi$$
+
+      \item With a point mass:
+
+        $$\Phi=-\frac{GM}{r}$$
+
+      \item Thus, $R_s=2GM$
+
+      \item Schwarzschild Properties:
+
+        \begin{enumerate}
+
+          \item $M\to0,\quad g_{MV}\to\eta_{M\nu}$
+
+          \item $r\to\infty,\quad g_{M\nu}\to\eta_{M\nu}$
+
+          \item $r=0,\quad \dfrac{R_s}{r}\to\infty$
+
+          \item $r=R_s,\quad \left( 1-\frac{R_s}{r} \right)^{-1}\to\infty$
+
+        \end{enumerate}
+
+      \item For Black Holes, light cones are deformed by null geodesics. We may derive:
+
+        $$\frac{dt}{dr}=\pm\left( 1-\frac{2GM}{r} \right)^{-1}$$
+
+        \begin{itemize}
+
+          \item As $r\to\infty$ back to $45^{\circ}$
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Anthropic Principle
+
+\end{itemize}
+
+\end{document}
+
