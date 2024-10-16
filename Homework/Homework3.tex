@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: General Relativity and Cosmology
+% Professor: J. Blazek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Homework 3}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: J. Blazek}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+        Per the given metric, we may write:
+
+        $$I=\frac{1}{2}\int ds(\dot{\psi}^2+\sin^2(\psi)\dot{\theta}^2+\sin^2(\psi)\sin^2(\theta)\dot{\phi}^2)$$
+
+        This gives us:
+
+        $$\delta I=\frac{1}{2}\int ds(2\dot{\psi}\,\delta\dot{\psi}+\sin(2\psi)\dot{\theta}^2\,\delta\psi+\sin(2\psi)\sin^2(\theta)\dot{\phi}^2\,\delta\psi+2\sin^2(\psi)\dot{\theta}\,\delta\dot{\theta}$$
+        $$+\sin(2\theta)\sin^2(\psi)\dot{\phi}^2\,\delta\theta+2\sin^2(\psi)\sin^2(\theta)\dot{\phi}\,\delta\dot{\phi})$$
+
+        We can apply the property that $\delta\dot{x}=\frac{d}{ds}\delta x$, and integrate by parts to get:
+
+        $$\delta I=\frac{1}{2}\int ds[(-2\ddot{\psi}+\sin(2\psi)\dot{\theta}^2+\sin(2\psi)\sin^2(\theta)\dot{\phi}^2)\,\delta\psi+(-2\sin^2(\psi)\ddot{\theta}-2\sin(2\psi)\dot{\theta}\dot{\psi}$$
+        $$+\sin(2\theta)\sin^2(\psi)\dot{\phi}^2)\,\delta\theta-(2\sin(2\psi)\sin^2(\theta)\dot{\psi}\dot{\phi}+2\sin^2(\psi)\sin(2\theta)\dot{\theta}\dot{\phi}+2\sin^2(\psi)\sin^2(\theta)\ddot{\phi})\,\delta\phi]$$
+
+        From this long expression, we obtain three expressions, which we know must evaluate to zero, independently, due to the fact that the geodesic must be zero independent of variations. Thus, we see:
+
+        $$-\ddot{\psi}+\frac{1}{2}\sin(2\psi)\dot{\theta}^2+\frac{1}{2}\sin(2\psi)\sin^2(\theta)\dot{\phi}^2=0$$
+        $$-\sin^2(\psi)\ddot{\theta}-\sin(2\psi)\dot{\theta}\dot{\psi}+\frac{1}{2}\sin(2\theta)\sin^2(\psi)\dot{\phi}^2=0$$
+        $$-\sin(2\psi)\sin^2(\theta)\dot{\psi}\dot{\phi}-\sin^2(\psi)\sin(2\theta)\dot{\theta}\dot{\phi}-\sin^2(\psi)\sin^2(\theta)\ddot{\phi}=0$$
+
+        We want to put these in terms that mach the geodesic equation form, or with an isolated second order derivative. This gives us:
+
+        $$\ddot{\psi}-\frac{1}{2}\sin(2\psi)\dot{\theta}^2-\frac{1}{2}\sin(2\psi)\sin^2(\theta)\dot{\phi}^2=0$$
+        $$\ddot{\theta}+2\cot(\psi)\dot{\theta}\dot{\psi}-\frac{1}{2}\sin(2\theta)\dot{\phi}^2=0$$
+        $$\ddot{\phi}+2\cot(\psi)\dot{\psi}\dot{\phi}+2\cot(\theta)\dot{\theta}\dot{\phi}=0$$
+
+        With this form, we can now compare with the formula:
+
+        $$\ddot{x}^a+\Gamma^a_{bc}\dot{x}^b\dot{x}^c=0$$
+
+        First, taking $a=\psi$, we may see that the symbol is non-zero only for $b=c=\theta$ or $b=c=\phi$. Thus, we see the only non-zero terms with $a=\psi$ are:
+
+        $$\Gamma^{\psi}_{\theta\theta}=-\frac{1}{2}\sin(2\psi)$$
+        $$\Gamma^{\psi}_{\phi\phi}=-\frac{1}{2}\sin(2\psi)\sin^2(\theta)$$
+
+        Next, we take $a=\theta$. We may see that the symbol is non-zero for $b=\theta$ and $c=\psi$, or vice versa, and $b=c=\phi$. Thus, we get the non-zero terms as:
+
+        $$\Gamma^{\theta}_{\psi\theta}=\Gamma^{\theta}_{\theta\psi}=2\cot(\psi)$$
+        $$\Gamma^{\theta}_{\phi\phi}=-\frac{1}{2}\sin(2\theta)$$
+
+        Finally, we take $a=\phi$, and see that one of the $b$ or $c$ must be $\phi$, with the other being $\psi$ or $\theta$. This gives us the non-zero terms as:
+
+        $$\Gamma^{\phi}_{\psi\phi}=\Gamma^{\phi}_{\phi\psi}=2\cot(\psi)$$
+        $$\Gamma^{\phi}_{\theta\phi}=\Gamma^{\phi}_{\phi\theta}=2\cot(\theta)$$
+
+        Thus, we see the non-zero terms are:
+
+        $$\boxed{\left\{\begin{array}{lll} \Gamma^{\psi}_{\theta\theta}&=&-\frac{1}{2}\sin(2\psi)\\\Gamma^{\psi}_{\phi\phi}&=&-\frac{1}{2}\sin(2\psi)\sin^2(\theta)\\\Gamma^{\theta}_{\psi\theta}=\Gamma^{\theta}_{\theta\psi}&=&2\cot(\psi)\\\Gamma^{\theta}_{\phi\phi}&=&-\frac{1}{2}\sin(2\theta)\\\Gamma^{\phi}_{\psi\phi}&=&\Gamma^{\phi}_{\phi\psi}=2\cot(\psi)\\\Gamma^{\phi}_{\theta\phi}=\Gamma^{\phi}_{\phi\theta}&=&2\cot(\theta) \end{array}}$$
+
+      \item 
+
+      \item 
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+      \item 
+
+      \item 
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+      \item 
+
+      \item 
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
