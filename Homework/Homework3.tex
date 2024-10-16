@@ -73,6 +73,16 @@
 
       \item 
 
+        We know the Riemann Tensor is defined as:
+
+        $$R^{\rho}_{\sigma\mu\nu}=\partial_{\mu}\Gamma^{\rho}_{\mu\sigma}-\partial_{\nu}\Gamma^{\rho}_{\mu\sigma}+\Gamma^{\rho}_{\mu\lambda}\Gamma^{\lambda}_{\nu\sigma}-\Gamma^{\rho}_{\mu\lambda}\Gamma^{\lambda}_{\mu\sigma}$$
+
+        Let us begin with $\rho=\psi$:
+
+        $$R^{\psi}_{\sigma\mu\nu}=\partial_{\mu}\Gamma^{\psi}_{\mu\sigma}-\partial_{\nu}\Gamma^{\psi}_{\mu\sigma}+\Gamma^{\psi}_{\mu\lambda}\Gamma^{\lambda}_{\nu\sigma}-\Gamma^{\psi}_{\mu\lambda}\Gamma^{\lambda}_{\mu\sigma}$$
+
+        By observation, we may see that this is non-zero only for $\mu=\sigma=\theta\text{ or }\phi$ or $\mu=\lambda=\theta\text{ or }\phi$. Thus, let us begin with the former:
+
       \item 
 
     \end{enumerate}
@@ -83,7 +93,50 @@
 
       \item 
 
+        The Schwarzschild metric is given by:
+
+        $$ds^2=-\left( 1-\frac{2GM}{r} \right)\,dt^2+\left( 1-\frac{2GM}{r} \right)^{-1}\,dr^2+r^2\,d\Omega^2$$
+
+        We know that $\Omega$ refers to the angular trajectory of the particle; we may assume that the trajectory is spherically similar to get $d\Omega=0$, which gives us:
+
+        $$ds^2=-\left( 1-\frac{2GM}{r} \right)\,dt^2+\left( 1-\frac{2GM}{r} \right)^{-1}\,dr^2$$
+
+        Since the proper time is taken with fixed spatial coordinates, we may combine the above, along with:
+
+        $$d\tau^2=\left( 1-\frac{2GM}{r} \right)\,dt^2$$
+
+        to get:
+
+        $$ds^2=-d\tau^2+\left( 1-\frac{2GM}{r} \right)^{-1}\,dr^2$$
+
+        Given that the particle must be time or light-like, we know that $ds^2\leq 0$, which allows us to write:
+
+        $$-d\tau^2+\left( 1-\frac{2GM}{r} \right)^{-1}\,dr^2\leq 0$$
+
+        We can now rearrange to get:
+
+        $$\left( 1-\frac{2GM}{r} \right)^{-1}\,dr^2\leq d\tau^2$$
+        $$\left( 1-\frac{2GM}{r} \right)^{-1}\leq \left(\frac{d\tau}{dr}\right)^2$$
+        $$\left(\frac{dr}{d\tau}\right)^2\leq 1-\frac{2GM}{r}$$
+
+        And finally, we get:
+
+        $$\boxed{\Big|\frac{dr}{d\tau}\Big|\geq \sqrt{\frac{2GM}{r}-1}}$$
+
       \item 
+
+        We may integrate along the particle's trajectory to find the proper time. Let us use the result from part (a) at its maximum to find the maximum proper time. Thus, we use:
+
+        $$\Big|\frac{dr}{d\tau}\Big|=\sqrt{\frac{2GM}{r}-1}$$
+
+        To get:
+
+        $$\int d\tau_{max}=\int_0^{2GM} \frac{dr}{\sqrt{\frac{2GM}{r}-1}}$$
+        $$\tau_{max}=\left[ -2GM\tan^{-1}\left( \sqrt{\frac{2GM}{r}-1} \right)-GM\sin\left( 2\tan^{-1}\left( \sqrt{\frac{2GM}{r}}-1 \right) \right) \right]_0^{2GM}$$
+
+        We may see that the terms go to zero at $r=2GM$. At $r=0$, we get:
+
+        $$\boxed{\tau_{max}=\pi GM}$$
 
       \item 
 
