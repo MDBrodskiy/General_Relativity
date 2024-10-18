@@ -45,8 +45,8 @@
         We want to put these in terms that mach the geodesic equation form, or with an isolated second order derivative. This gives us:
 
         $$\ddot{\psi}-\frac{1}{2}\sin(2\psi)\dot{\theta}^2-\frac{1}{2}\sin(2\psi)\sin^2(\theta)\dot{\phi}^2=0$$
-        $$\ddot{\theta}+2\cot(\psi)\dot{\theta}\dot{\psi}-\frac{1}{2}\sin(2\theta)\dot{\phi}^2=0$$
-        $$\ddot{\phi}+2\cot(\psi)\dot{\psi}\dot{\phi}+2\cot(\theta)\dot{\theta}\dot{\phi}=0$$
+        $$\ddot{\theta}+\cot(\psi)\dot{\theta}\dot{\psi}-\frac{1}{2}\sin(2\theta)\dot{\phi}^2=0$$
+        $$\ddot{\phi}+\cot(\psi)\dot{\psi}\dot{\phi}+\cot(\theta)\dot{\theta}\dot{\phi}=0$$
 
         With this form, we can now compare with the formula:
 
@@ -59,17 +59,17 @@
 
         Next, we take $a=\theta$. We may see that the symbol is non-zero for $b=\theta$ and $c=\psi$, or vice versa, and $b=c=\phi$. Thus, we get the non-zero terms as:
 
-        $$\Gamma^{\theta}_{\psi\theta}=\Gamma^{\theta}_{\theta\psi}=2\cot(\psi)$$
+        $$\Gamma^{\theta}_{\psi\theta}=\Gamma^{\theta}_{\theta\psi}=\cot(\psi)$$
         $$\Gamma^{\theta}_{\phi\phi}=-\frac{1}{2}\sin(2\theta)$$
 
         Finally, we take $a=\phi$, and see that one of the $b$ or $c$ must be $\phi$, with the other being $\psi$ or $\theta$. This gives us the non-zero terms as:
 
-        $$\Gamma^{\phi}_{\psi\phi}=\Gamma^{\phi}_{\phi\psi}=2\cot(\psi)$$
-        $$\Gamma^{\phi}_{\theta\phi}=\Gamma^{\phi}_{\phi\theta}=2\cot(\theta)$$
+        $$\Gamma^{\phi}_{\psi\phi}=\Gamma^{\phi}_{\phi\psi}=\cot(\psi)$$
+        $$\Gamma^{\phi}_{\theta\phi}=\Gamma^{\phi}_{\phi\theta}=\cot(\theta)$$
 
         Thus, we see the non-zero terms are:
 
-        $$\boxed{\left\{\begin{array}{lll} \Gamma^{\psi}_{\theta\theta}&=&-\frac{1}{2}\sin(2\psi)\\\Gamma^{\psi}_{\phi\phi}&=&-\frac{1}{2}\sin(2\psi)\sin^2(\theta)\\\Gamma^{\theta}_{\psi\theta}=\Gamma^{\theta}_{\theta\psi}&=&2\cot(\psi)\\\Gamma^{\theta}_{\phi\phi}&=&-\frac{1}{2}\sin(2\theta)\\\Gamma^{\phi}_{\psi\phi}&=&\Gamma^{\phi}_{\phi\psi}=2\cot(\psi)\\\Gamma^{\phi}_{\theta\phi}=\Gamma^{\phi}_{\phi\theta}&=&2\cot(\theta) \end{array}}$$
+        $$\boxed{\left\{\begin{array}{lll} \Gamma^{\psi}_{\theta\theta}&=&-\frac{1}{2}\sin(2\psi)\\\Gamma^{\psi}_{\phi\phi}&=&-\frac{1}{2}\sin(2\psi)\sin^2(\theta)\\\Gamma^{\theta}_{\psi\theta}=\Gamma^{\theta}_{\theta\psi}&=&\cot(\psi)\\\Gamma^{\theta}_{\phi\phi}&=&-\frac{1}{2}\sin(2\theta)\\\Gamma^{\phi}_{\psi\phi}=\Gamma^{\phi}_{\phi\psi}&=&\cot(\psi)\\\Gamma^{\phi}_{\theta\phi}=\Gamma^{\phi}_{\phi\theta}&=&\cot(\theta) \end{array}}$$
 
       \item 
 
@@ -77,13 +77,141 @@
 
         $$R^{\rho}_{\sigma\mu\nu}=\partial_{\mu}\Gamma^{\rho}_{\mu\sigma}-\partial_{\nu}\Gamma^{\rho}_{\mu\sigma}+\Gamma^{\rho}_{\mu\lambda}\Gamma^{\lambda}_{\nu\sigma}-\Gamma^{\rho}_{\mu\lambda}\Gamma^{\lambda}_{\mu\sigma}$$
 
-        Let us begin with $\rho=\psi$:
+        We need to ``turn the crank'' and simply analyze cases, then exploiting the symmetry (or anti-symmetry) of the Riemann Tensor. Let us begin analyzing with $\rho=\psi$, which gets us:
 
         $$R^{\psi}_{\sigma\mu\nu}=\partial_{\mu}\Gamma^{\psi}_{\mu\sigma}-\partial_{\nu}\Gamma^{\psi}_{\mu\sigma}+\Gamma^{\psi}_{\mu\lambda}\Gamma^{\lambda}_{\nu\sigma}-\Gamma^{\psi}_{\mu\lambda}\Gamma^{\lambda}_{\mu\sigma}$$
 
-        By observation, we may see that this is non-zero only for $\mu=\sigma=\theta\text{ or }\phi$ or $\mu=\lambda=\theta\text{ or }\phi$. Thus, let us begin with the former:
+        Assuming that $\mu=\sigma=\theta$ gets us:
+
+        $$R^{\psi}_{\theta\theta\nu}=\partial_{\theta}\Gamma^{\psi}_{\theta\theta}-\partial_{\nu}\Gamma^{\psi}_{\theta\theta}+\Gamma^{\psi}_{\theta\lambda}\Gamma^{\lambda}_{\nu\theta}-\Gamma^{\psi}_{\theta\lambda}\Gamma^{\lambda}_{\theta\theta}$$
+        $$R^{\psi}_{\theta\theta\nu}=\partial_{\theta}\left[ -\frac{1}{2}\sin(2\psi) \right]-\partial_{\nu}\left[ -\frac{1}{2}\sin(2\psi) \right]+\Gamma^{\psi}_{\theta\lambda}\Gamma^{\lambda}_{\nu\theta}-\Gamma^{\psi}_{\theta\lambda}\Gamma^{\lambda}_{\theta\theta}$$
+
+        We may observe that for the last two terms, the only non-zero term occurs when $\lambda=\theta$. Furthermore, for any value $\nu\neq \psi$, the tensor is zero as well. Thus, we find:
+
+        $$R^{\psi}_{\theta\theta\psi}=\cos(2\psi)-\frac{1}{2}\sin(2\psi)\cdot\cot(\psi)$$
+        $$R^{\psi}_{\theta\theta\psi}=\cos(2\psi)-\cos^2(\psi)$$
+        $$R^{\psi}_{\theta\theta\psi}=\cos^2(\psi)-\sin^2(\psi)-\cos^2(\psi)$$
+        $$R^{\psi}_{\theta\theta\psi}=-\sin^2(\psi)$$
+
+        By anti-symmetry, we also get:
+
+        $$\boxed{R^{\psi}_{\theta\psi\theta}=-R^{\psi}_{\theta\theta\psi}=\sin^2(\psi)}$$
+
+        By the summing property of the last three indices, we may observe that because:
+
+        $$\underbrace{R^{\psi}_{\theta\psi\theta}+R^{\psi}_{\theta\theta\psi}}_0+R^{\psi}_{\sigma\mu\nu}=0$$
+
+        We get:
+
+        $$R^{\psi}_{\sigma\mu\nu}=0$$
+
+        Where $\sigma,\mu,$ and $\nu$ are equal to either $\psi$ or $\theta$ and do not produce a term equivalent to the first two. Next, let us analyze with the same $\rho$, but change $\mu=\sigma=\phi$. This gets us:
+
+        $$R^{\psi}_{\phi\phi\nu}=\partial_{\phi}\Gamma^{\psi}_{\phi\phi}-\partial_{\nu}\Gamma^{\psi}_{\phi\phi}+\Gamma^{\psi}_{\phi\lambda}\Gamma^{\lambda}_{\nu\phi}-\Gamma^{\psi}_{\phi\lambda}\Gamma^{\lambda}_{\phi\phi}$$
+        $$R^{\psi}_{\phi\phi\nu}=\cancel{\partial_{\phi}\left[ -\frac{1}{2}\sin(2\psi)\sin^2(\theta) \right]}-\partial_{\nu}\left[ -\frac{1}{2}\sin(2\psi)\sin^2(\theta) \right]+\Gamma^{\psi}_{\phi\lambda}\Gamma^{\lambda}_{\nu\phi}-\Gamma^{\psi}_{\phi\lambda}\Gamma^{\lambda}_{\phi\phi}$$
+
+        Summing all non-zero cases of $\lambda$ (only when $\lambda=\phi$), we get:
+
+        $$R^{\psi}_{\phi\phi\nu}=\partial_{\nu}\left[ \frac{1}{2}\sin(2\psi)\sin^2(\theta) \right]+\Gamma^{\psi}_{\phi\phi}\Gamma^{\phi}_{\nu\phi}\cancel{-\Gamma^{\psi}_{\phi\phi}\Gamma^{\phi}_{\phi\phi}}$$
+
+        We may see that we obtain non-zero values for both $\nu=\theta$ and $\nu=\psi$. Let us first analyze the former:
+
+        $$R^{\psi}_{\phi\phi\theta}=\frac{1}{2}\sin(2\psi)\sin(2\theta)+\left[ -\frac{1}{2}\sin(2\psi)\sin^2(\theta) \right][\cot(\theta)]$$
+        $$R^{\psi}_{\phi\phi\theta}=0$$
+
+        And now the latter:
+
+        $$R^{\psi}_{\phi\phi\psi}=\frac{1}{2}\cos(2\psi)\sin^2(\theta)+\left[ -\frac{1}{2}\sin(2\psi)\sin^2(\theta) \right][\cot(\psi)]$$
+        $$R^{\psi}_{\phi\phi\psi}=-\sin^2(\psi)\sin^2(\theta)$$
+
+        By anti-symmetry, we may see:
+
+        $$\boxed{R^{\psi}_{\phi\psi\phi}=-R^{\psi}_{\phi\phi\psi}=\sin^2(\psi)\sin^2(\theta)}$$
+
+        And, similarly, other $\psi$-$\phi$ terms are zero. Thus, we have obtained all non-zero possibilities for $\rho=\psi$. We move on to $\rho=\theta$:
+
+        $$R^{\theta}_{\sigma\mu\nu}=\partial_{\mu}\Gamma^{\theta}_{\mu\sigma}-\partial_{\nu}\Gamma^{\theta}_{\mu\sigma}+\Gamma^{\theta}_{\mu\lambda}\Gamma^{\lambda}_{\nu\sigma}-\Gamma^{\theta}_{\mu\lambda}\Gamma^{\lambda}_{\mu\sigma}$$
+
+        For theta, we know that the bottom indices of the Christoffels must either both be $\phi$ or a combination of $\psi$ and $\phi$. Let us first analyze where $\sigma=\mu=\phi$:
+
+        $$R^{\theta}_{\phi\phi\nu}=\cancel{\partial_{\phi}\Gamma^{\theta}_{\phi\phi}}-\partial_{\nu}\Gamma^{\theta}_{\phi\phi}+\Gamma^{\theta}_{\phi\lambda}\Gamma^{\lambda}_{\nu\phi}-\Gamma^{\theta}_{\phi\lambda}\Gamma^{\lambda}_{\phi\phi}$$
+
+        Summing for the $\lambda$ values, we see that both $\phi$ and $\psi$ are valid:
+
+        $$R^{\theta}_{\phi\phi\nu}=\partial_{\nu}\left[ \frac{1}{2}\sin(2\theta) \right]+\left[ -\frac{1}{2}\sin(2\theta) \right]\Gamma^{\phi}_{\nu\phi}+[\cot(\psi)]\Gamma^{\psi}_{\nu\phi}+\left[ \frac{1}{2}\sin(2\theta) \right][\cot(\theta)]$$
+        $$R^{\theta}_{\phi\phi\nu}=\partial_{\nu}\left[ \frac{1}{2}\sin(2\theta) \right]+\left[ -\frac{1}{2}\sin(2\theta) \right]\Gamma^{\phi}_{\nu\phi}+[\cot(\psi)]\Gamma^{\psi}_{\nu\phi}+\cos^2(\theta)$$
+
+        We now vary $\nu$. Let us begin with $\nu=\psi$:
+
+        $$R^{\theta}_{\phi\phi\psi}=\left[ -\frac{1}{2}\sin(2\theta) \right]\cot(\theta)+\cos^2(\theta)$$
+        $$R^{\theta}_{\phi\phi\psi}=0$$
+
+        Now with $\nu=\theta$:
+
+        $$R^{\theta}_{\phi\phi\theta}=-\sin^2(\psi)\sin^2(\theta)$$
+
+        By anti-symmetry, we may also say:
+
+        $$\boxed{R^{\theta}_{\phi\theta\phi}=-R^{\theta}_{\phi\phi\theta}=\sin^2(\psi)\sin^2(\theta)}$$
+
+        In the interest of condensing the matter present within this document, we skip the actual calculations (as the process is the same) and find:
+
+        $$R^{\theta}_{\psi\theta\psi}=-R^{\theta}_{\psi\psi\theta}=1$$
+        $$R^{\phi}_{\psi\phi\psi}=-R^{\phi}_{\psi\psi\phi}=1$$
+        $$R^{\phi}_{\theta\phi\theta}=-R^{\phi}_{\theta\theta\phi}=\sin^2(\psi)$$
+
+        By the fact the we may write the below equation, in tandem with the metric's diagonality, we know there are no additional non-zero values of the tensor:
+
+        $$R_{\rho\sigma\mu\nu}=g_{\rho\lambda}R^{\lambda}_{\sigma\mu\nu}$$
+
+        Thus, we get the non-zero Riemann Tensor values (grouped by anti-symmetry) as:
+
+        $$\boxed{\left\{\begin{array}{l} \left[\begin{array}{lll}  R^{\psi}_{\theta\theta\psi}&=&-\sin^2(\psi)\\R^{\psi}_{\theta\psi\theta}&=&\sin^2(\psi)\end{array} \\ \left[\begin{array}{lll}  R^{\psi}_{\phi\phi\psi}&=&-\sin^2(\psi)\sin^2(\theta)\\R^{\psi}_{\phi\psi\phi}&=&\sin^2(\psi)\sin^2(\theta)\end{array} \\\left[\begin{array}{lll}  R^{\theta}_{\phi\phi\theta}&=&-\sin^2(\psi)\sin^2(\theta)\\R^{\theta}_{\phi\theta\phi}&=&\sin^2(\psi)\sin^2(\theta)\end{array} \\\left[\begin{array}{lll}  R^{\theta}_{\psi\theta\psi}&=&1\\R^{\theta}_{\psi\psi\theta}&=&-1\end{array} \\\left[\begin{array}{lll}  R^{\phi}_{\psi\phi\psi}&=&1\\R^{\phi}_{\psi\psi\phi}&=&-1\end{array} \\\left[\begin{array}{lll}  R^{\phi}_{\theta\theta\phi}&=&-\sin^2(\psi)\\R^{\phi}_{\theta\phi\theta}&=&\sin^2(\psi)\end{array} \\\end{array}}$$
+
+        We may obtain the Ricci tensor by contracting the first and third terms of the Riemann tensor:
+
+        $$R_{\sigma\nu}=R^{\rho}_{\sigma\rho\nu}$$
+
+        This can be ``cranked out'' a bit quicker, and gives us a three-by-three matrix, with values as follows:
+
+        $$R_{\psi\psi}=\underbrace{R^{\psi}_{\psi\psi\psi}}_0+R^{\theta}_{\psi\theta\psi}+R^{\phi}_{\psi\phi\psi}=2$$
+        $$R_{\psi\theta}=\underbrace{R^{\psi}_{\psi\psi\theta}+R^{\theta}_{\psi\theta\theta}+R^{\phi}_{\psi\phi\theta}}_0=0$$
+        $$R_{\psi\phi}=\underbrace{R^{\psi}_{\psi\psi\phi}+R^{\theta}_{\psi\theta\phi}+R^{\phi}_{\psi\phi\phi}}_0=0$$
+        $$R_{\theta\theta}=R^{\psi}_{\theta\psi\theta}+\underbrace{R^{\theta}_{\theta\theta\theta}}_0+R^{\phi}_{\theta\phi\theta}=2\sin^2(\psi)$$
+        $$R_{\theta\psi}=R_{\psi\theta}=0$$
+        $$R_{\theta\phi}=\underbrace{R^{\psi}_{\theta\psi\phi}+R^{\theta}_{\theta\theta\phi}+R^{\phi}_{\theta\phi\phi}}_0=0$$
+        $$R_{\phi\phi}=R^{\psi}_{\phi\psi\phi}+R^{\theta}_{\phi\theta\phi}+\underbrace{R^{\phi}_{\phi\phi\phi}}_0=2\sin^2(\psi)\sin^2(\theta)$$
+        $$R_{\phi\psi}=R_{\psi\phi}=0$$
+        $$R_{\phi\theta}=R_{\theta\phi}=0$$
+
+        We may see that the Ricci tensor follows the diagonality of the metric, and can, therefore, be expressed as:
+
+        $$\boxed{R_{\mu\nu}=2g_{\mu\nu}}$$
+
+        The Ricci scalar is the contracted form of the Ricci tensor such that:
+
+        $$R=R^{\rho}_{\rho}=g^{\rho\mu}R_{\mu\rho}$$
+
+        This may be rewritten using the definition above as:
+
+        $$R=2g^{\rho\mu}g_{\mu\rho}$$
+
+        Given the diagonality, this can be simplified to:
+
+        $$R=2(1+1+1)$$
+        $$\boxed{R=6}$$
 
       \item 
+
+        This can be shown quite simply, as we know that $R=6$ from above, and for a 3-dimensional case as this, $n=3$. This gives:
+
+        $$R_{\rho\sigma\mu\nu}=\frac{6}{3(3-1)}\left[ g_{\rho\mu}g_{\sigma\nu}-g_{\rho\nu}g_{\sigma\mu} \right]$$
+
+        And ultimately:
+
+        $$\boxed{R_{\rho\sigma\mu\nu}=g_{\rho\mu}g_{\sigma\nu}-g_{\rho\nu}g_{\sigma\mu}}$$
+
+        Note that we may observe that writing in this form preserves the observed nature of the Riemann tensor from Part (b); that is, it is non-zero only for $\rho=\mu$ and $\sigma=\nu$ OR $\rho=\nu$ and $\sigma=\mu$. As such, though we will not confirm through manual calculation of the 81 terms, we may see that writing in this form behaves as expected, and, as such, it is maximally symmetric for this case.
 
     \end{enumerate}
 
@@ -134,13 +262,13 @@
         $$\int d\tau_{max}=\int_0^{2GM} \frac{dr}{\sqrt{\frac{2GM}{r}-1}}$$
         $$\tau_{max}=\left[ -2GM\tan^{-1}\left( \sqrt{\frac{2GM}{r}-1} \right)-GM\sin\left( 2\tan^{-1}\left( \sqrt{\frac{2GM}{r}}-1 \right) \right) \right]_0^{2GM}$$
 
-        We may see that the terms go to zero at $r=2GM$. At $r=0$, we get:
+        We may see that the terms go to zero at $r=2GM$. At $r=0$, we get (note that we reinstate the speed of light factor, $c$, to keep the correct units):
 
-        $$\boxed{\tau_{max}=\pi GM}$$
+        $$\boxed{\tau_{max}=\frac{\pi GM}{c^3}}$$
 
-        In solar masses, we return the $c$ component to write:
+        Given that we know the mass of the sun is approximately $2\cdot 10^{30}$, we can say that the mass of a black hole can be expressed by a multiple ($M$) of the solar mass, such that: $M_{BH}=\left( 2\cdot10^{30} \right)M$. This gives us:
 
-        $$\boxed{\tau_{max}=\frac{\pi GM}{c^3}\approx 4.9\pi\left[ \frac{\text{M}}{\text{M}_{\odot}}\si{\micro\second} \right]}$$
+        $$\boxed{\tau_{max}=\pi \left( 6.67\cdot10^{-11} \right)\left( 2\cdot10^{30} \right)M\approx 4.19\cdot10^{20}\left[ \frac{\text{M}}{c^3\text{M}_{\odot}}\si{\second} \right]=1.552\cdot10^{-5}\left[ \frac{\text{M}}{\text{M}_{\odot}}\si{\second} \right]}$$
 
       \item 
 
@@ -162,11 +290,76 @@
 
     \begin{enumerate}
 
-      \item 
+      \item Looking back to Problem 2 part (c), we may write:
+
+        $$d\tau^2=\left( 1-\frac{2GM}{r} \right)\,dt^2-\left( 1-\frac{2GM}{r} \right)^{-1}\,dr^2$$
+
+        Rearranging the differentials, we may rewrite this as:
+
+        $$1=\left( 1-\frac{2GM}{r} \right)\,\left(\frac{dt}{d\tau}\right)^2-\left( 1-\frac{2GM}{r} \right)^{-1}\,\left(\frac{dr}{d\tau}\right)^2$$
+        $$\left( \frac{dr}{dt} \right)^2=\left( 1-\frac{2GM}{r} \right)^2-\left( 1-\frac{2GM}{r} \right)\,\left(\frac{d\tau}{dt}\right)^2$$
+
+        We then need to bring in the following equation:
+
+        $$E=\left( 1-\frac{2GM}{r} \right)\,\frac{dt}{d\tau}$$
+
+        And rearrange:
+
+        $$\frac{d\tau}{dt}=\frac{1}{E}\left( 1-\frac{2GM}{r} \right)$$
+
+        Combining our equations, we get:
+
+        $$\left( \frac{dr}{dt} \right)^2=\left( 1-\frac{2GM}{r} \right)^2-\frac{1}{E^2}\left( 1-\frac{2GM}{r} \right)^3$$
+        $$\left( \frac{dr}{dt} \right)^2=\left( 1-\frac{2GM}{r} \right)^2\left[1-\frac{1}{E^2}\left( 1-\frac{2GM}{r} \right)\right]$$
+        $$\frac{dr}{dt}=\pm\left( 1-\frac{2GM}{r} \right)\sqrt{\left[1-\frac{1}{E^2}\left( 1-\frac{2GM}{r} \right)\right]}$$
+
+        We finally need to take into account that $E$ is constant, and zero at $r=r^*$, which allows us to write:
+
+        $$0=\left( 1-\frac{2GM}{r^*} \right)\sqrt{\left[1-\frac{1}{E^2}\left( 1-\frac{2GM}{r^*} \right)\right]}$$
+        $$\frac{1}{E^2}\left( 1-\frac{2GM}{r^*} \right)=1$$
+        $$E^2=\left( 1-\frac{2GM}{r^*} \right)$$
+
+        Returning this to our original equation, we may write:
+
+        $$\frac{dr}{dt}=\pm\left( 1-\frac{2GM}{r} \right)\sqrt{\left[1-\left( 1-\frac{2GM}{r^*} \right)^{-1}\left( 1-\frac{2GM}{r} \right)\right]}$$
+        $$\boxed{\frac{dr}{dt}=\pm\left( 1-\frac{2GM}{r} \right)\sqrt{\left[1-\left( \frac{r^*(r-2GM)}{r(r^*-2GM)}\right)\right]}}$$
 
       \item 
 
+        We may observe that:
+
+        $$dt_{proper}=\sqrt{\left( 1-\frac{2GM}{r} \right)}\,dt$$
+        $$dr_{proper}=\sqrt{\left( 1-\frac{2GM}{r} \right)^{-1}}\,dr$$
+
+        Thus, we divide the two to get (note the change to prime notation for simplicity):
+
+        $$\frac{dr'}{dt'}=\left( 1-\frac{2GM}{r} \right)^{-1}\,\frac{dr}{dt}$$
+
+        From (a), we know the value of $dr/dt$, which gives us:
+
+        $$\boxed{\frac{dr'}{dt'}=\sqrt{1-\frac{r^*(r-2GM)}{r(r^*-2GM)}}}$$
+
+        We may see that, as $r\to 2GM$, the fraction goes to zero, which gives us:
+
+        $$\boxed{\frac{dr'}{dt'}=1\Big|_{r\to2GM}}$$
+
       \item 
+
+        Per the relativistic Doppler effect, we may write (for some arbitrary observer):
+
+        $$\lambda'_{em}=\lambda_{em}\sqrt{\frac{1+v'}{1-v'}}$$
+
+        This lets us obtain:
+
+        $$\lambda'_{em}=\lambda_{em}\sqrt{\frac{\sqrt{r_{em}(r^{*}-2GM)}+\sqrt{2GM(r^{*}-r_{em})}}{\sqrt{r_{em}(r^{*}-2GM)}-\sqrt{2GM(r^{*}-r_{em})}}}$$
+
+        Using our shift equation from Carroll, we may write:
+
+        $$\lambda_{obs}=\lambda_{em}'\sqrt{\frac{1-\frac{2GM}{r^{*}}}{1-\frac{2GM}{r_{em}}}}$$
+
+        We may combine these two to get:
+
+        $$\boxed{\frac{\lambda_{obs}}{\lambda_{em}}=\sqrt{\frac{\sqrt{r_{em}(r^{*}-2GM)}+\sqrt{2GM(r^{*}-r_{em})}}{\sqrt{r_{em}(r^{*}-2GM)}-\sqrt{2GM(r^{*}-r_{em})}}\left[\frac{1-\frac{2GM}{r^{*}}}{1-\frac{2GM}{r_{em}}}\right]}}$$
 
     \end{enumerate}
 
