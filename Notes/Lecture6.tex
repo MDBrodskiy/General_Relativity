@@ -81,6 +81,221 @@
 
         \end{itemize}
 
+      \item Conservation of Energy Solution to Expanding Cloud:
+
+        $$\frac{1}{2}\dot{R}^2-\frac{2GM}{R}=C$$
+
+        \begin{itemize}
+
+          \item What is the physical meaning of $C$?
+
+            \begin{itemize}
+
+              \item $C=0$
+
+                You are just at escape velocity. As $R\to\infty$, $\dot{R}=v\to0$. Potential and kinetic both go to zero.
+                
+              \item $C>0$
+
+                Positive total energy. You have more than enough energy to escape. $\dot{R}>0$ as $R\to\infty$
+                
+              \item $C<0$
+
+                Negative total energy. You won't make it out to $R=\infty$, you will stop and turn around at some finite $t$
+                
+            \end{itemize}
+
+          \item These cases capture an ideal universe's expansion with only real matter
+
+          \item For a matter-only universe, $C$ describes the spatial geometry, with zero indicating flat, $C>0$ indicating open (negative curvature), and $C<0$ indicating closed (positive curvature)
+
+            \begin{itemize}
+
+              \item Note that $\Lambda$ complicates this
+
+            \end{itemize}
+
+        \end{itemize}
+
+      \item Using the first-order equation, we may write:
+
+        $$\frac{1}{2}\dot{R}^2=\frac{4}{3}\pi G\rho R^2+C$$
+        $$\left(\frac{\dot{R}}{R}\right)=\frac{8\pi G\rho}{3}+C$$
+
+      \item At $C=0$, we find $\rho_{crit}$:
+
+        $$\rho_{crit}=\frac{3H^2}{8\pi G}$$
+
+        Note that we define the Hubble parameter as:
+
+        $$H=\frac{\dot{R}}{R}$$
+
+    \end{itemize}
+
+  \item Comoving Coordinates
+
+    \begin{itemize}
+
+      \item Coordinates (and distances) scale with the size of the universe:
+
+        $$x=a(t)r$$
+
+        \begin{itemize}
+
+          \item $x$ is the ``proper'' coordinate
+
+          \item $r$ is the ``comoving'' coordinate
+
+          \item $a(t)$ is the scale factor, with $a(t_o)=1$ indicating ``today''
+
+        \end{itemize}
+
+      \item Ex. $x_{12}=a(t)r_{12}$
+
+        $$\frac{dx_{12}}{dt}\quad\text{ is the recession velocity}$$
+
+      \item Two Things:
+
+        \begin{enumerate}
+
+          \item Velocity is proportional to distance (Hubble law)
+
+          \item The proportionality term is $\dfrac{\dot{a}}{a}=H(t)$
+
+        \end{enumerate}
+
+      \item Hubble constant is approximately:
+
+        $$H_o=70\left[ \si{\kilo\meter\over\second\mega\parsec} \right]$$
+
+        \begin{itemize}
+
+          \item We define $h$, such that:
+
+            $$H_o=100h\left[ \si{\kilo\meter\over\second\mega\parsec} \right]$$
+
+          \item We can see that the units are actually just $\si{\hertz}$, which gives us:
+
+          $$H_o\approx 3.24\cdot10^{-18}\left[\si{1\over\second}\right]$$
+
+        \end{itemize}
+
+      \item If $a$ is constant, this gives us the doubling time or the time to go back to $a=0$, which gives us the ``Hubble'' time, or the age of the universe
+
+      \item For $h=.7\to 1.4\cdot10^{10}\left[ \frac{1}{\text{yr}} \right]$
+
+        \begin{itemize}
+
+          \item Fairly accurate approximation of 14 billion years
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item FLRW Metric
+
+    \begin{itemize}
+
+      \item Cosmological principle tells us that spacetime (on large scales) should be homogenous (translation invariant) and isotropic (rotation invariant)
+
+      \item We seek a general form of a metric that obeys these assumptions:
+
+        $$ds^2=\bar{c}^2\,dt^2+R^2(t)\,d\sigma^2$$
+
+      \item We are able to derive:
+
+        $$d\sigma^2=\frac{d\bar{r}^2}{1-k\bar{r}^2}+\bar{r}^2\,d\Omega^2$$
+
+      \item Where:
+
+        \begin{itemize}
+
+          \item $d\Omega^2$ is the 2-sphere metric
+
+          \item $k\propto R$ (Ricci scalar on 3D space)
+
+            $$k=\left\{\begin{array}{ll}+1,& \text{Positive Curvature (3-sphere), "closed"}\\ 0,& \text{Flat}\\ -1,&\text{Negative curvature (saddle), "open"}\end{array}$$
+
+        \end{itemize}
+
+      \item Thus, we may define the metric as:
+
+        $$ds^2=-dt^2+a^2(t)\left[ \frac{dr^2}{1-\kappa r^2}+r^2\,d\Omega^2 \right]$$
+
+        \begin{itemize}
+
+          \item Where:
+
+            $$\left\{\begin{array}{ll}\kappa>0,&\text{closed}\\\kappa=0,&\text{flat}\\\kappa<0,&\text{open}\end{array}$$
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Cosmological Redshift
+
+    \begin{itemize}
+
+      \item Like a D\"oppler shift, but use caution!
+
+      \item $v=H_od$, locally $v<<c$
+
+      \item Redshift in special relativity:
+
+        $$\frac{\lambda_{obs}}{\lambda_{em}}=\sqrt{\frac{1+v/c}{1-v/c}}\approx1+\frac{v}{c}$$
+
+      \item From this, we know:
+
+        $$\frac{\lambda_{obs}}{\lambda_{em}}=1+z\approx 1+\frac{H_o d}{c}$$
+
+      \item More generally, we may say (for $a_o=$ today):
+
+        $$1+z=\frac{a_{obs}}{a_{em}}=a_{em}^{-1}$$
+
+    \end{itemize}
+
+  \item Cosmological Redshift versus Peculiar Motions:
+
+    \begin{itemize}
+
+      \item For comoving coordinates:
+
+        $$v\approx H_od=H_o|\vec{r}_2-\vec{r}_1|/a_o=H_o|\vec{r}_2-\vec{r}_1|$$
+        
+      \item For ``peculiar'' motions
+
+        $$v\approx H_od+\frac{\Delta v}{c}$$
+
+      \item In the FLRW metric, due to lack of simple time symmetry, energy is not conserved
+
+        \begin{itemize}
+
+          \item There is a Killing Tensor that reflects a symmetry:
+
+            $$K_{\mu\nu}=a^2(g_{\mu\nu}+U_{\mu}U_{\nu})\quad\text{ for observer (comoving) $U^{\mu}=(1,0,0,0)$}$$
+
+          \item We get:
+
+            $$K^2=K_{\mu\nu}V^{\mu}V^{\nu}$$
+
+            \begin{itemize}
+
+              \item Is conserved, with
+
+                $$V^{\mu}=\frac{dx^{\mu}}{d\lambda}$$
+
+              \item For a photon on a null geodesic:
+
+                $$V_{\mu}V^{\mu}=0$$
+
+            \end{itemize}
+
+          \item This can be simplified to:
+
+            $$v=\frac{K}{a}$$
+
+        \end{itemize}
+
     \end{itemize}
 
 \end{itemize}
