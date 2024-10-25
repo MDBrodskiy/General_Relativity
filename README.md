@@ -29,6 +29,8 @@
     * [**Homework 1**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Homework/Homework1.pdf)
     * [**Homework 2**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Homework/Homework2.pdf)
     * [**Homework 3**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Homework/Homework3.pdf)
+* [**Exams**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Exams/)
+    * [**Midterm**](https://github.com/MDBrodskiy/General_Relativity/tree/master/Exams/Midterm1.pdf)
 
 <!--
   * [**Chapter 1**](#Notes/Chapter\ 1)
