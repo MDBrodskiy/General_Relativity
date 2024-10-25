@@ -1,0 +1,375 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: General Relativity & Cosmology
+% Professor: J. Blazek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Midterm Examination}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: J. Blazek}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item By the coefficients of the metric, we may observe that the metric may be written in terms of solely diagonal components such that:
+
+        $$\boxed{g_{\mu\nu}=\left[ \begin{matrix} -1 & 0 & 0 & 0\\ 0 & a^2 & 0 & 0\\ 0 & 0 & b^2 & 0\\ 0 & 0 & 0 & c^2 \end{matrix}\right]}$$
+
+          Given the diagonality of $g_{\mu\nu}$, the inverse may be written as simply the inverse of each component such that:
+
+          $$\boxed{g^{\mu\nu}=\left[ \begin{matrix} -1 & 0 & 0 & 0\\ 0 & a^{-2} & 0 & 0\\ 0 & 0 & b^{-2} & 0\\ 0 & 0 & 0 & c^{-2} \end{matrix}\right]}$$
+
+      \item 
+
+        The trace of a tensor may be exhibited as a contraction of the tensor to the same up and down index. First, we must raise an index:
+
+        $$g^{\lambda}_{\nu}=g^{\mu\lambda}g_{\mu\nu}$$
+
+        This gives us:
+
+        $$g^{\lambda}_{\nu}=\left[ \begin{matrix} 1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 1\end{matrix} \right]$$
+
+        We contract with $\lambda=\nu$ to get:
+
+        $$\boxed{\text{Tr}(g_{\mu\nu})=4}$$
+
+      \item 
+
+        We may observe that this is a special case of the metric (spacetime is flat) which means:
+
+        $$\boxed{R=0}$$
+
+        We may see this by the fact that:
+
+        $$R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R=T_{\mu\nu}$$
+
+        We may multiply by the inverse to find:
+
+        $$R-\frac{1}{2}gR=g^{\mu\nu}T_{\mu\nu}$$
+
+        We can see that this becomes:
+
+        $$R\left(1-\frac{1}{2}g\right)=0$$
+
+        Since we know $g\neq0$, we know that $R$ vanishes
+
+      \item The transformation matrix may be constructed using:
+
+        $$\frac{dx^{\mu}}{dx^{\mu'}}$$
+
+        This would give us a matrix as follows:
+
+        $$\left[ \begin{matrix} \frac{\partial t}{\partial t} & \frac{\partial t}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial z}{\partial \phi}\\ \frac{\partial x}{\partial t} & \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial \phi}\\\frac{\partial y}{\partial t} & \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial \phi}\\\frac{\partial z}{\partial t} & \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial \phi}\end{matrix} \right]$$
+
+        The first term becomes one:
+
+        $$\left[ \begin{matrix} 1 & \frac{\partial t}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial z}{\partial \phi}\\ \frac{\partial x}{\partial t} & \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial \phi}\\\frac{\partial y}{\partial t} & \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial \phi}\\\frac{\partial z}{\partial t} & \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial \phi}\end{matrix} \right]$$
+
+        From here, we may compute based on the provided equations. We see that the transforms are independent of $t$, which gives:
+
+        $$\left[ \begin{matrix} 1 & 0 & 0 & 0\\ 0 & \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial \phi}\\0 & \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial \phi}\\0 & \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial \phi}\end{matrix} \right]$$
+
+        This is logical, since, for the transform, the time component remains unchanged. We continue to find:
+
+        $$\left[ \begin{matrix} 1 & 0 & 0 & 0\\ 0 & a^{-1}\sin(\theta)\cos(\phi) & a^{-1}r\cos(\theta)\cos(\phi) & -a^{-1}r\sin(\theta)\sin(\phi)\\0 & \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial \phi}\\0 & \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial \phi}\end{matrix} \right]$$
+
+        Continuing for $y$ and $z$, we finally construct:
+
+        $$\boxed{\left[ \begin{matrix} 1 & 0 & 0 & 0\\ 0 & a^{-1}\sin(\theta)\cos(\phi) & a^{-1}r\cos(\theta)\cos(\phi) & -a^{-1}r\sin(\theta)\sin(\phi)\\0 & b^{-1}\sin(\theta)\sin(\phi) & b^{-1}r\cos(\theta)\sin(\phi) & b^{-1}r\sin(\theta)\cos(\phi)\\0 & c^{-1}\cos(\theta) & -c^{-1}r\sin(\theta) & 0\end{matrix} \right]}$$
+
+      \item 
+
+        We may write the new metric as:
+
+        $$g_{\mu'\nu'}=\frac{\partial x^{\mu}}{\partial x^{\mu'}}\frac{\partial x^{\nu}}{\partial x^{\nu'}}g_{\mu\nu}$$
+
+        We obtain the metric by multiplying the former metric by two of the above transformations. Since we know that the initial metric is solely diagonal, we obtain expressions for the new metric (omitting time, since this will be the same, and taking $\mu=\nu$):
+
+        $$g_{\mu'\nu'}=\left\{\begin{array}{l}\frac{\partial x^{x}}{\partial x^{\mu'}}\frac{\partial x^{x}}{\partial x^{\nu'}}g_{xx}\\\\\frac{\partial x^{y}}{\partial x^{\mu'}}\frac{\partial x^{y}}{\partial x^{\nu'}}g_{yy}\\\\\frac{\partial x^{z}}{\partial x^{\mu'}}\frac{\partial x^{z}}{\partial x^{\nu'}}g_{zz}\end{array}$$
+
+          This is equivalent to:
+
+        $$g_{\mu'\nu'}=\left\{\begin{array}{l}\frac{\partial x^{x}}{\partial x^{\mu'}}\frac{\partial x^{x}}{\partial x^{\nu'}}a^2\\\\\frac{\partial x^{y}}{\partial x^{\mu'}}\frac{\partial x^{y}}{\partial x^{\nu'}}b^2\\\\\frac{\partial x^{z}}{\partial x^{\mu'}}\frac{\partial x^{z}}{\partial x^{\nu'}}c^2\end{array}$$
+
+          Summing these three cases together will give each component, and so we calculate:
+
+          $$g_{rr}=\sin^2(\theta)\cos^2(\phi)+\sin^2(\theta)\sin^2(\phi)+\cos^2(\theta)=1$$
+          $$g_{r\theta}=g_{\theta r}=r\sin(\theta)\cos(\theta)\cos(\phi)^2+r\sin(\theta)\cos(\theta)\sin^2(\phi)-r\sin(\theta)\cos(\theta)=0$$
+          $$g_{r\phi}=g_{\phi r}=-r\sin^2(\theta)\sin(\phi)\cos(\phi)+r\sin^2(\theta)\sin(\phi)\cos(\phi)=0$$
+          $$g_{\theta\theta}=r^2\cos^2(\theta)\cos^2(\phi)+r^2\cos^2(\theta)\sin^2(\phi)+r^2\sin^2(\theta)=r^2$$
+          $$g_{\theta\phi}=g_{\phi\theta}=-r^2\cos(\theta)\sin(\theta)\cos(\phi)\sin(\phi)+r^2\cos(\theta)\sin(\theta)\cos(\phi)\sin(\phi)=0$$
+          $$g_{\phi\phi}=r^2\sin^2(\theta)\sin^2(\phi)+r^2\sin^2(\theta)\cos^2(\phi)=r^2\sin^2(\theta)$$
+
+          As such, we may form our metric as:
+
+          $$\boxed{g_{\mu'\nu'}=\left[ \begin{matrix}-1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0\\ 0 & 0 & r^2 & 0\\ 0 & 0 & 0 & r^2\sin^2(\theta)\end{matrix} \right]}$$
+
+          Note that, by the results in both (d) and (e), we may observe that this transformation represents a change to spherical coordinates.
+
+      \item 
+
+        The determinant of these metrics, due to their diagonality, is simply the product of their non-zero values, which gives:
+
+        $$\boxed{\text{det}(g_{\mu\nu})=-a^2b^2c^2}$$
+
+        Working this out with the new metric, we may obtain:
+
+        $$\boxed{\text{det}(g_{\mu'\nu'})=-r^4\sin^2(\theta)}$$
+
+        We may observe that \underline{the two determinants are not equal}. This signifies that the coordinate transformation is \underline{not Lorentz invariant}.
+
+      \item 
+
+        We may see that the geometry of this spacetime is described by the metric above. This metric is similar to Minkowski space, except that it is scaled by various factors ($a^2$ in the $x$ direction, $b^2$ in the $y$ direction, and $c^2$ in the $z$ direction). Most importantly, the metric describes a flat spacetime, as evident by the Ricci Scalar.
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+        First, we may identify that there are six possible cases of the Christoffel symbols:
+
+        $$\Gamma^{\theta}_{\phi\phi},\,\Gamma^{\theta}_{\theta\theta},\,\Gamma^{\theta}_{\phi\theta}=\Gamma^{\theta}_{\theta\phi},\,\Gamma^{\phi}_{\phi\phi},\,\Gamma^{\phi}_{\theta\theta},\,\Gamma^{\phi}_{\theta\phi}=\Gamma^{\phi}_{\phi\theta}$$
+
+        We may then begin to turn the crank and compute. Note that we know that any $\sigma\neq\rho=0$. We use the formula:
+
+        $$\Gamma^{\sigma}_{\mu\nu}=\frac{1}{2}g^{\sigma\rho}\left[ \partial_{\mu}g_{\nu\rho}+\partial_{\nu}g_{\rho\mu}-\partial_{\rho}g_{\mu\nu} \right]$$
+
+        Let us first take $\sigma=\theta$, which requires $\rho=\theta$:
+
+        $$\Gamma^{\theta}_{\mu\nu}=\frac{1}{2}g^{\theta\theta}\left[ \partial_{\mu}g_{\nu\theta}+\partial_{\nu}g_{\theta\mu}-\partial_{\theta}g_{\mu\nu} \right]$$
+
+        Let us first take $\mu=\nu=\phi$:
+
+        $$\Gamma^{\theta}_{\phi\phi}=\frac{1}{2}g^{\theta\theta}\left[ \cancel{\partial_{\phi}g_{\nu\phi}+\partial_{\phi}g_{\theta\phi}}-\partial_{\theta}g_{\phi\phi} \right]$$
+        $$\Gamma^{\theta}_{\phi\phi}=\frac{1}{2}g^{\theta\theta}\left[ -\partial_{\theta}g_{\phi\phi} \right]$$
+
+        Since the metric is diagonal, we know that $g^{\theta\theta}=[g_{\theta\theta}]^{-1}$, which gives us:
+
+        $$\Gamma^{\theta}_{\phi\phi}=\frac{r_o^{-2}}{2} \left(-\partial_{\theta}[r_o^2\sin^2(\theta)]\right)$$
+        $$\Gamma^{\theta}_{\phi\phi}=-\frac{\sin(2\theta)}{2}$$
+
+        This is equivalent to (as expected):
+
+        $$\boxed{\Gamma^{\theta}_{\phi\phi}=-\sin(\theta)\cos(\theta)}$$
+
+        Let us now analyze the other two cases of $\sigma=\theta$:
+
+        $$\Gamma^{\theta}_{\theta\theta}=\frac{1}{2}g^{\theta\theta}\left[ \partial_{\theta}g_{\theta\theta}+\partial_{\theta}g_{\theta\theta}-\partial_{\theta}g_{\theta\theta} \right]$$
+
+        For this case, we see that, because the value of $g_{\theta\theta}$ is a constant, all partials go to zero, which leaves us with:
+
+        $$\boxed{\Gamma^{\theta}_{\theta\theta}=0}$$
+
+        We now proceed to the final case:
+
+        $$\Gamma^{\theta}_{\theta\phi}=\Gamma^{\theta}_{\phi\theta}=\frac{1}{2}g^{\theta\theta}\left[ \partial_{\theta}g_{\phi\theta}+\partial_{\phi}g_{\theta\phi}-\partial_{\theta}g_{\theta\phi} \right]$$
+
+        We see that, because each value from the metric is a non-diagonal component, this goes to zero:
+
+        $$\boxed{\Gamma^{\theta}_{\theta\phi}=0}$$
+
+        We step to the $\sigma=\phi$ (and, therefore, $\rho=\phi$) case:
+
+        $$\Gamma^{\phi}_{\mu\nu}=\frac{1}{2}g^{\phi\phi}\left[ \partial_{\mu}g_{\nu\phi}+\partial_{\nu}g_{\phi\mu}-\partial_{\phi}g_{\mu\nu} \right]$$
+
+        Let us take the two cases $\mu=\nu=\theta$ and $\mu=\nu=\phi$:
+
+        $$\Gamma^{\phi}_{\theta\theta}=\frac{1}{2}g^{\phi\phi}\left[ \partial_{\theta}g_{\theta\phi}+\partial_{\theta}g_{\phi\theta}-\partial_{\phi}g_{\theta\theta} \right]$$
+        $$\Gamma^{\phi}_{\phi\phi}=\frac{1}{2}g^{\phi\phi}\left[ \partial_{\phi}g_{\phi\phi}+\partial_{\phi}g_{\phi\phi}-\partial_{\phi}g_{\phi\phi} \right]$$
+
+        We may see that, for the first expression, the only non-zero term is $g_{\theta\theta}$; however, because this is a constant, the partial goes to zero. For the second expression, we see that each is a partial with respect to $\phi$ of the $\phi\phi$ term; however, this term is independent of $\phi$, and, therefore, the partials become zero. As such, we see:
+
+        $$\boxed{\Gamma^{\phi}_{\theta\theta}=\Gamma^{\phi}_{\phi\phi}=0}$$
+
+        We compute the final case:
+
+        $$\Gamma^{\phi}_{\phi\theta}=\Gamma^{\phi}_{\theta\phi}=\frac{1}{2}g^{\phi\phi}\left[ \partial_{\phi}g_{\theta\phi}+\partial_{\theta}g_{\phi\phi}-\partial_{\phi}g_{\phi\theta} \right]$$
+
+        We see that only the second term is on the diagonal and, therefore, is non-zero, which gives us:
+
+        $$\Gamma^{\phi}_{\phi\theta}=\Gamma^{\phi}_{\theta\phi}=\frac{1}{2r_o^2\sin^2(\theta)}\left[ \partial_{\theta}[r_o^2\sin^2(\theta)] \right]$$
+        $$\Gamma^{\phi}_{\phi\theta}=\Gamma^{\phi}_{\theta\phi}=\frac{1}{2\sin^2(\theta)}\left[ \sin(2\theta) \right]$$
+
+        Finally, this gives us:
+
+        $$\boxed{\Gamma^{\phi}_{\phi\theta}=\Gamma^{\phi}_{\theta\phi}=\frac{\cos(\theta)}{\sin(\theta)}}$$
+
+        Thus, we see that the values may be listed as:
+
+        $$\boxed{\left\{\begin{array}{lll} \Gamma^{\theta}_{\theta\theta}&=&0\\\Gamma^{\theta}_{\theta\phi}=\Gamma^{\theta}_{\phi\theta}&=&0\\\Gamma^{\theta}_{\phi\phi}&=&-\sin(\theta)\cos(\theta)\\\Gamma^{\phi}_{\theta\theta}&=&0\\\Gamma^{\phi}_{\theta\phi}=\Gamma^{\phi}_{\phi\theta}&=&\cot(\theta)\\\Gamma^{\phi}_{\phi\phi}&=&0\end{array}}$$
+
+      \item 
+
+        We may use our general geodesic equation:
+
+        $$\frac{d^2x^{\mu}}{d\lambda^2}+\Gamma^{\mu}_{\rho\sigma}\frac{dx^{\rho}}{d\lambda}\frac{dx^{\sigma}}{d\lambda}=0$$
+
+        Using the results from (a), we plug in our two non-zero connections to get:
+
+        $$\frac{d^2x^{\theta}}{d\lambda^2}+\Gamma^{\theta}_{\phi\phi}\frac{dx^{\phi}}{d\lambda}\frac{dx^{\phi}}{d\lambda}=0$$
+        $$\frac{d^2x^{\phi}}{d\lambda^2}+\Gamma^{\phi}_{\theta\phi}\frac{dx^{\theta}}{d\lambda}\frac{dx^{\phi}}{d\lambda}=0$$
+
+        We can simplify the first equation to get:
+
+        $$\frac{d^2x^{\theta}}{d\lambda^2}+\Gamma^{\theta}_{\phi\phi}\left(\frac{dx^{\phi}}{d\lambda^2}\right)^2=0$$
+        $$\frac{d^2x^{\phi}}{d\lambda^2}+\Gamma^{\phi}_{\theta\phi}\frac{dx^{\theta}}{d\lambda}\frac{dx^{\phi}}{d\lambda}=0$$
+
+        Given the constant requirement, let us first analyze the case in which:
+
+        $$\frac{dx^{\phi}}{d\lambda}=0$$
+
+        Using our first equation, we see:
+
+        $$\boxed{\frac{d^2x^{\theta}}{d\lambda^2}=0}$$
+
+        \underline{From this, we may observe that every line of longitude is a geodesic}
+
+        Now let us analyze the case in which:
+
+        $$\frac{dx^{\theta}}{d\lambda}=0$$
+
+        We may see that, though we get (from the second equation):
+
+        $$\boxed{\frac{d^2x^{\phi}}{d\lambda^2}=0}$$
+
+        We also get (from the first equation):
+
+        $$\boxed{-\sin(\theta)\cos(\theta)\frac{d^2x^{\phi}}{d\lambda^2}=0}$$
+
+        This indicates that, for lines of latitude, at least one of $\sin(\theta)$, $\cos(\theta)$, or $\dfrac{d^2x^{\phi}}{d\lambda^2}$ is zero. This means that \underline{not all latitude lines are geodesics}.
+
+        We know that the equator is the only latitude line that is a geodesic. At this point, we know that $\theta=\pi/2$, which gives us:
+
+        $$\boxed{\frac{d^2x^{\theta}}{d\lambda^2}=0\quad\text{ and }\quad\frac{d^2x^{\phi}}{d\lambda^2}=0}$$
+
+        This indicates that the equator is a \underline{latitude line that is also a geodesic}
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+        We may compute this at the null spacetime point (\textit{i}.\textit{e}. $ds^2=0$), which gives us:
+
+        $$1-\frac{2GM}{r}+\frac{GQ^2}{r^2}=0$$
+
+        Multiplying by $r^2$, we introduce a simple quadratic:
+
+        $$r^2-2GMr+GQ^2=0$$
+
+        We solve for $r\to 0$ to get:
+
+        $$r_0=\frac{2GM\pm\sqrt{4G^2M^2-4GQ^2}}{2}$$
+        $$\boxed{r_0=GM\pm\sqrt{G^2M^2-GQ^2}}$$
+
+        These two radii represent the two event horizon radii.
+
+      \item 
+
+        Assuming the masses are equivalent, we may observe that, for a black hole with charge, \underline{the Schwarzsschild radius is smaller}. We know that the Schwarzsschild radius for a black hole with no charge is:
+
+        $$r_s=2GM$$
+
+        And that, from (a), we find that, at most, this radius is:
+
+        $$r_o=GM+\sqrt{G^2M^2-GQ^2}$$
+
+        Since the charge subtracts from the $G^2M^2$ term, we know that the result of the square root will be less than $GM$, meaning that $r_o<r_s=2GM$.
+
+      \item 
+
+        We know that, for an observer at rest:
+
+        $$U_{\mu}=[1,0,0,0]$$
+
+        And that we may write:
+
+        $$E_{obs}=-p^{\mu}U_{\mu}$$
+
+        This gives us:
+
+        $$E_{obs}=-[(E)(1)+(Ev_x)(0)+(Ev_y)(0)+(Ev_z)(0)]$$
+        $$\boxed{E_{obs}=-E}$$
+
+        From this, we conclude that \underline{the energy of the particle is redshifted as it moves} \underline{away from the black hole}. Near the black hole, the energy observed by the observer decreases (redshifts) as the photon becomes more distant.
+
+      \item 
+
+        Based on the provided information, we obtain:
+
+        $$E=-K_\mu\frac{dx^{\mu}}{d\lambda}$$
+
+        We lower the index with:
+
+        $$g_{\mu\mu}K^{\mu}=K_{\mu}$$
+
+        Since $K_{\mu}$ is non-zero only for $\mu=t$, we get:
+
+        $$g_{tt}K^{t}=K_{t}$$
+        $$K_{t}=-\left( 1-\frac{2GM}{r}+\frac{GQ^2}{r^2} \right)(1)$$
+
+        Thus, we obtain:
+
+        $$\boxed{E=-g_{tt}K^t\frac{dx^{t}}{d\lambda}}$$
+
+        Or, alternatively:
+
+        $$\boxed{E=\left( 1-\frac{2GM}{r} +\frac{GQ^2}{r^2}\right)\frac{dx^{t}}{d\lambda}}$$
+
+      \item 
+
+        We may first express this using the wavelength such that:
+
+        $$1+z=\frac{\lambda_{obs}}{\lambda_{em}}$$
+
+        Using a ratio of energies, we may write:
+
+        $$1+z=\frac{E(r_1)}{E(r_2)}$$
+
+        From here, we can define this in terms of the time-component of the metric such that:
+
+        $$1+z=\sqrt{\frac{g_{tt}(r_2)}{g_{tt}(r_1)}}$$
+
+        We may expand this to write:
+
+        $$\boxed{1+z=\sqrt{\frac{1-\frac{2GM}{r_2}+\frac{GQ^2}{r^2}}{1-\frac{2GM}{r_1}+\frac{GQ^2}{r^2}}}}$$
+
+      \item 
+
+        Taking $r_2\to\infty$ gives us:
+
+        $$1+z=\sqrt{\frac{1}{1-\frac{2GM}{r_1}+\frac{GQ^2}{r^2}}}$$
+        $$\boxed{1+z=\left(1-\frac{2GM}{r_1}+\frac{GQ^2}{r^2}\right)^{-\frac{1}{2}}}$$
+
+        From this, we may conclude that the redshift as the probe gets very far is determined solely by the time-dependent characteristics of the metric at radius $r_1$.
+
+      \item
+
+        Given no charge, we see that the redshift becomes:
+
+        $$\boxed{1+z=\left(1-\frac{2GM}{r_1}\right)^{-\frac{1}{2}}}$$
+
+      We may observe that an additive term was thus removed, and, therefore, the denominator becomes smaller. Thus, \underline{the redshift becomes larger for a black hole with} \underline{no charge.}
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
