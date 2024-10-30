@@ -398,11 +398,11 @@
 
       \item This allows us to rewrite the Hubble parameter as:
 
-        $$\frac{H(a)}{H_o}=\left( \Omega_{m}a^{-3}+\Omega_ra^{-4}+\Omega_{\labda}+\Omega_{\kappa}a^{-2} \right)^{\frac{1}{2}}$$
+        $$\frac{H(a)}{H_o}=\left( \Omega_{m}a^{-3}+\Omega_ra^{-4}+\Omega_{\Lambda}+\Omega_{\kappa}a^{-2} \right)^{\frac{1}{2}}$$
 
       \item We can then write in terms of the redshift:
 
-        $$\frac{H(z)}{H_o}=\left( \Omega_{m}(1+z)^{3}+\Omega_r(1+z)^{4}+\Omega_{\labda}+\Omega_{\kappa}(1+z)^{2} \right)^{\frac{1}{2}}$$
+        $$\frac{H(z)}{H_o}=\left( \Omega_{m}(1+z)^{3}+\Omega_r(1+z)^{4}+\Omega_{\Lambda}+\Omega_{\kappa}(1+z)^{2} \right)^{\frac{1}{2}}$$
 
       \item Furthermore, we see:
 
@@ -423,6 +423,171 @@
           \item $\Omega_{\kappa}=1$: Empty
 
         \end{itemize}
+
+    \end{itemize}
+
+  \item How Do We Measure Distances?
+
+    \begin{itemize}
+        
+      \item Angular Size (Object seems larger if it is closer)
+
+      \item Noise (Object seems louder if it is closer)
+
+      \item Light (Object seems brighter if it is closer)
+
+    \end{itemize}
+
+  \item Distances:
+
+    \begin{itemize}
+        
+      \item Comoving (radial) distance: follow a photon as it travels from a distant source
+
+        $$ds=0 \to dt=a(t)\frac{dr}{\left( 1-\kappa r^2 \right)^{\frac{1}{2}}}$$
+        $$\chi=\int_{t_{em}}^{t_o}\frac{dt}{a(t)}=\int_0^r \frac{dr'}{\left( 1-\kappa r'^2 \right)^{\frac{1}{2}}}$$
+
+      \item We will redefine the $r$ coordinate such that $\chi$ is always $r$:
+
+        $$ds^2=-dt^2+a^2(t)\left[ dr^2+S^{2}_{k}(r)d\Omega^2 \right]$$
+
+        \begin{itemize}
+
+          \item The term becomes:
+
+            $$S_{\kappa}(r)=\left\{\begin{array}{ll} r,& \Omega_{\kappa}=0\quad\text{ (flat)}\\H_o^{-1}(\Omega_{\kappa})^{-\frac{1}{2}}\sinh\left( H_o(\Omega_{\kappa})^{\frac{1}{2}}r \right),& \Omega_{\kappa}>0\quad\text{ (open)}\\H_o^{-1}(|\Omega_{\kappa}|)^{-\frac{1}{2}}\sin\left( H_o(-\Omega_{\kappa})^{\frac{1}{2}}r \right),& \Omega_{\kappa}<0\quad\text{ (closed)}\end{array}$$
+
+        \end{itemize}
+
+      \item We may rewrite $\chi$ in terms of $a$ to see:
+
+        $$\chi(a)=\int_{a(t_{em})}^{a(t_o)=1}\frac{da}{a^2H(a)}$$
+
+    \end{itemize}
+
+  \item The Horizon:
+
+    $$\chi_{hor}=\int_0^1\frac{da}{a^2H(a)}\xlongrightarrow{\text{EdS Universe}}\int_0^1\frac{da}{a^2H_oa^{-\frac{3}{2}}}=\frac{2}{H_o}$$
+
+    \begin{itemize}
+        
+      \item Note if we restore $c$:
+
+        $$\chi_{hor}=\frac{2c}{H_o}$$
+
+    \end{itemize}
+    
+  \item Age of the Universe
+
+    \begin{itemize}
+
+      \item We imagine an empty universe ($\Omega_{\kappa}=1$):
+
+        $$\int_0^1\,da=\int_0^{t_o}H_o\,dt$$
+        $$1=t_oH_o$$
+        $$t_o=\frac{1}{H_o}\quad\text{ (Hubble time)}$$
+
+      \item Similarly, for a matter-dominated universe ($\Omega_m=1$):
+
+        $$\int_0^1 a^{\frac{1}{2}}\,da=\int_0^{t_o}H_o\,dt$$
+        $$\frac{2}{3}a^{\frac{3}{2}}=t_oH_o$$
+        $$t_o=\frac{2}{3H_o}$$
+
+    \end{itemize}
+
+  \item Luminosity Distance
+
+    \begin{itemize}
+
+      \item ``Standard Candles''
+
+      \item Luminosity is Energy per time
+
+      \item Flux is the Energy per Area per time
+
+      \item In normal three dimensions:
+
+        $$L=F(4\pi R^2)$$
+
+        \begin{itemize}
+
+          \item This means:
+
+            $$F\propto \frac{L}{R^2}$$
+
+        \end{itemize}
+
+      \item In comoving coordinates, we may write:
+
+        $$F\propto\frac{L}{\chi^2}\cdot\frac{1}{1+z}\cdot\frac{1}{1+z}$$
+
+      \item We may thus find that, in a flat universe:
+
+        $$d_L=\chi(1+z)$$
+
+      \item In a non-flat universe, we see:
+
+        $$d_L=S_{\kappa}(\chi)(1+z)$$
+
+    \end{itemize}
+
+  \item Angular Diameter Distance
+
+    \begin{itemize}
+
+      \item Object of physical size $l$
+
+        \begin{itemize}
+
+          \item Assume a flat universe:
+
+            $$l=d_A\theta$$
+            $$d_A^{flat}=\chi a=\frac{\chi}{1+z}=\frac{d_L}{(1+z)^2}$$
+            $$d_A=aS_{\kappa}(\chi)$$
+
+          \item Importantly, $d_A$ can increase, reach a max, and then decrease
+
+            \begin{itemize}
+
+              \item This means physical $l$ takes up larger fraction of a smaller universe
+
+            \end{itemize}
+
+          \item This is slightly more complicated in a non-flat universe, since we need to properly account for $d\Omega$ factor
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Evidence for Dark Energy
+
+    \begin{itemize}
+
+      \item Until the early 1990's, people did not take $\Lambda$ too seriously. Evidence from galaxy clusters, galaxy clustering, and CMB started to raise some questions. Universe appeared roughly flat, but $\Omega_m<1$
+
+      \item Mapping out $a(t)$ has been a useful way to probe the universe
+
+    \end{itemize}
+
+  \item Dark Matter
+
+    \begin{itemize}
+
+      \item In 1781, William Herschel discovered Uranus; over the next 60 years, astronomers carefully mapped out it orbit, but it didn't quite match Newtonian theory
+
+      \item Urbain Le Verrier: Showed that Uranus' orbit could be explained if there were another, more distant planet acting gravitationally
+
+      \item In September 1846, he mailed a letter to a colleague at the Berlin Observatory with precise predictions
+
+      \item In 1930s, Fritz Zwicky studied the Coma Cluster
+
+        \begin{itemize}
+
+          \item Galaxy Clusters: Largest gravitationally bound objects in the Universe
+
+        \end{itemize}
+
+      \item Zwicky measured spectra of many galaxies and calculated the velocity dispersion
 
     \end{itemize}
 
