@@ -58,7 +58,7 @@
         Finally, we find the comoving horizon distance as (note that restoring $c$ would return this value to the numerator):
 
         $$\chi_{hor}=\int_0^1 \frac{da}{a^{.5}H_o}$$
-        $$\chi_{hor}=\frac{2\sqrt{a}}{H_o}\Big_0^1$$
+        $$\chi_{hor}=\frac{2\sqrt{a}}{H_o}\Big|_0^1$$
         $$\boxed{\chi_{hor}=\frac{2}{H_o}}$$
 
       \item 
@@ -68,26 +68,121 @@
         $$\frac{da}{dt}=\frac{H_o}{a}$$
         $$\int a\,da=\int H_o\,dt$$
         $$\frac{1}{2}a^2=H_ot$$
-        $$\boxed{a(t)=\sqrt{4H_ot}}$$
+        $$\boxed{a(t)=\sqrt{2H_ot}}$$
 
         From here, we can find the age as:
 
-        $$1=\sqrt{4H_ot_o}$$
-        $$\boxed{t_o=\frac{1}{4H_o}}$$
+        $$1=\sqrt{2H_ot_o}$$
+        $$\boxed{t_o=\frac{1}{2H_o}}$$
 
         Finally, we find the horizon distance:
 
-        $$\chi_{hor}=\int_0^1\frac{da}{a^2H_o}$$
-        $$\chi_{hor}=-\frac{1}{aH_o}\Big_0^1$$
-        $$\chi_{hor}=-\frac{1}{H_o}$$
+        $$\chi_{hor}=\int_0^{1}\frac{da}{a^2H(a)}$$
+        $$\chi_{hor}=\int_0^1\frac{1}{H_o}\,da$$
+        $$\boxed{\chi_{hor}=\frac{1}{H_o}}$$
 
       \item 
 
-      \item 
+        For an empty universe, we obtain:
 
-      \item 
+        $$\frac{da}{dt}=H_o$$
+        $$\int \,da=\int H_o\,dt$$
+        $$\boxed{a(t)=H_o t}$$
 
-      \item 
+        We continue to get the age:
+
+        $$1=H_ot_o$$
+        $$\boxed{t_o=\frac{1}{H_o}}$$
+
+        Note that this corresponds to Hubble time. Finally, we get the horizon distance:
+
+        $$\chi_{hor}=\int_0^{t_o}\frac{dt}{a(t)}$$
+        $$\chi_{hor}=\int_0^{t_o}(H_ot)^{-1}\,dt$$
+        $$\chi_{hor}=H_o\ln(t)\Big|_0^{t_o}$$
+        $$\chi_{hor}\to\infty$$
+
+      \item For a de Sitter universe, we get:
+
+        $$\frac{da}{dt}=aH_o$$
+        $$\int a^{-1}\,da=\int H_o\,dt$$
+        $$\ln(a)=H_o t$$
+        $$\boxed{a(t)=e^{H_o t}}$$
+
+        Now, we can find the age as:
+
+        $$t_o=\int_0^1\frac{da}{aH(a)}$$
+        $$t_o=\int_0^1\frac{da}{aH_o}$$
+        $$t_o=H_o\ln(a)\Big|_0^1$$
+        $$t_o\to\infty$$
+
+        Finally, we find the horizon distance:
+
+        $$\chi_{hor}=\int_0^{t_o} \frac{dt}{a(t)}$$
+        $$\chi_{hor}=\int_0^{t_o} e^{-H_ot}\,dt$$
+        $$\chi_{hor}=-\frac{e^{-H_ot}}{H_o}\Big|_0^{\infty}$$
+        $$\boxed{\chi_{hor}=\frac{1}{H_o}}$$
+
+      \item For a flat, dark-energy dominated (all matter is dark energy) universe, we get:
+
+        $$\frac{da}{dt}=aH_o\sqrt{a^{-3[1+(-1.1)]}}$$
+        $$\frac{da}{dt}=a^{1.15}H_o$$
+        $$\int a^{-1.15}\,da=\int H_o\,dt$$
+        $$-\frac{a^{-.15}}{.15}=H_ot$$
+        $$a^{-.15}=-.15H_ot$$
+        $$\boxed{a(t)=(-.15H_ot)^{-6.6\bar{6}}}$$
+
+        From here, we find the age:
+
+        $$t_o=\int_0^1\frac{da}{a^{1.15}H_o}$$
+        $$\boxed{t_o\to\infty}$$
+
+        Finally, we get the horizon distance:
+
+        $$\chi_{hor}=\int_0^1 \frac{da}{a^{2.15}H_o}$$
+        $$\chi_{hor}=-\frac{1}{1.15a^{1.15}H_o}\Big_0^1$$
+        $$\boxed{\chi_{hor}\to\infty}$$
+
+        We may observe that this universe's parameters approach infinity, which may signify a ``big rip.''
+
+      \item We now check a standard $\Lambda$CDM. We analyze two cases: with and without radiation. Thus, we find the scale factors:
+
+        $$H^2(a)=H_o^2\Omega_ma^{-3}+(1-\Omega_m)$$
+        $$\int H_o\,dt=\int\frac{\sqrt{a}}{\sqrt{\Omega_ma^{-3}+(1-\Omega_m)}}\,da$$
+
+        Here, we can take: $\frac{\Omega_m}{1-\Omega_m}=a^3_{\Lambda m}$, which gives us:
+
+        $$\int H_o\,dt=\frac{1}{\sqrt{1-\Omega_m}}\int_0^a\frac{\sqrt{a}}{\sqrt{a^3+a_{\Lambda m}^3}}\,da$$
+
+        Taking a substitution such that:
+
+        $$a=a_{\Lambda m}(\sinh(u))^{\frac{2}{3}}$$
+        $$da=\frac{2a_{\Lambda m}}{3}(\sinh(u))^{-\frac{1}{3}}\cosh(u)\,du$$
+
+        We can use:
+
+        $$\sqrt{a_{\Lambda m}^3+a^3}=\sqrt{a_{\Lambda m}^3+a_{\Lambda m}^3\sinh^2(u)}=\sqrt{a_{\Lambda m}^3}\cosh(u)$$
+
+        This finally lets us form a solvable integral expression:
+
+        $$H_ot=\frac{1}{\sqrt{1-\Omega_m}}\int_0^a\frac{2\sqrt{a_{\Lambda m}}a_{\Lambda m}}{3a_{\Lambda m}^3}[\sinh(u)]^{-\frac{1}{3}}\,du$$
+        $$H_ot=\frac{1}{\sqrt{1-\Omega_m}}\int_0^a\frac{2}{3}\,du$$
+        $$H_ot=\frac{2u}{3\sqrt{1-\Omega_m}}$$
+
+        Solving in terms of $u$, we can substitute in terms of $u$ to obtain:
+
+        $$a(t)=a_{\Lambda m}\sinh\left( \frac{3H_ot}{2}\sqrt{1-\Omega_m} \right)^{\frac{2}{3}}$$
+
+        We can approximate the hyperbolic sinusoid to simplify and get:
+
+        $$\boxed{a(t)\approx a_{\Lambda m}\sinh\left( \frac{3H_ot}{2}\sqrt{1-\Omega_m} \right)^{\frac{2}{3}}}$$
+
+        Furthermore, in the step where we rearranged for $u$, we can instead rearrange for $t$ to obtain the age of the universe:
+
+        $$t=\frac{2u}{3H_o\sqrt{1-\Omega_M}}$$
+
+        Note that such a universe evolves in a manner similar to the Einstein-de Sitter universe.
+
+        $$\frac{da}{dt}=aH_o\sqrt{(.31-\Omega_r)a^{-3}+.69+\Omega_ra^{-4}}$$
 
     \end{enumerate}
 
@@ -160,6 +255,39 @@
     $$\boxed{\omega<-\frac{1}{3}}$$
 
   \item
+
+    Per the Friedmann equation at turnaround, we know that $\dot{a}\to0$, which gives us:
+
+    $$H_o^2\left[ \Omega_ma^{-3}+\Omega_k a^{-2} \right]=0$$
+
+    Rearranging in terms of the scale factor, we find:
+
+    $$a=-\frac{\Omega_m}{\Omega_k}$$
+    $$a=-\frac{1.2}{-.2}$$
+    $$\boxed{a_{turn}=6}$$
+
+    We can find the time by integrating the expression with respect to $a$:
+
+    $$\frac{da}{dt}=aH_o\sqrt{1.2a^{-3}-.2a^{-2}}$$
+    $$t=\int_0^{a_{turn}} \frac{da}{aH_o\sqrt{1.2a^{-3}-.2a^{-2}}}$$
+    $$t=\frac{1}{H_o}\int_0^{6} \frac{da}{\sqrt{1.2a^{-1}-.2}}$$
+    $$t=\frac{21.0744}{H_o}$$
+
+    We need to convert $H_o$ to suitable units; we know that, in inverse seconds, this is: $H_o=2.27\cdot10^{-18}[\si{\per\second}]$. Thus, we get:4
+
+    $$t=\frac{21.0744}{2.27\cdot10^{-18}}$$
+    $$\boxed{t=9.2838\cdot10^{18}[\si{\second}]}$$
+
+    Note that this is a long time, as it is equivalent to $2.9439\cdot10^{11}$ years. To show that a matter and cosmological universe will not recollapse, we return to the Friedmann equation. We know that a universe will begin collapsing when $\dot{a}$ goes from positive to negative. Thus, we may write:
+
+    $$\dot{a}=aH_o\sqrt{\frac{1}{a^3}+\Omega_{\Lambda}}$$
+    $$\dot{a}=H_o\sqrt{\frac{1}{a}+a^2\Omega_{\Lambda}}$$
+
+    We may observe that, due to the square root, this expression will never be negative. We may find a critical point at:
+
+    $$\frac{1}{a}=-a^2\Omega_{\Lambda}$$
+
+  However, for this to be true, $\Omega_{\Lambda}$ would need to be less than zero. Thus, \underline{a closed universe} \underline{with matter and cosmological constant will not recollapse}
 
   \item We know that:
 
