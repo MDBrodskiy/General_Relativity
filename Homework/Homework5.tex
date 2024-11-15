@@ -1,0 +1,206 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: General Relativity and Cosmology
+% Professor: J. Blazek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Homework 4}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: J. Blazek}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+  \item Using our formula:
+
+    $$\frac{\Delta T}{T}=\frac{v}{c}$$
+
+    We may use $T=2.725[\si{K}]$, the given value of $\Delta T$, and the speed of light as $c=3\cdot10^5[\si{\km\per\second}]$ to get:
+
+    $$v=\frac{3.36\cdot10^{-3}}{2.725}(3\cdot10^5)$$
+    $$\boxed{v=369.908[\si{\kilo\meter\per\second}]}$$
+
+    As a fraction of the speed of light, we may write this as:
+
+    $$\boxed{v=.001233c}$$
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+      \item 
+
+      \item 
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item Given one second since the Big Bang, we know:
+
+        Integration leads us to find:
+
+        $$t(a)=\frac{a^2}{2H_o\sqrt{\Omega_{r,0}}}$$
+
+        We rearrange in terms of $a$ to write:
+
+        $$a=\sqrt{2tH_o\sqrt{\Omega_{r,0}}}$$
+        
+        Using our known values, we get:
+
+        $$a=\sqrt{2(1)\left(2.27\cdot10^{-18}\right)\sqrt{9\cdot10^{-5}}}$$
+        $$\boxed{a=2.0753\cdot10^{-10}}$$
+
+        From here, we know:
+
+        $$a=\frac{1}{1+z}$$
+
+        This gives us the redshift as:
+
+        $$z=\frac{1}{a}-1$$
+        $$z=\frac{1}{2.0753\cdot10^{-10}}-1$$
+        $$\boxed{z=4.8186\cdot10^{9}}$$
+
+        Using the scale factor, we know that the temperature is simply the current CMB over the factor:
+
+        $$T(a)=a^{-1}T_o$$
+        $$T(a)=\left( 2.0753\cdot10^{-10} \right)^{-1}(2.725[\si{K}])$$
+        $$\boxed{T(a)=1.3131\cdot10^{10}[\si{K}]}$$
+
+        Using the standard units, we know that the energy is proportional to the temperature; however, we need to adjust our units to electron-volts. This gives us:
+
+        $$E\approx (1.3131\cdot10^{10})(8.617\cdot10^{-5})$$
+        $$E=1.1315\cdot10^6[\si{eV}]$$
+        $$\boxed{E=1.1315[\si{\mega eV}]}$$
+
+        With standard units, mass is equal to the energy, which lets us simply convert units to say:
+
+        $$\boxed{m=2.017\cdot10^{-30}\left[\si{\kilo\gram}\right]}$$
+
+      \item We may begin by converting to Temperature (Kelvin):
+
+        $$T=\frac{13\cdot10^{12}}{8.617\cdot10^{-5}}$$
+        $$\boxed{T=1.5086\cdot10^{17}[\si{K}]}$$
+
+        We can then find the scale factor:
+
+        $$a=\frac{T_o}{T}$$
+        $$a=\frac{2.725}{1.5086\cdot10^{17}}$$
+        $$\boxed{a=1.8063\cdot10^{-17}}$$
+
+        Using the time formula obtained in (a), we get:
+
+        $$t=\frac{a^2}{2H_o\sqrt{\Omega_{r,0}}}$$
+        $$t=\frac{(1.8063\cdot10^{-17})^2}{2(2.27\cdot10^{-18})\sqrt{9\cdot10^{-5}}}$$
+        $$\boxed{t=7.58\cdot10^{-15}[\si{\second}]}$$
+
+        The redshift may be found as:
+
+        $$z=\frac{1}{a}-1$$
+        $$z=\frac{1}{1.8063\cdot10^{-17}}-1$$
+        $$\boxed{z=5.536\cdot10^{16}}$$
+
+        The mass can finally be obtained as:
+
+        $$m=\left( 1.78266\cdot10^{-30} \right)\left( 13\cdot10^{6} \right)$$
+        $$\boxed{m=2.317\cdot10^{-23}[\si{\kilo\gram}]}$$
+
+      \item With this mass, we may begin by calculating the energy:
+
+        $$10^{-9}[\si{\gram}]=10^{-12}[\si{\kilo\gram}]$$
+        $$E=\frac{10^{-12}}{1.78266\cdot10^{-30}}$$
+        $$\boxed{E=5.609\cdot10^{11}[\si{TeV}]}$$
+
+        The temperature then becomes:
+
+        $$T=\frac{5.609\cdot10^{23}}{8.617\cdot10^{-5}}$$
+        $$\boxed{T=6.509\cdot10^{27}[\si{K}]}$$
+
+        We may obtain the scale factor:
+
+        $$a=\frac{2.725}{6.509\cdot10^{27}}$$
+        $$\boxed{a=4.1864\cdot10^{-28}}$$
+
+        This gives us the redshift as:
+
+        $$z=\frac{1}{a}-1$$
+        $$z=\frac{1}{4.1864\cdot10^{-28}}-1$$
+        $$\boxed{z=2.389\cdot10^{27}}$$
+        
+        And finally, we may find the time since the Big Bang as:
+
+        $$t=\frac{(4.1864\cdot10^{-28})^2}{2(2.27\cdot10^{-18})\sqrt{9\cdot10^{-5}}}$$
+        $$\boxed{t=4.069\cdot10^{-36}[\si{\second}]}$$
+
+      \item In the case of temperature being given, we need to consider radiation and matter. This gives us:
+
+        $$\int \frac{1}{H_o\sqrt{\Omega_{r}a^{-4}+(\Omega_m-\Omega_r)a^{-3}}}\,da=t$$
+
+        Using a numerical solver gets us:
+
+        $$t=\frac{2}{(\Omega_m-\Omega_r)^2}\left[ \frac{1}{3}\left( \Omega_r+\left( \Omega_m-\Omega_r \right)a \right)^{\frac{3}{2}}-\Omega_r\sqrt{\Omega_r+\left( \Omega_m-\Omega_r \right)a} \right]$$
+
+        We may find the scale factor as:
+
+        $$a=\frac{2.725}{3000}$$
+        $$\boxed{a=.000908}$$
+
+        We then plug this into the above to get time:
+
+        $$t=\frac{2}{(.31-9\cdot10^{-5})^2}\left[ \frac{1}{3}\left( 9\cdot10^{-5}+\left( .31-9\cdot10^{-5} \right)(.000908) \right)^{\frac{3}{2}}-$$
+        $$\left( 9\cdot10^{-5} \right)\sqrt{9\cdot10^{-5}+\left( .31-9\cdot10^{-5} \right)(.000908)} \right]$$
+        $$\boxed{t=.000014[\si{\second}]}$$
+
+        We can then proceed to find the rest of the values as usual:
+
+        $$z=\frac{1}{a}-1$$
+        $$z=\frac{1}{.000908}-1$$
+        $$\boxed{z=1099.92}$$
+
+        We convert the temperature to energy:
+
+        $$E=3000(8.617\dot10^{-5})$$
+        $$\boxed{E=.25851}$$
+
+        And finally we get the mass as:
+
+        $$m=(.25851\cdot10^{-6})(1.78266\cdot10^{-30})$$
+        $$\boxed{m=4.6084\cdot10^{-37}[\si{\kilo\gram}]}$$
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+
+      \item 
+
+      \item 
+
+    \end{enumerate}
+
+  \item
+
+    \begin{enumerate}
+        
+      \item 
+
+      \item 
+
+      \item 
+
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
