@@ -33,11 +33,52 @@
 
     \begin{enumerate}
 
-      \item 
+      \item We know that $\Omega(a)$ is the ratio of the total density to the critical density at a certain scale factor. This allows us to write the Friedmann equation as:
 
-      \item 
+        $$\Omega(a)+\Omega_{\kappa}(a)=1$$
 
-      \item 
+        We know that the curvature density may be expressed as:
+
+        $$\Omega_{\kappa}=\frac{H_o^2(1-\Omega_o)}{a^2H^2(a)}$$
+
+        We arrange such that:
+
+        $$\Omega_{\kappa}(a)=1-\Omega(a)$$
+
+        And then substitute the above to get:
+
+        $$\frac{H_o^2(1-\Omega_o)}{a^2H^2(a)}=1-\Omega(a)$$
+
+        We then substitute the Friedmann equation to write:
+
+        $$\frac{(1-\Omega_o)a^{-2}}{(\Omega_ma^{-3}+\Omega_ra^{-4}+\Omega_{\Lambda})+(1-\Omega_o)a^{-2}}=1-\Omega(a)$$
+
+        As such, $1-\Omega(a)$ may be expressed in terms of $1-\Omega_o$ as:
+
+        $$\boxed{1-\Omega(a)=\frac{(1-\Omega_o)a^{-2}}{(\Omega_ma^{-3}+\Omega_ra^{-4}+\Omega_{\Lambda})+(1-\Omega_o)a^{-2}}}$$
+
+      \item The fact that this value is so small indicates that, today, our universe is nearly flat. Looking at energy on the order of the Grand Unified Theory, the expected value of $|1-\Omega(a)|$ should be significantly smaller, as a deviation from flatness in the early stages of the universe would result in a noticeably curved universe today due to the amplification of this initial curvature. This leads to what is known as the ``Flatness Problem.'' From the given energy scale, we may find:
+
+        $$a=\frac{2.725}{\frac{10^{25}}{8.617\cdot10^{-5}}}$$
+        $$a=2.3481\cdot10^{-29}$$
+
+        Computing the value of $1-\Omega(a)$ for $\Lambda$CDM model values, assuming the largest possible value of $1-\Omega_o$ today, we get:
+
+        $$1-\Omega(a)=\frac{(.005)(2.35\cdot10^{-29})^{-2}}{.31(2.35\cdot10^{-29})^{-3}+(9\cdot10^{-5})(2.35\cdot10^{-29})^{-4}+.69+(.005)(2.35\cdot10^{-29})^{-2}}$$
+
+        This gives us:
+
+        $$\boxed{1-\Omega(a)=3.0631\cdot10^{-56}}$$
+
+      \item In a period where $H(a)=H_i$ (a constant), we may express exponential expansion as:
+
+        $$a_2=a_1e^N$$
+
+        If we take $1-\Omega(a_1)$ as approximately $1$ (a very flat universe), then we may write:
+
+        $$\boxed{1-\Omega(a_2)\approx \frac{e^{-2N}}{\Omega_me^{-3N}+\Omega_re^{-4N}+\Omega_{\Lambda}+e^{-2N}}}$$
+
+        We may observe that, as $N$ increases, $1-\Omega(a_2)$ becomes very small (or, alternatively, $\Omega(a_2)$ very close to 1). This kind of inflation may be applied to solve the flatness problem by moving $\Omega(a_2)$ closer to $1$, despite any initial deviation.
 
     \end{enumerate}
 
@@ -182,9 +223,72 @@
 
     \begin{enumerate}
 
-      \item 
+      \item We may calculate the baryon density today by writing:
 
-      \item 
+        $$\rho_b=\Omega_b\rho_{crit}$$
+
+        We can calculate the critical density as:
+
+        $$\rho_{crit}=\frac{3H_o^2}{8\pi G}$$
+        $$\rho_{crit}=\frac{3(2.27\cdot10^{-18})^2}{8\pi(6.67\cdot10^{-11})}$$
+        $$\rho_{crit}=9.222\cdot10^{-27}\left[ \si{\kilo\gram\over\meter\cubed} \right]$$
+
+        This gives us:
+
+        $$\rho_b=(.05)(\rho_{crit})$$
+        $$\rho_b=4.611\cdot10^{-28}\left[ \si{\kilo\gram\over\meter\cubed} \right]$$
+
+        From here, we can find $n_{e,o}$:
+
+        $$n_{e,o}=\frac{4.611\cdot10^{-28}}{1.67\cdot10^{-27}}$$
+        $$n_{e,o}=.2761\left[ \si{\per\meter\cubed} \right]$$
+
+        Then, we can calculate this at $z=10^5$, by using:
+
+        $$n_e(z)=n_{e,o}(1+z)^3$$
+
+        This gives us:
+
+        $$n_e(10^5)=.2761(1+10^5)^3$$
+        $$\boxed{n_e(10^5)=2.761\cdot10^{14}[\si{\per\meter\cubed}]}$$
+
+        We may then obtain the scattering rate, $\Gamma$, as:
+
+        $$\Gamma=n_e\sigma_Tc$$
+        $$\Gamma=(2.761\cdot10^{14})(6.65\cdot10^{-29})(3\cdot10^8)$$
+        $$\boxed{\Gamma=5.508\cdot10^{-6}[\si{\per\second}]}$$
+
+        We may then check the Hubble rate at this point to get:
+
+        $$H(z)=H_o\sqrt{\Omega_m(1+z)^3}$$
+
+        We use our $\Lambda$CDM value of $\Omega_m$ to get:
+
+        $$H(10^5)=(2.27\cdot10^{-18})\sqrt{.31(1+10^5)^3}$$
+        $$\boxed{H(10^5)=4\cdot10^{-11}[\si{\per\second}]}$$
+
+        We may observe that, at a redshift of $z=10^5$, $\Gamma>>H(z)$, which indicates that photons and baryons are firmly coupled.
+
+      \item We know that the condition for ``freeze-out'' is:
+
+        $$\Gamma\approx H(z)$$
+
+        We use the equations for both to write:
+
+        $$n_{e,o}(1+z)^3\sigma_Tc=H_o\sqrt{\Omega_m(1+z)^3}$$
+
+        We solve for the redshift, $z$, to get:
+
+        $$\frac{n_{e,o}\sigma_Tc}{H_o\sqrt{\Omega_m}}=\frac{\sqrt{(1+z)^3}}{(1+z)^3}$$
+        $$\frac{n_{e,o}\sigma_Tc}{H_o\sqrt{\Omega_m}}=(1+z)^{-\frac{3}{2}}$$
+        $$z=\left( \frac{n_{e,o}\sigma_Tc}{H_o\sqrt{\Omega_m}} \right)^{-\frac{3}{2}}-1$$
+
+        We substitute either given values or values found in (a) to get:
+
+        $$z=\left( \frac{.2761(6.65\cdot10^{-29})(3\cdot10^8)}{(2.27\cdot10^{-18}\sqrt{.31}} \right)^{-\frac{3}{2}}-1$$
+          $$\boxed{z=36.48}$$
+
+          We see that this is a very small redshift.
 
     \end{enumerate}
 
