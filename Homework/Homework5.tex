@@ -6,7 +6,7 @@
 
 \include{Includes.tex}
 
-\title{Homework 4}
+\title{Homework 5}
 \date{\today}
 \author{Michael Brodskiy\\ \small Professor: J. Blazek}
 
@@ -296,11 +296,74 @@
 
     \begin{enumerate}
         
-      \item 
+      \item We may begin by making some conclusions based on proportionality. Since we know that $a\prop\to t^{2/3}$ and $T\propto a^{-1}$, we may conclude:
 
-      \item 
+        $$T\propto t^{-2/3}$$
 
-      \item 
+        We may differentiate with respect to our newly-defined variable $x\to\epsilon_o/T$, such that:
+
+        $$\frac{dx}{dt}=\frac{d}{dt}\left[ \frac{\epsilon_o}{T} \right]$$
+        $$\frac{dx}{dt}=-\frac{\epsilon_o}{T^2}\frac{dT}{dt}$$
+
+        Based on our conclusion based on proportionality, we may say:
+
+        $$\frac{dT}{dt}=-\frac{2}{3}t^{-5/3}$$
+        $$\frac{dx}{dt}=\frac{2\epsilon_o}{3T^2t^{5/3}}$$
+
+        Since we know $x=\epsilon_o/T$, we may also write:
+
+        $$T=\frac{\epsilon_o}{x}$$
+
+        This allows us to write:
+
+        $$\frac{dx}{dt}=\frac{2x^2}{3\epsilon_ot^{5/3}}$$
+
+        We can rewrite the Boltzmann equation with respect to $x$ to get:
+
+        $$\frac{d\chi_e}{dt}\cdot\frac{dt}{dx}=\frac{dt}{dx}\left[ \cdots \right]$$
+
+        Which gives us the final form of:
+
+        $$\frac{d\chi_e}{dx}=\frac{3\epsilon_ot^{5/3}}{2x^2}\left[ (1-\chi_e)\beta-\chi_e^2n_b\alpha^{(2)} \right]$$
+
+        We then proceed to find $\beta$:
+
+        $$\beta=\alpha^{(2)}\left( \frac{m_e \epsilon_o}{2\pi x} \right)^{3/2}e^{-x}$$
+
+        And then $\alpha^{(2)}$:
+
+        $$\alpha^{(2)}=9.78\frac{\alpha^2}{m_e^2}\sqrt{x}\ln(x)$$
+
+        We then synthesize all of our findings to get a final form of:
+
+        $$\boxed{\frac{d\chi_e}{dx}=\frac{3\epsilon_o t^{5/3}}{2x^2}\left[ (1-\chi_e) \alpha^{(2)}\left( \frac{m_e\epsilon_o}{2\pi x} \right)^{3/2}e^{-x}-\frac{9.78\chi_e^2n_b\alpha^2}{m_e^2}\sqrt{x}\ln(x)\right]}$$
+
+      \item We may employ the following code to obtain a numerical solution:
+
+\lstinputlisting[
+    caption=GNU Octave Code, % Caption above the listing
+	label=lst:L1, % Label for referencing this listing
+	language=matlab, % Use python functions/syntax highlighting
+	frame=single, % Frame around the code listing
+	showstringspaces=false, % Don't put marks in string spaces
+	numbers=left, % Line numbers on left
+	numberstyle=\tiny, % Line numbers styling
+    backgroundcolor=\color{black!5}, % Set background color
+    keywordstyle=\color{magenta!80}, % Set keyword color
+    commentstyle=\color{blue!80}, % Set comment color
+    stringstyle=\color{green!80}, % Set string color
+    breaklines=true
+  ]{HW5-4b.m}
+
+      \item This generates the following plot:
+
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=.7\textwidth]{Figure}
+          \label{fig:1}
+        \end{figure}
+
+        We may observe that, since $x$ is inversely related to the temperature, the plot takes on the inverse shape of that of the Saha solution, as expected.
 
     \end{enumerate}
 
