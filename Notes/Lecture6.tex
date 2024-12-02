@@ -960,6 +960,184 @@
 
     \end{itemize}
 
+  \item Galaxy Formation
+
+    \begin{itemize}
+
+      \item Dark matter and baryons collapse to form a halo
+
+      \item Baryons cool through radiation and fall to center of the halo, forming a galazy
+
+      \item Formatiom looks simple from a statistical perspective (linear galaxy bias):
+
+        $$\delta_g=b\delta_m$$
+
+        \begin{itemize}
+
+          \item The overdensity in galaxies is proportional to the overdensity of dark matter
+
+          \item Overdensity is expressed as:
+
+            $$\delta=\frac{\rho-\bar{\rho}}{\rho}$$
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Redshift Space Distortions
+
+    \begin{itemize}
+
+      \item Strength of effect given by:
+
+        $$f\equiv \frac{d\ln(D)}{d\ln(a)}$$
+
+        \begin{itemize}
+
+          \item More growth $\to$ larger peculiar velocities
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Gravitational Lensing
+
+    \begin{itemize}
+
+      \item All geodesics are impacted by mass/energy density, including photons
+
+      \item The path of light is bent $\to$ gravitational lensing
+
+      \item For a point source: deflection
+
+      \item For an extended source (\textit{e}.\textit{g} a galaxy), you also get distortions:
+
+        \begin{itemize}
+
+          \item Shear
+
+          \item Magnification
+
+        \end{itemize}
+
+      \item Recall geodesic deviation
+
+        $$A^{\mu}=\frac{D^2}{dt^2}\,S^{\mu}=R^{\mu}_{\nu\rho\sigma}T^{\nu}T^{\rho}S^{\sigma}$$
+
+    \end{itemize}
+
+  \item Regimes of Lensing (NB: All within ``weak field'' limit; differences depend on geometry of observation)
+
+    \begin{itemize}
+
+      \item Strong Lensing: Multiple images, arcs, Einstein rings, strong magnification
+
+        $$\theta\leq \theta_E$$
+
+      \item Weak Lensing: Small distrotions, must be statistically studied
+
+        $$\theta > \theta_E$$
+
+      \item Microlensing: Unresolved strong lensing (\textit{e}.\textit{g}. by an exoplanet)
+
+    \end{itemize}
+
+  \item Lensing Derivations
+
+    \begin{itemize}
+
+      \item Assuming that the curvature is small (weak field), we can write the metric perturbatively:
+
+        $$g_{\mu\nu}=g^{(o)}_{\mu\nu}+h_{\mu\nu}$$
+
+      \item Initially, we can assume that $g_{\mu\nu}^{(o)}=\eta_{\mu\nu}$; however, for cosmology, we need to remember that $g^{(o)}_{\mu\nu}$ is actually the homogenous FLRW metric
+
+      \item Decomposing the perturbation, we get:
+
+        $$\left\{\begin{array}{ll} h_{oo}=-2\Phi, & \Phi,\Psi:\text{ scalar perturbations}\\h_{oi}=w_i, & w_i:\text{ vector perturbations}\\h_{ij}=2s_{ij}-2\Psi\delta_{ij}, & s_{ij}:\text{ tensor perturbations}\end{array}$$
+
+        \item Cranking through some algebra and plugging into Einstein's equation, we get:
+
+          $$R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}=8\pi GT_{\mu\nu}$$
+
+          \begin{itemize}
+
+            \item From this, we find:
+
+              $$\nabla^2\Psi=4\pi G\rho$$
+              $$w_i=s_{ij}=0$$
+              $$\Psi=\Phi$$
+
+            \item The last expression is an important General Relativity result, valid only when Tr($T_{ij}$)=0
+
+          \end{itemize}
+
+        \item We may recall that, in the ``Newtonian limit'' only the $h_{oo}$ was important for geodesics; now we deal with photons, so we need both time and space perturbations. Considering a null geodesic, we write:
+
+          $$x^{\mu}(\lambda)=x^{(o)\mu}(\lambda)+x^{(1)\mu}(\lambda)$$
+
+        \item We define:
+
+          $$k^{\mu}=\frac{dx^{(o)\mu}}{d\lambda}\quad\text{ and }\quad l^{\mu}=\frac{dx^{(1)\mu}}{d\lambda}$$
+
+        \item The null geodesic expression becomes:
+
+          $$(\eta_{\mu\nu}+h_{\mu\nu})(k^{\mu}+l^{\mu})(k^{\nu}+l^{\nu})=0$$
+
+        \item This can be evaluated to:
+
+          $$\frac{dl^{\mu}}{d\lambda}=-\Gamma^{\mu}_{\rho\sigma}k^{\rho}k^{\sigma}$$
+          $$\text{Time: }\quad\frac{dl^{o}}{d\lambda}=-2k(\vec{k}\cdot\vec{\nabla}\Phi)$$
+          $$\text{Space: }\quad\frac{d\vec{l}}{d\lambda}=-2k^2\vec{\nabla}_{\perp}\Phi$$
+
+        \item We want to find the deflection angle, $\hat{\alpha}$, which can be expressde as:
+
+          $$\frac{\Delta\vec{l}}{k}=\Delta \theta\equiv \hat{\alpha}$$
+
+        \item Thus, we can get:
+
+          $$\Delta\vec{l}=\int\frac{d\vec{l}}{d\lambda}\,d\lambda=-2k^2\int\vec{\nabla}_{\perp}\Phi\,d\lambda$$
+
+        \item We can thus write $\hat{\alpha}$ as:
+
+          $$\hat{\alpha}=2\int\vec{\nabla}_{\perp}\Phi\,ds$$
+
+        \item We obtain the lens equation as:
+
+          $$\vec{\beta}=\vec{\theta}-\vec{\alpha}=\vec{\theta}-\frac{D_{LS}}{D_{S}}\hat{\alpha}$$
+
+        \item For a point mass, we substitute to get:
+
+          $$\beta=\theta-\frac{D_{LS}}{D_LD_S}\frac{4GM}{\theta}$$
+
+          \begin{itemize}
+
+            \item Considering perfect lens-source alignment ($\beta=0$), we get the Einstein angle:
+
+              $$\theta_E=\sqrt{\frac{4GMD_{LS}}{D_LD_S}}$$
+
+            \item From here, we get the Einstein radius:
+
+              $$R_E=D_L\theta_E=\sqrt{\frac{4GMD_LD_{LS}}{D_S}}$$
+
+            \item For imperfect lens-source alignment, we get:
+
+              $$\theta^2-\beta\theta-\theta_E^=0$$
+              $$\theta=\frac{1}{2}\left[ \beta\pm\sqrt{\beta^2-4\theta_E^2} \right]$$
+
+            \item When $\beta>>\theta_E$, we have:
+
+              $$\theta=\frac{1}{2}\left[ \beta\pm\beta\left( 1+\frac{2\theta_E}{\beta} \right) \right]$$
+
+            \item This gets us:
+
+              $$\theta_+=\beta+\frac{\theta_E^2}{\beta}$$
+              $$\theta_-&=-\frac{\theta_E^2}{\beta}\to0$$
+
+          \end{itemize}
+
+    \end{itemize}
+
 \end{itemize}
 
 \end{document}
