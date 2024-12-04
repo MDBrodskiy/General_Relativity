@@ -1138,6 +1138,188 @@
 
     \end{itemize}
 
+  \item Lensing Potential
+
+    $$\psi(\vec{\theta})=\frac{2D_{Ls}}{D_LD_S}\int \Phi(D_L\vec{\theta},s)\,ds$$
+
+    \begin{itemize}
+
+      \item We may write:
+
+        $$\vec{\alpha}=\vec{\nabla}_\theta\psi=D_L\vec{\nabla}_{\perp}\psi$$
+
+      \item We define the convergence as:
+
+        $$\kappa(\vec{\theta})=\frac{1}{2}\nabla^2_{\theta}\psi=\frac{D_LD_{LS}}{D_s}\int\nabla^2\Phi\,ds$$
+
+      \item By Poisson's equation, this is simply the integral of the overdensity, so $\kappa$ is the lens-geometry-weighted mass density at some position $\theta$ on the sky
+
+        $$\kappa(\vec{\theta})=\frac{D_LD_{LS}}{D_s}\int\delta\,ds$$
+
+      \item In terms of $\kappa$, the deflection angle can be written:
+
+        $$\vec{\alpha}(\vec{\theta})=\frac{1}{\pi}\int\kappa(\vec{\theta}')\left[ \frac{\vec{\theta}-\vec{\theta}'}{|\vec{\theta}-\vec{\theta}'|^2} \right]\,d^2\theta'$$
+
+      \item The 2D lensing transformation can be described as a matrix:
+
+        $$A_{ij}\equiv\frac{\partial\beta_i}{\partial\theta_j}=\delta_{ij}-\frac{\partial \alpha_i}{\partial \theta_j}=\delta_{ij}-\frac{\partial^2\psi}{\partial\theta_i\partial\theta_j}\equiv \delta_{ij}-\psi_{ij}$$
+
+      \item We may describe:
+
+        \begin{itemize}
+
+          \item Convergence: $\kappa=\dfrac{1}{2}(\psi_{11}+\psi_{22})$ (isotropic focusing)
+
+          \item Shear: $\gamma_1=\dfrac{1}{2}(\psi_{11}-\psi_{22})=\gamma\cos(2\phi)$ and $\gamma_2=\psi_{12}=\psi_{21}$
+
+        \end{itemize}
+
+        $$A=\left[ \begin{matrix} 1-\kappa-\gamma_1 & -\gamma_2\\ -\gamma_2 & 1-\kappa+\gamma_1\end{matrix} \right]$$
+
+      \item $\mu=A^{-1}$ is the magnification tensor
+
+      \item Surface brightness is conserved, so total observed flux is:
+
+        $$F_{obs}=\mu F_{true}$$
+
+      \item For $\mu>1$, a given patch of sky will appear larger, and for $\mu<1$ it will appear smaller
+
+    \end{itemize}
+
+  \item Technical Terms
+
+    \begin{itemize}
+
+      \item ``Cosmic Shear'' — Correlations in shapes due to weak lensing
+
+      \item Galaxy-Galaxy Lensing — The lensing of galaxies by galaxies (essentially determining the mass of galaxy based on its lensing contribution to a different galaxy)
+
+      \item CMB Lensing — CMB photons are also affected by shear and lensing, so the CMB map could be used
+
+      \item Strong Lensing — Mass mapping, time delays, dark matter constraints
+
+    \end{itemize}
+
+  \item Gravitational Waves
+
+    \begin{itemize}
+
+      \item Ripples in spacetime
+
+      \item ``Gauge Transformations''
+
+      \item Using the same ``chirp'' from above, we may write:
+
+        $$h_{\mu\nu}^{TT}=\left( \begin{matrix} 0 & 0 & 0 & 0\\ 0 & & &\\0 & & s_{ij} &\\ 0 & & & \end{matrix} \right)$$
+
+        \begin{itemize}
+
+          \item This is the transverse-traceless gauge (TT)
+
+          \item Often referred to by a box: $\square$
+
+        \end{itemize}
+
+      \item This results in a wave equation
+
+        \begin{itemize}
+
+          \item Note that this obeys the same generic solution set:
+
+            $$f(x,t)=Ae^{i(kx-\omega t)}$$
+
+          \item This plane wave follows:
+
+            $$k=\frac{\omega}{c_s}=\frac{2\pi}{\lambda c_s}$$
+
+          \item Can add multiple plane waves to match boundary/initial conditions
+
+          \item We can note:
+
+            $$k\Delta x=\omega\Delta t$$
+
+        \end{itemize}
+
+      \item Gravitational waves have quadrupolar symmetry ($180^{\circ}$ rotation invariant), unlike electromagnetic waves, which are dipoles ($360^{\circ}$ rotation invariant)
+
+      \item For gravitational radiation, this dipole scenario doesn't work, as there is only one gravitational ``charge''  (universality of gravity)
+
+      \item We don't have a quantized theory of gravity (proven) yet, but we know it has a spin-2 particle
+
+      \item We could have derived Einstein's equations by taking the particle physics perspective and writing down $\mathcal{L}$ including a new spin-2 particle $h_{\mu\nu}$
+
+      \item String theory naturally gives rise to 2 spin-2 degrees of freedom and spin-0 degrees of freedom
+
+    \end{itemize}
+
+  \item Production and detection of gravitational waves
+
+    \begin{itemize}
+
+      \item This is in general a complex problem: perturbation theory breaks down, and numerical techniques are needed
+
+      \item Once you have the form of the wave, the propagation is easily expressed as a sum of plane waves
+
+      \item Gravitational waves are produced by changing quadrupole moment of mass distribution:
+
+        $$\bar{h}_{ij}(t,\vec{x})=\frac{2G}{r}\frac{d^2I_{ij}}{dt^2}$$
+
+        \begin{itemize}
+
+          \item Where:
+
+            $$I_{ij}(t)=\int y^iy^jT^{oo}(t,y)\,d^3y$$
+
+          \item Is the quadrupole of mass/energy distribution
+
+        \end{itemize}
+
+      \item Using Newtonian orbits (which, technically, are not correct, especially as objects are close to merging, i.e. strong gravity), but good enough for order of magnitude:
+
+        $$\Omega=\frac{2\pi}{T}=\sqrt{\frac{GM}{4R^3}}$$
+
+        $$\bar{h}_{ij}(t,\vec{x})=\frac{8GM}{r}\Omega^2R^2\left( \begin{matrix} -\cos(2\Omega t) & -\sin(2\Omega t) & 0\\ -\sin(2\Omega t) & \cos(2\Omega t) & 0\\ 0 & 0 & 0 \end{matrix} \right)$$
+
+    \end{itemize}
+
+  \item Binary Pulsar: Hulse and Taylor (1974 discovery, 1993 Nobel Prize)
+
+    \begin{itemize}
+
+      \item Pulsar: a spinning neutron star
+
+      \item Two neutron stars, one of which is a pulsar, which pulses 17 times per second
+
+      \item Precise timing allows us to track the orbit with very good precision
+        
+    \end{itemize}
+
+  \item Gravitational Wave Sources (in order of decreasing frequency)
+
+    \begin{itemize}
+
+      \item Mergers of approximately stellar mass black holes, neutron stars
+
+      \item Supernovae
+
+      \item Supermassive black hole mergers
+
+      \item Inflation, early universe phase transitions
+
+    \end{itemize}
+
+  \item Gravitational Wave Detection
+
+    \begin{itemize}
+
+      \item LIGO: Laser Interferometer Gravitational-Wave Observatory
+
+      \item Pulsar Timing Arrays
+
+      \item CMB Polarization
+
+    \end{itemize}
+
 \end{itemize}
 
 \end{document}
