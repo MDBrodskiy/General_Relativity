@@ -1,0 +1,430 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Written By Michael Brodskiy
+% Class: General Relativity and Cosmology
+% Professor: J. Blazek
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{Includes.tex}
+
+\title{Cosmology Review}
+\date{\today}
+\author{Michael Brodskiy\\ \small Professor: J. Blazek}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+
+  \item The Cosmological Principle
+
+    \begin{itemize}
+
+      \item The universe is homogenous and isotropic (statistically the same everywhere, and in every direction)
+
+      \item Not formally true, but it is \textit{statistically} true
+
+      \item Lets us make assumptions when solving the Einstein equation
+
+      \item Also, lets us arrive at the FLRW Metric (the only consistent solution to Einstein equations)
+
+        $$ds^2=-dt^2+a^2(t)\left[ \frac{dr^2}{1-\kappa r^2}+r^2d\Omega^2 \right]$$
+
+        \begin{itemize}
+
+          \item For $\kappa>0$, we have a closed universe
+
+          \item For $\kappa=0$, we have a flat universe
+
+          \item For $\kappa<0$, we have an open universe
+
+          \item Our universe is near flat, so we usually don't need to consider this; however, it is good to know that the FLRW metric can be used with non-flat universes
+
+          \item Spacetime is curved in 4-dimensions
+
+        \end{itemize}
+
+      \item Analogy to Newtonian Cosmology: Expanding Sphere
+
+        \begin{itemize}
+
+          \item Given a sphere with some density $\rho$ expanding at velocity $v$, if the density and velocity are balanced, the sphere stops at $t\to\infty$ (in a flat universe with a critical density)
+
+          \item If $\rho$ is larger, this corresponds to a closed universe that will turn around
+
+          \item If $\rho$ is smaller, this corresponds to an open universe, which will keep expanding
+
+        \end{itemize}
+
+      \item Once we introduce dark energy ($\Lambda$), the Newtonian analogy breaks down
+
+      \item $a(t)$ is referred to as the scale factor, which captures the expansion of the universe (relates comoving coordinates with physical coordinates)
+
+        $$x=a(t)\cdot r$$
+
+        \begin{itemize}
+
+          \item Where $x$ is the physical (proper) coordinate, and $r$ is the comoving coordinate
+
+        \end{itemize}
+
+      \item Thus, we arrive at the Hubble expansion law:
+
+        $$v_{12}=\frac{\dot{a}}{a}\cdot x_{12}\equiv H(a)\cdot x_{12}$$
+        $$H(a)=\frac{\dot{a}}{a}$$
+
+      \item ``Today'' corresponds to $a=1$, where:
+
+        $$H(a=1)=H(t=t_o)=H_o$$
+
+      \item Using this to solve the Einstein equations, we arrive at the Friedmann equations:
+
+        $$\frac{\ddot{a}}{a}=-\frac{4\pi G}{3}(\rho+3p)$$
+        $$\left( \frac{\dot{a}}{a} \right)^2=\frac{8\pi G}{3}\rho-\frac{2\kappa}{a^2}$$
+
+    \end{itemize}
+
+  \item Energy Density Evolution
+
+    \begin{itemize}
+
+      \item We model energy density in the homogenous universe as the sum of various perfect fluids
+
+        $$T_{\mu\nu}=\left( \begin{matrix} \rho & 0\\0 & g_{ij}p \end{matrix} \right)$$
+
+      \item In the case of zero pressure (dust) we get:
+
+        $$T_{\mu\nu}=\left( \begin{matrix} \rho & 0\\0 & 0 \end{matrix} \right)$$
+
+      \item We treat dark matter and normal matter as dust, since $v<<c$
+
+      \item The density of such components scales as:
+
+        $$\rho=\rho_o a^{-3(1+w)}$$
+
+        \begin{itemize}
+
+          \item Where $w$ is the equation of state, $p=w\rho$
+
+          \item $w=0$ for dust ($\rho=\rho_oa^{-3}$)
+
+          \item $w=1/3$ for radiation ($\rho=\rho_oa^{-4}$)
+
+          \item $w=-1$ for $\Lambda$ ($\rho=\rho_o$)
+
+        \end{itemize}
+
+      \item Redshifting of radiation
+
+        $$E_{photon}(a)=\frac{E_o}{a}$$
+
+        \begin{itemize}
+
+          \item Formally, this comes from the redshift of momenta
+
+            $$\left( \frac{\dot{a}}{a} \right)^2=H^2(a)=\frac{8\pi G}{3}\left( \rho_{m,o}a^{-3}+\rho_{r,o}a^{-4}+\rho_{\Lambda,o}-2\kappa a^{-2} \right)$$
+
+          \item If we want $\kappa=0$, today $a=1$, which gives us:
+
+            $$H^2(a=1)=H_o^2=\frac{8\pi G}{3}\rho_{tot}$$
+
+            \begin{itemize}
+
+              \item Thus, the critical density (the density required today for there to be no curvature) is defined as:
+
+                $$\rho_{crit}=\frac{3H_o^2}{8\pi G}$$
+
+            \end{itemize}
+
+          \item Remember, the scale factor and redshift are related by:
+
+            $$a=\frac{1}{1+z}$$
+
+          \item We define:
+
+            $$\Omega=\frac{\rho}{\rho_{crit}}$$
+
+          \item This lets us define:
+
+            $$\frac{H(a)}{H_o}=\sqrt{\Omega_ma^{-3}+\Omega_ra^{-4}+\Omega_{\Lambda}+\Omega_{\kappa}a^{-2}}$$
+
+          \item Incorporating the equation of state for dark energy:
+
+            $$\frac{H(a)}{H_o}=\sqrt{\Omega_ma^{-3}+\Omega_ra^{-4}+\Omega_{DE}a^{-3(1+w)}+\Omega_{\kappa}a^{-2}}$$
+
+          \item Also, we may write:
+
+            $$\Omega_m+\Omega_r+\Omega_{\Lambda}+\Omega_{\kappa}=1$$
+            $$\Omega_m+\Omega_r+\Omega_{DE}+\Omega_{\kappa}=1$$
+
+        \end{itemize}
+
+      \item Important Universe Types:
+
+        \begin{itemize}
+
+          \item $\Omega_{\kappa}=0\to$ flat
+
+          \item $\Omega_{m}=1\to$ Einstein-deSitter (flat, matter only)
+
+          \item $\Omega_{\Lambda}=1\to$ deSitter
+
+          \item $\Omega_{\kappa}=1\to$ empty
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Distances
+
+    \begin{itemize}
+
+      \item Comoving radial distance
+
+        $$\chi=\int_{t_{em}}^{t_o}\frac{dt}{a(t)}=\int_o^r \frac{dr}{\sqrt{1-\kappa r^2}}$$
+
+        \begin{itemize}
+
+          \item For various $\kappa$:
+
+            \begin{itemize}
+
+              \item $\kappa>0$ (closed):
+
+                $$\chi=\kappa^{-\frac{1}{2}}\sin(\kappa^{\frac{1}{2}}r)$$
+
+              \item $\kappa<0$ (open):
+
+                $$\chi=\kappa^{-\frac{1}{2}}\sinh(\kappa^{\frac{1}{2}}r)$$
+
+              \item $\kappa=0$ (flat):
+
+                $$\chi=r$$
+
+            \end{itemize}
+
+          \item We redefine the metric with $S_{\kappa}(r)$ to relate the above, so we get:
+
+            $$ds^2=-dt^2+a^2(t)\left[ dr^2+S_{\kappa}^2(r)d\Omega^2 \right]$$
+
+            \begin{itemize}
+
+              \item Note that, for a flat universe, this $S$ function equals $r$
+
+            \end{itemize}
+
+        \end{itemize}
+
+      \item We may obtain:
+
+        $$\chi(a)=\int_{a_{em}}^{a_o=1}\frac{da}{a^2H(a)}\to \chi(z)$$
+
+      \item The horizon distance may be written as:
+
+        $$\chi_{hor}=\int_{a=0}^{1}\frac{da}{a^2H(a)}$$
+
+        \begin{itemize}
+
+          \item Note that for an Einstein-deSitter universe, we get:
+
+            $$\chi_{hor}=\frac{2}{H_o}\to \frac{2c}{H_o}$$
+
+        \end{itemize}
+
+      \item We can calculate the age of the universe using:
+
+        $$\frac{\dot{a}}{a}=H_o\sqrt{\Omega_ma^{-3}+\Omega_ra^{-4}+\Omega_{\Lambda}+\Omega_{\kappa}a^{-2}}$$
+
+      \item We can break $\dot{a}$ into its differential form, and multiply the $dt$ over to solve for the age of the universe
+
+        \begin{itemize}
+
+          \item For example, in an empty universe ($\Omega_{\kappa}=1$), we see:
+
+            $$\frac{da}{dt}=aH_o(a^{-2})$$
+            $$\int_0^1 a\,da=\int_0^t_o H_o\,dt$$
+            $$1=H_ot_o$$
+            $$t_o=\frac{1}{H_o}$$
+
+          \item In a matter-only universe, we see:
+
+            $$t_o=\frac{2}{3H_o}$$
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Luminosity Distance
+
+    \begin{itemize}
+
+      \item Relate intrinsic luminosity to observed luminosity:
+
+        $$F\approx \frac{L}{d_L^2}$$
+
+      \item We derived:
+
+        $$d_L=\chi(1+z)=\chi/a\quad\text{ (flat universe)}$$
+        $$d_L=\chi S_k(1+z)\quad\text{ (in general)}$$
+
+      \item The angular diameter distance can be written as:
+
+        $$\theta\approx l/d_A$$
+        $$d_A=\frac{\chi}{1+z}=\frac{d_L}{(1+z)^2}\quad\text{ (flat universe)}$$
+        $$d_A=\frac{S_k\chi}{1+z}\quad\text{ (in general)}$$
+
+      \item Luminosity distance used to discover Dark Energy:
+
+        $$SNI_a\to\text{ "standard candles"}$$
+
+        \begin{itemize}
+
+          \item For $\Omega_{\Lambda}$: $d_L$ is larger $\Rightarrow$ objects are fainter
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Dark Matter
+
+    \begin{itemize}
+
+      \item Zwicky: velocities in clusters were too large
+
+      \item Rubin: rotation of galaxies were too large
+
+      \item Both of the above indicate some kind of missing mass $\to$ dark matter
+
+      \item What is dark matter?
+
+        \begin{itemize}
+
+          \item We don't actually know
+
+          \item Came up with weakly-interacting massive particles (WIMPs) as a possible candidate
+
+          \item Could also be axions
+
+          \item Neutrinos (new ``sterile'' neutrinos)
+
+          \item Black holes?
+
+          \item We combine this together to determine the concordance model: $\Lambda$CDM
+
+            \begin{itemize}
+
+              \item Dark energy ($\Lambda$) with cold dark matter
+
+              \item Could also generalize to some dark energy with $w<-1/3$
+
+            \end{itemize}
+
+        \end{itemize}
+
+    \end{itemize}
+
+  \item Hot Big Bang and Thermal Processes
+
+    \begin{itemize}
+
+      \item Universe started off very hot and dense
+
+        \begin{itemize}
+
+          \item Expansion makes it less dense and cooler
+
+        \end{itemize}
+
+      \item Photons have a blackbody spectrum with temperature $T$
+
+        $$T\propto \frac{1}{a}$$
+
+      \item Processes start in equilibrium
+
+      \item As the universe expands, interaction rate ($\Gamma$) drops
+
+        \begin{itemize}
+
+          \item When $\Gamma\leq H$, we experience freeze out (matter can not find a partner to interact with, and remains as is)
+
+        \end{itemize}
+
+      \item The temperature today is approximately $T_o=2.726[\si{\kelvin}]$ (microwaves)
+
+      \item Kinetic equilibrium $\to$ particles follow the DE, FD distribution
+
+        \begin{itemize}
+            
+          \item Can be assumed as always true
+
+        \end{itemize}
+
+      \item Chemical equilibrium $\to$ $1 + 2\leftrightarrow 3+4$ is in equilibrium
+
+      \item Our assumptions are:
+
+        \begin{enumerate}
+
+          \item Kinetic equilibrium
+
+          \item $E\mu > T$ (ignore quantum effects $\pm1$)
+
+        \end{enumerate}
+
+      \item The Boltzmann Equation is:
+
+        $$a^{-3}\frac{d}{dt}(n_1a^3)=n_1^{(o)}n_2^{(o)}<\sigma_v>\left\{ \frac{n_3n_4}{n_3^{(o)}n_4^{(o)}}-\frac{n_1n_2}{n_1^{(o)}n_2^{(o)}} \right\}$$
+
+        \begin{itemize}
+
+          \item Where:
+
+            $$n_i^{(o)}=\left\{\begin{array}{ll} g_i\left( \frac{m_iT}{2\pi} \right)^{3/2}e^{-m_i/T}, & m_i>>T\text{ (non-relativistic)}\\ g_i\left( \frac{T^3}{\pi^2} \right), & m_i<<T\text{ (relativistic)}\end{array}$$
+
+        \end{itemize}
+
+      \item Chemical equilibrium occurs when:
+
+        $$\frac{n_1n_2}{n_1^{(o)}n_2^{(o)}}=\frac{n_3n_4}{n_3^{(o)}n_4^{(o)}}$$
+
+        \begin{itemize}
+
+          \item Freeze out occurs when:
+
+            $$n_2^{(o)}<\sigma_v> <<H$$
+
+        \end{itemize}
+        
+      \item We assume $l_{sm}$ remains in chemical equilibrium, $n_1=n_2=n_x$ , and $n_3=n_4=n_l=n_l^{(o)}$ to get:
+
+        $$a^{-3}\frac{d}{dt}(n_xa^{3})=<\sigma_v>\left\{ (n_x^{(o)})^2-n_x^2 \right\}$$
+
+      \item Recombination:
+
+        \begin{itemize}
+
+          \item Particle one is an electron ($e^{-}$), particle two is a proton ($p^{+}$), particle three is a hydrogen ($H$), and particle four is radiation ($\gamma$):
+
+            $$e^{-}+p^{+}\leftrightarrow H + \gamma$$
+
+            \begin{itemize}
+
+              \item This gives us:
+
+                $$\frac{n_en_p}{n_e^{(o)}n_p^{(o)}}=\frac{n_Hn_{\gamma}}{n_H^{(o)}n_{\gamma}^{(o)}}$$
+                $$\frac{n_en_p}{n_H}=\frac{n_e^{(o)}n_p^{(o)}}{n_H^{(o)}}$$
+
+              \item Per our non-relativistic particle formula, we may obtain:
+
+                $$\chi_e=\frac{n_e}{n_e+n_H}\to \frac{\chi_e^2}{1-\chi_e}=\left( \frac{1}{n_e+n_H} \right)\left( \frac{m_eT}{2\pi} \right)^{\frac{3}{2}}e^{-m_e/T}$$
+
+            \end{itemize}
+
+        \end{itemize}
+
+    \end{itemize}
+
+\end{itemize}
+
+\end{document}
+
