@@ -20,31 +20,231 @@
 
     \begin{enumerate}
 
-      \item 
+      \item First and foremost, we can eliminate the pressure contribution, since we are assuming a case of the $\Lambda$CDM universe. As such, this universe has low thermal pressure, which can be approximated to zero.
+
+      \item We can begin by decomposing the components of the fluid equations into ``perturbation form'' as follows:
+
+        $$\rho=\rho_o+\delta \rho$$
+        $$\vec{v}=\vec{v}_o+\delta \vec{v}$$
+        $$\Phi=\Phi_o+\delta \Phi$$
+
+        Using standard convention, we take $\delta \Phi\to\Phi$. This allows us to rewrite the equations as
+
+        $$\left\{\begin{array}{ll} \frac{D(\vec{v}_o+\delta\vec{v})}{Dt}&=-\nabla\Phi\\ \frac{D(\rho_o+\delta \rho)}{Dt} &= -(\rho_o+\delta \rho)\nabla\cdot(\vec{v}_o+\delta\vec{v})\\ \nabla^2\Phi&=4\pi G(\rho_o+\delta \rho) \end{array}$$
+
+          And finally we linearize (removing zeroth-order terms):
+
+        $$\boxed{\left\{\begin{array}{ll} \dfrac{d(\delta\vec{v})}{dt}&=-\nabla\Phi\\\\ \dfrac{d(\delta)}{dt} &= -\nabla\cdot(\delta\vec{v})\\\\ \nabla^2\Phi&=4\pi G(\delta \rho) \end{array}}$$
+
+        \item Incorporating the background velocity ($\vec{v}_o=H\vec{x}$), we may write:
+
+          $$\boxed{\left\{\begin{array}{ll} \dfrac{d(\delta\vec{v})}{dt}+2H\delta\vec{v}&=-\nabla\Phi\\\\ \dfrac{d(\delta)}{dt} &= -\nabla\cdot(\delta\vec{v})\\\\ \nabla^2\Phi&=4\pi G(\delta \rho) \end{array}}$$
+
+        We may see that this contributes a damping term proportional to twice the Hubble expansion.
+
+      \item To transition to comoving coordinates, we may use the following relationships:
+
+        $$\vec{x}=a\vec{r}$$
+
+        The peculiar velocity:
+
+        $$\delta\vec{v}=a\vec{u}$$
+
+        And the gradient:
+
+        $$\nabla_c=\frac{1}{a}\nabla$$
+
+        Incorporating this into the above, we get:
+
+        $$\left\{\begin{array}{ll} a\dfrac{d\vec{u}}{dt}+2aH\vec{u}&=-\nabla_c\Phi\\\\ \dfrac{d(\delta)}{dt} &= -\nabla_c\cdot(\vec{u})\\\\ \nabla^2_c\Phi&=4\pi G\bar{\rho}a^2\delta \end{array}$$
+
+        We can then simplify using dot notation to get the equations in terms of comoving coordinates:
+
+        $$\boxed{\left\{\begin{array}{ll} \dot{\vec{u}}+2H\vec{u}&=-a^{-2}\nabla_c\Phi\\ \dot{\delta} &= -\nabla_c\cdot\vec{u}\\ \nabla^2_c\Phi&=4\pi G\bar{\rho}a^2\delta \end{array}}$$
+
+        \item Taking the divergence of the first equation, we get:
+
+          $$\nabla_c\cdot\dot{\vec{u}}+2H\nabla_c\cdot\vec{u}=-\frac{1}{a^2}\nabla_c^2\Phi$$
+
+          We may observe that this can be combined with the third equation to get:
+
+          $$\nabla_c\cdot\dot{\vec{u}}+2H\nabla_c\cdot\vec{u}=-4\pi G\bar{\rho}\delta$$
+
+          We then take the time derivative of the second equation to write:
+
+          $$\ddot{\delta}=-\nabla_c\cdot\dot{\vec{u}}$$
+          $$\nabla_c\cdot\dot{\vec{u}}=-\ddot{\delta}$$
+
+          We then plug this and the undifferentiated form of the second equation into the first and third combined equation to write:
+
+          $$-\ddot{\delta}-2H\dot{\delta}=-4\pi G\bar{\rho}\delta$$
+
+          We distribute the negative sign to get:
+
+          $$\boxed{\ddot{\delta}+2H\dot{\delta}=4\pi G\bar{\rho}\delta}$$
+
+      \item We know that the mean matter density can be written as:
+
+        $$\bar{\rho}(a)=\rho_{crit}\Omega_m(a)$$
+
+        Furthermore, we know that the critical density is:
+
+        $$\rho_{crit}=\frac{3H_O^2}{8\pi G}$$
+
+        Combining this with part (e), we get:
+
+        $$\boxed{\ddot{\delta}+2H\dot{\delta}=\frac{3H_o^2\Omega_m(a)\delta}{2}}$$
 
       \item 
 
-      \item 
+        \begin{itemize}
+
+          \item Matter Domination
+
+            In this case, we may see that:
+
+            $$\ddot{\delta}+2H\dot{\delta}=\frac{3}{2}H_o^2\delta$$
+
+            We know that:
+
+            $$H(a)=\frac{\dot{a}}{a}=H_o\sqrt{\Omega_ma^{-3}+\Omega_ra^{-4}+\Omega_{\Lambda}+\Omega_{\kappa}a^{-2}}$$
+
+            Taking the purely matter component, we may write:
+
+            $$H(a)=H_o\sqrt{a^{-3}}$$
+
+            This gives us:
+
+            $$\frac{d^2\delta}{dt^2}+2\sqrt{a^{-3}}\frac{d\delta}{dt}=\frac{3}{2}H_o\delta$$
+
+            We can then write this as:
+
+            $$\frac{d^2\delta}{dt^2}+\frac{4}{3t}\frac{d\delta}{dt}-\frac{2}{3t^2}\delta=$$
+
+            We can determine that, since $\delta\propto t^{2/3}$ and $a\propto t^{2/3}$ then:
+
+            $$\boxed{\delta\propto a}$$
+
+          \item Radiation Domination
+
+            We may observe that $H(a)=H_o/a^2$ and that $\Omega_m=0$, which gives us:
+
+            $$\ddot{\delta}+\frac{2H_o}{a^2}\dot{\delta}=0$$
+
+            We can expand to write:
+
+            $$\frac{d^2\delta}{dt^2}=-\frac{2H_o}{a^2}\frac{d\delta}{dt}$$
+            $$d\delta=-\frac{2H_o}{a^2}\,dt$$
+            $$\int\,d\delta=-\frac{2H_o}{a^2}\int\,dt$$
+
+            And finally, we get:
+
+            $$\boxed{\delta = -\frac{2H_ot_o}{a^2}}$$
+
+          \item $\Lambda$ Domination
+
+            We may observe that $H(a)=H_o$, and that $\Omega_m=0$, which gives us:
+
+            $$\ddot{\delta}+2H_o\dot{\delta}=0$$
+
+            We expand to write:
+
+            $$\frac{d^2\delta}{dt^2}+2H_o\frac{d\delta}{dt}=0$$
+            $$\frac{d^2\delta}{dt^2}=-2H_o\frac{d\delta}{dt}$$
+            $$\int\,d\delta=\int-2H_o\,dt$$
+
+            Finally, this gets us:
+
+            $$\boxed{\delta=-2H_ot_o}$$
+
+            We see that this term is constant.
+
+        \end{itemize}
 
       \item 
 
-      \item 
+        \begin{itemize}
 
-      \item 
+          \item Matter Domination
 
-      \item 
+            We may observe that, during this period, $\Phi$ remains constant
 
-      \item 
+          \item Radiation and $\Lambda$ Domination
 
-      \item 
+            We may observe that, as $\delta$ is either slowing or constant, $\Phi$ decays
+
+        \end{itemize}
+
+      \item Based on the results from (h), we may conclude that, in a matter-dominated region, the photon would remain at the same energy, since the gravitational potential doesn't change; however, the photon would gain energy (experience the ISW effect) in a radiation or $\Lambda$ dominated universe, since the gravitational potential would decay, meaning that the decrease in potential would be gained by the photon.
 
     \end{enumerate}
 
-  \item
+  \item We first use the Born approximation to find the perpendicular acceleration:
 
-  \item
+    $$a_{\perp}=\frac{GM}{r^2}\cos(\theta)$$
 
-  \item
+    This acceleration results in the deflection of the light ray. From here, we may define the angle $\hat{\alpha}$ as the integral of the perpendicular acceleration. We first define:
+
+    $$r^2=\varepsilon^2+z^2$$
+
+    And then:
+
+    $$\cos(\theta)=\frac{\varepsilon}{\sqrt{\varepsilon^2+z^2}}$$
+
+    This allows us to write:
+
+    $$\hat{\alpha}=\int_{-\infty}^{\infty} \frac{GM\varepsilon}{(\varepsilon^2+z^2)^{\frac{3}{2}}}\,dz$$
+
+    We integrate to obtain:
+
+    $$\boxed{\hat{\alpha}=\frac{2GM}{\varepsilon}}$$
+
+    We may observe that the General Relativity case predicts a deflection angle that is twice that of the Newtonian prediction.
+
+  \item First and foremost, we know that gravitational lensing results in two effects: first, the magnification of luminosity, which results in observed luminosity $\mu L$ with magnification factor $\mu$ and intrinsic luminosity $L$; second, the apparent area of the sky is magnified by the same factor $\mu$, which results in the density of galaxies being decreased by a factor $\mu^{-1}$. Given that $n(L)$ corresponds to the number density of galaxies, we may write:
+
+    $$n(L)\to n_{app}(L_{app})$$
+    $$n_{app}(L_{app})\propto \frac{1}{\mu}\left( \frac{\mu}{L_{app}} \right)^{\alpha}$$
+
+    We may simplify to get:
+
+    $$n_{app}(L_{app})\propto \left( \frac{\mu^{\alpha-1}}{L_{app}^{\alpha}} \right)$$
+
+    Since we are to assume $\alpha>1$, the magnification factor, $\mu^{\alpha-1}$ must be increasing, which indicates that the number of galaxies with the given apparent luminosity detected increases as a result of the magnification. As such, magnification as a result of gravitational lensing in the foreground increases the quantity of detected galaxies for $\alpha>1$.
+
+  \item We may begin by calculating the luminosity distance as:
+
+    $$d_L=\chi(1+z)$$
+
+    For a $\Lambda$CDM universe, we know that $\chi$ may be obtained using:
+
+    $$\chi=\int_0^z \frac{dz'}{H_o\sqrt{.31(1+z')^3+.69}}$$
+    
+    Since the redshift is given, we get:
+
+    $$\chi=\int_0^{.01} \frac{dz'}{H_o\sqrt{.31(1+z')^3+.69}}$$
+
+    Entering this into a numerical solver, we may obtain:
+
+    $$\chi=\frac{.009977}{H_o}$$
+
+    Which ultimately gives us:
+
+    $$d_L=\frac{.009977(1+.01)c}{70}$$
+    $$\boxed{d_L\approx1.3224\cdot10^{21}[\si{\kilo\meter}]}$$
+
+    Since we are given the time delay as $\Delta t =1.7[\si{\second}]$, we can obtain the difference in speed as:
+
+    $$\Delta v=\frac{d_L}{\Delta t}$$
+
+    This gives us:
+
+    $$\Delta v=\frac{1.3224\cdot10^{21}}{1.7}$$
+    $$\boxed{\Delta v=7.779\cdot10^{20}\left[ \si{\kilo\meter\over\second} \right]}$$
+
+    Thus, we see that the upper limit of the order-of-magnitude difference between the speed of light and the speed of gravitational waves is on the order of:
+
+    $$10^{20}\left[\si{\kilo\meter\over\second}\right]$$
 
 \end{enumerate}
 
