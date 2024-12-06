@@ -20,7 +20,7 @@
 
     \begin{enumerate}
 
-      \item First and foremost, we can eliminate the pressure contribution, since we are assuming a case of the $\Lambda$CDM universe. As such, this universe has low thermal pressure, which can be approximated to zero.
+      \item First and foremost, we can eliminate the pressure contribution, since we are assuming a case in which we treat matter as dust. Dust is assumed to have no pressure, since velocities are non-relativistic, while mass is most of the energy density.
 
       \item We can begin by decomposing the components of the fluid equations into ``perturbation form'' as follows:
 
@@ -32,15 +32,13 @@
 
         $$\left\{\begin{array}{ll} \frac{D(\vec{v}_o+\delta\vec{v})}{Dt}&=-\nabla\Phi\\ \frac{D(\rho_o+\delta \rho)}{Dt} &= -(\rho_o+\delta \rho)\nabla\cdot(\vec{v}_o+\delta\vec{v})\\ \nabla^2\Phi&=4\pi G(\rho_o+\delta \rho) \end{array}$$
 
-          And finally we linearize (removing zeroth-order terms):
+        And finally we linearize (removing zeroth-order terms):
 
-        $$\boxed{\left\{\begin{array}{ll} \dfrac{d(\delta\vec{v})}{dt}&=-\nabla\Phi\\\\ \dfrac{d(\delta)}{dt} &= -\nabla\cdot(\delta\vec{v})\\\\ \nabla^2\Phi&=4\pi G(\delta \rho) \end{array}}$$
+        $$\boxed{\left\{\begin{array}{ll} \left[\dfrac{\partial}{\partial t}+(\vec{v}_o+\delta\vec{v})\cdot\nabla\right]\vec{v}_o+\left[ \dfrac{\partial}{\partial t}+\vec{v}_o\cdot\nabla \right]\delta\vec{v}&=-\nabla\Phi\\\\ \dfrac{\partial\bar{\rho}}{\partial t}+\left( \dfrac{\partial}{\partial t}+\vec{v}_o\cdot\nabla \right)\bar{\rho}\delta &= -\bar{\rho}(\nabla\cdot(\vec{v}_o+\delta\vec{v})+\delta\nabla\cdot\vec{v}_o)\\\\ \nabla^2\Phi&=4\pi G\bar{\rho}\delta \end{array}}$$
 
         \item Incorporating the background velocity ($\vec{v}_o=H\vec{x}$), we may write:
 
-          $$\boxed{\left\{\begin{array}{ll} \dfrac{d(\delta\vec{v})}{dt}+2H\delta\vec{v}&=-\nabla\Phi\\\\ \dfrac{d(\delta)}{dt} &= -\nabla\cdot(\delta\vec{v})\\\\ \nabla^2\Phi&=4\pi G(\delta \rho) \end{array}}$$
-
-        We may see that this contributes a damping term proportional to twice the Hubble expansion.
+          $$\boxed{\left\{\begin{array}{ll} H\delta\vec{v}+\frac{d(\delta\vec{v}}{dt}&= -\nabla \Phi\\\frac{d(\delta)}{dt}&=\nabla\cdot\delta\vec{v}\end{array}}$$
 
       \item To transition to comoving coordinates, we may use the following relationships:
 
@@ -61,6 +59,8 @@
         We can then simplify using dot notation to get the equations in terms of comoving coordinates:
 
         $$\boxed{\left\{\begin{array}{ll} \dot{\vec{u}}+2H\vec{u}&=-a^{-2}\nabla_c\Phi\\ \dot{\delta} &= -\nabla_c\cdot\vec{u}\\ \nabla^2_c\Phi&=4\pi G\bar{\rho}a^2\delta \end{array}}$$
+
+        We may see that we have found the damping term proportional to twice the Hubble expansion.
 
         \item Taking the divergence of the first equation, we get:
 
@@ -93,7 +93,7 @@
 
         Combining this with part (e), we get:
 
-        $$\boxed{\ddot{\delta}+2H\dot{\delta}=\frac{3H_o^2\Omega_m(a)\delta}{2}}$$
+        $$\boxed{\ddot{\delta}+2H\dot{\delta}=\frac{3H^2\Omega_m(a)\delta}{2}}$$
 
       \item 
 
@@ -103,79 +103,77 @@
 
             In this case, we may see that:
 
-            $$\ddot{\delta}+2H\dot{\delta}=\frac{3}{2}H_o^2\delta$$
+            $$\ddot{\delta}+2H\dot{\delta}=\frac{3}{2}H^2\delta$$
 
-            We know that:
+            We can rewrite this in terms of $t$ to get:
 
-            $$H(a)=\frac{\dot{a}}{a}=H_o\sqrt{\Omega_ma^{-3}+\Omega_ra^{-4}+\Omega_{\Lambda}+\Omega_{\kappa}a^{-2}}$$
+            $$\ddot{\delta}+\frac{4}{3t}\dot{\delta}-\frac{2}{3t^2}\delta=0$$
 
-            Taking the purely matter component, we may write:
-
-            $$H(a)=H_o\sqrt{a^{-3}}$$
-
-            This gives us:
-
-            $$\frac{d^2\delta}{dt^2}+2\sqrt{a^{-3}}\frac{d\delta}{dt}=\frac{3}{2}H_o\delta$$
-
-            We can then write this as:
-
-            $$\frac{d^2\delta}{dt^2}+\frac{4}{3t}\frac{d\delta}{dt}-\frac{2}{3t^2}\delta=$$
-
-            We can determine that, since $\delta\propto t^{2/3}$ and $a\propto t^{2/3}$ then:
+            We can see that the only cosmologically relevant solution is when $\delta\propto t^{2/3}$, and that, in this case, since $a\propto t^{2/3}$, we can conclude:
 
             $$\boxed{\delta\propto a}$$
 
           \item Radiation Domination
 
-            We may observe that $H(a)=H_o/a^2$ and that $\Omega_m=0$, which gives us:
+            We may observe that $\Omega_m=0$, which gives us:
 
-            $$\ddot{\delta}+\frac{2H_o}{a^2}\dot{\delta}=0$$
+            $$\ddot{\delta}+2H\dot{\delta}=0$$
 
-            We can expand to write:
+            We can rewrite in terms of $t$ to get:
 
-            $$\frac{d^2\delta}{dt^2}=-\frac{2H_o}{a^2}\frac{d\delta}{dt}$$
-            $$d\delta=-\frac{2H_o}{a^2}\,dt$$
-            $$\int\,d\delta=-\frac{2H_o}{a^2}\int\,dt$$
+            $$\ddot{\delta}+\frac{1}{t}\dot{\delta}=0$$
 
-            And finally, we get:
+            We may observe that since the first-order time derivative is proportional to the inverse of $t$, $\delta\propto\ln(t)$. As such, we may conclude:
 
-            $$\boxed{\delta = -\frac{2H_ot_o}{a^2}}$$
+            $$\boxed{\delta\propto\frac{3}{2}\ln(a)}$$
 
           \item $\Lambda$ Domination
 
-            We may observe that $H(a)=H_o$, and that $\Omega_m=0$, which gives us:
+            Similarly to radiation, we get:
 
-            $$\ddot{\delta}+2H_o\dot{\delta}=0$$
+            $$\ddot{\delta}+2H\dot{\delta}=0$$
 
-            We expand to write:
+            However, we know that in $\Lambda$ domination, $H$ is constant. Thus, we can determine that there are two solutions for $\delta$, and only one that is cosmologically meaningful:
 
-            $$\frac{d^2\delta}{dt^2}+2H_o\frac{d\delta}{dt}=0$$
-            $$\frac{d^2\delta}{dt^2}=-2H_o\frac{d\delta}{dt}$$
-            $$\int\,d\delta=\int-2H_o\,dt$$
+            $$\delta = c\quad\text{ or }\delta\propto e^{-2Ht}$$
 
-            Finally, this gets us:
+            Given that the second would imply that $\delta\propto a^{-2}$, the only relevant solution is, for some constant $c$:
 
-            $$\boxed{\delta=-2H_ot_o}$$
+            $$\boxed{\delta=c}$$
 
-            We see that this term is constant.
+            And thus, this term is constant for $\Lambda$ domination.
 
         \end{itemize}
 
-      \item 
+      \item We use our solutions from (g) and the following formula:
+
+        $$\nabla^2_c\Phi=4\pi G\bar{\rho}a^2\delta$$
 
         \begin{itemize}
 
           \item Matter Domination
 
-            We may observe that, during this period, $\Phi$ remains constant
+            We may observe that, during this period, $\Phi$ remains constant, since:
+
+            $$\Phi\propto \frac{\delta}{a}$$
+            $$\Phi\propto \frac{a}{a}$$
+            $$\boxed{\Phi\propto c}$$
 
           \item Radiation and $\Lambda$ Domination
 
-            We may observe that, as $\delta$ is either slowing or constant, $\Phi$ decays
+            We may observe that $\Phi$ decays, since, for radiation, we see:
+
+            $$\boxed{\Phi\propto \frac{\ln(a)}{a}}$$
+
+            And for $\Lambda$ domination:
+
+            $$\boxed{\Phi\propto \frac{c}{a}}$$
+
+            Note that decay occurs much faster for the case of $\Lambda$ domination.
 
         \end{itemize}
 
-      \item Based on the results from (h), we may conclude that, in a matter-dominated region, the photon would remain at the same energy, since the gravitational potential doesn't change; however, the photon would gain energy (experience the ISW effect) in a radiation or $\Lambda$ dominated universe, since the gravitational potential would decay, meaning that the decrease in potential would be gained by the photon.
+      \item Based on the results from (h), we may conclude that, in a matter-dominated region, the photon would remain at the same energy, since the gravitational potential doesn't change; however, the photon would gain energy (experience the ISW effect) in a radiation or $\Lambda$ dominated universe, since the gravitational potential would decay, meaning that the decrease in potential would be gained by the photon. Note that, in an underdense region, the opposite would occur.
 
     \end{enumerate}
 
@@ -204,13 +202,25 @@
   \item First and foremost, we know that gravitational lensing results in two effects: first, the magnification of luminosity, which results in observed luminosity $\mu L$ with magnification factor $\mu$ and intrinsic luminosity $L$; second, the apparent area of the sky is magnified by the same factor $\mu$, which results in the density of galaxies being decreased by a factor $\mu^{-1}$. Given that $n(L)$ corresponds to the number density of galaxies, we may write:
 
     $$n(L)\to n_{app}(L_{app})$$
-    $$n_{app}(L_{app})\propto \frac{1}{\mu}\left( \frac{\mu}{L_{app}} \right)^{\alpha}$$
+
+    From here, we can define an ``unlensed'' function as:
+
+    $$n_{unl}(L)\propto L^{-\alpha}$$
+
+    We can integrate to find the quantity of observable galaxies:
+
+    $$N_{unl}(L)\propto\int_{L_o}^{\infty}L^{-\alpha}\,dL$$
+    $$N_{unl}(L)\propto L_o^{1-\alpha}$$
+
+    We then substitute into the observed case:
+
+    $$n_{app}(L)\propto \frac{1}{\mu}\left( \frac{\mu}{L_o} \right)^{\alpha-1}$$
 
     We may simplify to get:
 
-    $$n_{app}(L_{app})\propto \left( \frac{\mu^{\alpha-1}}{L_{app}^{\alpha}} \right)$$
+    $$n_{app}(L)\propto \left( \mu^{\alpha-2}N_{unl} \right)$$
 
-    Since we are to assume $\alpha>1$, the magnification factor, $\mu^{\alpha-1}$ must be increasing, which indicates that the number of galaxies with the given apparent luminosity detected increases as a result of the magnification. As such, magnification as a result of gravitational lensing in the foreground increases the quantity of detected galaxies for $\alpha>1$.
+    Thus, we may observe that, when $\mu >2$, more galaxies will be observed. When $\mu<2$, less galaxies are observed since the magnification factor will be less than 1. When $\mu=2$, there is no difference in the quantity of observed galaxies.
 
   \item We may begin by calculating the luminosity distance as:
 
@@ -231,20 +241,18 @@
     Which ultimately gives us:
 
     $$d_L=\frac{.009977(1+.01)c}{70}$$
-    $$\boxed{d_L\approx1.3224\cdot10^{21}[\si{\kilo\meter}]}$$
+    $$\boxed{d_L\approx 42.856[\si{\mega pc}]}$$
 
-    Since we are given the time delay as $\Delta t =1.7[\si{\second}]$, we can obtain the difference in speed as:
+    This gives us a time of:
 
-    $$\Delta v=\frac{d_L}{\Delta t}$$
+    $$t=4.4055\cdot10^{15}[\si{\second}]$$
 
-    This gives us:
+    Using the time delay given, we may write:
 
-    $$\Delta v=\frac{1.3224\cdot10^{21}}{1.7}$$
-    $$\boxed{\Delta v=7.779\cdot10^{20}\left[ \si{\kilo\meter\over\second} \right]}$$
+    $$\frac{c_{GW}}{c}\approx \frac{1.7}{4.4055\cdot10^{15}}$$
+    $$\frac{c_{GW}}{c}\approx 3.86\cdot10^{-16}$$
 
-    Thus, we see that the upper limit of the order-of-magnitude difference between the speed of light and the speed of gravitational waves is on the order of:
-
-    $$10^{20}\left[\si{\kilo\meter\over\second}\right]$$
+    Thus, we see the upper limit is, roughly, on the order of $10^{-16}$
 
 \end{enumerate}
 
